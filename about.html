@@ -7,7 +7,7 @@
     <title>About · Teik Granite Quarry Sdn Bhd</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ===== SAME STYLES AS INDEX.HTML (HEADER, FOOTER, SECTION TITLE, ETC.) ===== */
+        /* ===== SAME STYLES AS INDEX.HTML ===== */
         * {
             margin: 0;
             padding: 0;
@@ -360,7 +360,7 @@
             color: #4a5a5a;
         }
 
-        /* ===== ESG / SUSTAINABILITY ===== */
+        /* ===== ESG / SUSTAINABILITY WITH SDG ===== */
         .esg-section {
             padding: 4rem 0;
             background: #f0f2f5;
@@ -399,7 +399,20 @@
         .esg-card .esg-icon {
             font-size: 3rem;
             color: #cc0000;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .esg-card .sdg-badge {
+            display: inline-block;
+            background: #cc0000;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
         }
 
         .esg-card h3 {
@@ -414,7 +427,25 @@
             line-height: 1.7;
         }
 
-        /* ===== SUBSIDIARIES SECTION ===== */
+        .esg-card .sdg-list {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .esg-card .sdg-list .sdg-tag {
+            background: #fce8e8;
+            color: #cc0000;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            border: 1px solid #fce8e8;
+        }
+
+        /* ===== SUBSIDIARIES SECTION (WITH DROPDOWN) ===== */
         .subsidiaries-section {
             background: #ffffff;
             padding: 4rem 0;
@@ -436,6 +467,8 @@
             transition: 0.3s;
             background: #f8f9fa;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            cursor: pointer;
+            position: relative;
         }
 
         .sub-item:hover {
@@ -476,6 +509,91 @@
             font-size: 0.7rem;
             font-family: monospace;
             letter-spacing: 0.3px;
+        }
+
+        /* ===== DROPDOWN DETAILS ===== */
+        .sub-item .dropdown-arrow {
+            display: block;
+            margin-top: 0.5rem;
+            color: #cc0000;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .sub-item .dropdown-arrow i {
+            display: inline;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .sub-item .dropdown-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            padding: 0 0.5rem;
+            text-align: left;
+            font-size: 0.75rem;
+            color: #4a5a5a;
+            line-height: 1.8;
+        }
+
+        .sub-item .dropdown-details.open {
+            max-height: 400px;
+            padding: 0.8rem 0.5rem 0.3rem;
+        }
+
+        .sub-item .dropdown-details p {
+            margin: 0.2rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .sub-item .dropdown-details i {
+            font-size: 0.7rem;
+            color: #cc0000;
+            display: inline;
+            width: 1.2rem;
+            margin: 0;
+        }
+
+        .sub-item .dropdown-details .label {
+            font-weight: 600;
+            color: #1a2a1d;
+            min-width: 3.5rem;
+        }
+
+        /* ===== VIEW ON MAP BUTTON ===== */
+        .map-btn-wrapper {
+            text-align: right;
+            margin-top: 2rem;
+        }
+
+        .map-btn-wrapper .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #cc0000;
+            color: white;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+        }
+
+        .map-btn-wrapper .btn-map:hover {
+            background: #990000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4);
+        }
+
+        .map-btn-wrapper .btn-map i {
+            font-size: 1.1rem;
         }
 
         /* ===== FOOTER ===== */
@@ -561,11 +679,20 @@
             .esg-wrapper {
                 padding: 1.5rem;
             }
+            .map-btn-wrapper {
+                text-align: center;
+            }
         }
 
         @media (max-width: 600px) {
             .sub-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .sub-item .dropdown-details p {
+                flex-wrap: wrap;
+            }
+            .sub-item .dropdown-details .label {
+                min-width: 2.5rem;
             }
         }
 
@@ -710,7 +837,7 @@
         </div>
     </section>
 
-    <!-- ===== ESG / SUSTAINABILITY SECTION ===== -->
+    <!-- ===== ESG / SUSTAINABILITY SECTION WITH SDG ===== -->
     <section class="esg-section">
         <div class="container">
             <div class="esg-wrapper">
@@ -720,27 +847,48 @@
                     <p>Building a greener future through responsible quarrying</p>
                 </div>
                 <div class="esg-grid">
+                    <!-- Environmental -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-leaf"></i></div>
+                        <span class="sdg-badge">SDG 13, 15</span>
                         <h3>Environmental</h3>
                         <p>We are committed to sustainable quarrying practices, including responsible land rehabilitation, dust suppression, and water conservation to minimize our environmental footprint.</p>
+                        <div class="sdg-list">
+                            <span class="sdg-tag">Climate Action</span>
+                            <span class="sdg-tag">Life on Land</span>
+                        </div>
                     </div>
+
+                    <!-- Safety -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-shield-alt"></i></div>
+                        <span class="sdg-badge">SDG 3, 8</span>
                         <h3>Safety</h3>
                         <p>Comprehensive safety protocols and regular training ensure the well-being of our workforce and compliance with the highest industry safety standards.</p>
+                        <div class="sdg-list">
+                            <span class="sdg-tag">Good Health</span>
+                            <span class="sdg-tag">Decent Work</span>
+                        </div>
                     </div>
+
+                    <!-- Community -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-handshake"></i></div>
+                        <span class="sdg-badge">SDG 1, 8, 11</span>
                         <h3>Community</h3>
                         <p>We actively engage with local communities, supporting economic development and creating employment opportunities in the regions where we operate.</p>
+                        <div class="sdg-list">
+                            <span class="sdg-tag">No Poverty</span>
+                            <span class="sdg-tag">Decent Work</span>
+                            <span class="sdg-tag">Sustainable Cities</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SUBSIDIARIES ===== -->
+    <!-- ===== SUBSIDIARIES WITH DROPDOWN & VIEW ON MAP ===== -->
     <section class="subsidiaries-section">
         <div class="container">
             <div class="section-title">
@@ -749,36 +897,94 @@
                 <p>Teik Granite Group comprises the following entities</p>
             </div>
             <div class="sub-grid">
-                <div class="sub-item">
+                <!-- 01 - Teik Granite Quarry Sdn Bhd -->
+                <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">01</span>
                     <i class="fas fa-building"></i>
                     <h4>Teik Granite Quarry Sdn Bhd</h4>
                     <div class="reg">196001000153 (3821-P)</div>
+                    <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    <div class="dropdown-details">
+                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Email:</span> tqg@teikgranite.com</p>
+                        <p><span class="label">Phone:</span> 04-261 4477</p>
+                        <p><span class="label">Fax:</span> 04-262 2818</p>
+                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                    </div>
                 </div>
-                <div class="sub-item">
+
+                <!-- 02 - Teik Granite Corporation Sdn Bhd -->
+                <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">02</span>
                     <i class="fas fa-building"></i>
                     <h4>Teik Granite Corporation Sdn Bhd</h4>
                     <div class="reg">198401016157 (128713-X)</div>
+                    <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    <div class="dropdown-details">
+                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
+                        <p><span class="label">Phone:</span> 04-261 4477</p>
+                        <p><span class="label">Fax:</span> 04-262 2818</p>
+                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                    </div>
                 </div>
-                <div class="sub-item">
+
+                <!-- 03 - TGQ (Tanjung Bungah) Sdn Bhd -->
+                <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">03</span>
-                    <i class="fas fa-building"></i>
+                    <i class="fas fa-mountain"></i>
                     <h4>TGQ (Tanjung Bungah) Sdn Bhd</h4>
                     <div class="reg">198101008428 (74545-V)</div>
+                    <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    <div class="dropdown-details">
+                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
+                        <p><span class="label">Phone:</span> 04-261 4477/8</p>
+                        <p><span class="label">Fax:</span> 04-262 2818</p>
+                        <p><span class="label">Site:</span> Tanjung Bungah 604-8991189, 8905537 | Penanti 604-5212151, 5212310</p>
+                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                    </div>
                 </div>
-                <div class="sub-item">
+
+                <!-- 04 - TGQ (Air Itam) Sdn Bhd -->
+                <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">04</span>
-                    <i class="fas fa-building"></i>
+                    <i class="fas fa-mountain"></i>
                     <h4>TGQ (Air Itam) Sdn Bhd</h4>
                     <div class="reg">198101005503 (71617-P)</div>
+                    <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    <div class="dropdown-details">
+                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
+                        <p><span class="label">Phone:</span> 04-261 4477/8</p>
+                        <p><span class="label">Fax:</span> 04-262 2818</p>
+                        <p><span class="label">Site:</span> Tanjung Bungah 604-8991189, 8905537 | Penanti 604-5212151, 5212310</p>
+                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                    </div>
                 </div>
-                <div class="sub-item">
+
+                <!-- 05 - TGQ Transport Sdn Bhd -->
+                <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">05</span>
                     <i class="fas fa-truck"></i>
                     <h4>TGQ Transport Sdn Bhd</h4>
                     <div class="reg">198301008263 (103517-H)</div>
+                    <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    <div class="dropdown-details">
+                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
+                        <p><span class="label">Phone:</span> 04-261 4477</p>
+                        <p><span class="label">Fax:</span> 04-262 2818</p>
+                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- ===== VIEW ON MAP BUTTON ===== -->
+            <div class="map-btn-wrapper">
+                <a href="contact.html#find-us" class="btn-map">
+                    <i class="fas fa-location-dot"></i> View Locations on Map
+                </a>
             </div>
         </div>
     </section>
@@ -816,9 +1022,9 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4476</p>
+                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
-                    <p><i class="fas fa-map-marker-alt"></i> George Town, Penang, Malaysia</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -828,7 +1034,9 @@
         </div>
     </footer>
 
+    <!-- ===== SCRIPTS ===== -->
     <script>
+        // ===== Scroll Header Effect =====
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
@@ -837,6 +1045,33 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // ===== Dropdown Toggle Function =====
+        function toggleDropdown(element) {
+            const details = element.querySelector('.dropdown-details');
+            const arrow = element.querySelector('.dropdown-arrow i');
+            
+            // Close all other dropdowns
+            const allDetails = document.querySelectorAll('.dropdown-details');
+            const allArrows = document.querySelectorAll('.dropdown-arrow i');
+            
+            allDetails.forEach((detail, index) => {
+                if (detail !== details && detail.classList.contains('open')) {
+                    detail.classList.remove('open');
+                    allArrows[index].className = 'fas fa-chevron-down';
+                }
+            });
+            
+            // Toggle current dropdown
+            details.classList.toggle('open');
+            
+            // Toggle arrow direction
+            if (details.classList.contains('open')) {
+                arrow.className = 'fas fa-chevron-up';
+            } else {
+                arrow.className = 'fas fa-chevron-down';
+            }
+        }
     </script>
 </body>
 </html>

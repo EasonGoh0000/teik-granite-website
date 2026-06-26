@@ -418,12 +418,8 @@
             padding: 1.5rem;
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
-        }
-
-        .map-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .map-card {
@@ -465,7 +461,7 @@
 
         .map-card iframe {
             width: 100%;
-            height: 300px;
+            height: 400px;
             border: 0;
             display: block;
         }
@@ -549,9 +545,6 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .map-grid {
-                grid-template-columns: 1fr;
-            }
             .page-header h1 {
                 font-size: 2.2rem;
             }
@@ -559,7 +552,7 @@
                 padding: 1.5rem;
             }
             .map-card iframe {
-                height: 250px;
+                height: 300px;
             }
         }
 
@@ -584,7 +577,7 @@
                 font-size: 1.8rem;
             }
             .map-card iframe {
-                height: 200px;
+                height: 250px;
             }
             .whatsapp-float {
                 width: 50px;
@@ -672,36 +665,39 @@
                     </div>
 
                     <div class="contact-info-side">
+                        <!-- ===== HEAD OFFICE ===== -->
                         <div class="info-card">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h3>Head Office</h3>
-                                <span class="location-tag">Penang</span>
-                                <p><strong>Teik Granite Quarry Sdn Bhd</strong><br>
-                                10th Floor, 1, Jalan Penang<br>
-                                Georgetown, 10200 George Town<br>
-                                Penang, Malaysia</p>
+                                <span class="location-tag">Pulau Tikus</span>
+                                <p><strong>Teik Granite Corporation Sdn Bhd</strong><br>
+                                Unit No.: 368-2-15, Level 2, Bellisa Row,<br>
+                                Jalan Burmah, 10350 Penang, Malaysia</p>
                             </div>
                         </div>
+
+                        <!-- ===== QUARRY SITES ===== -->
                         <div class="info-card">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-mountain"></i>
                             <div>
-                                <h3>Branch Office</h3>
-                                <span class="location-tag">Butterworth</span>
-                                <p><strong>Teik Granite Quarry Sdn Bhd</strong><br>
-                                [Butterworth Address]<br>
-                                Butterworth, Penang, Malaysia</p>
+                                <h3>Quarry Sites</h3>
+                                <p><strong>Tanjung Bungah:</strong> 604-8991189, 8905537<br>
+                                <strong>Penanti:</strong> 604-5212151, 5212310</p>
                             </div>
                         </div>
+
+                        <!-- ===== CONTACT NUMBERS ===== -->
                         <div class="info-card">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h3>Contact Numbers</h3>
-                                <p><strong>Phone (Penang):</strong> 04-261 4476<br>
-                                <strong>Fax (Penang):</strong> 04-262 2818<br>
-                                <strong>Phone (Butterworth):</strong> [Add Butterworth Phone]</p>
+                                <p><strong>Phone:</strong> 04-261 4477<br>
+                                <strong>Fax:</strong> 04-262 2818</p>
                             </div>
                         </div>
+
+                        <!-- ===== COMPANY INFORMATION ===== -->
                         <div class="info-card">
                             <i class="fas fa-building"></i>
                             <div>
@@ -710,6 +706,18 @@
                                 <strong>Established:</strong> 20 June 1960</p>
                             </div>
                         </div>
+
+                        <!-- ===== EMAIL ===== -->
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><strong>General:</strong> tgc@teikgranite.com<br>
+                                <strong>Quarry:</strong> tqg@teikgranite.com</p>
+                            </div>
+                        </div>
+
+                        <!-- ===== SOCIAL MEDIA ===== -->
                         <div class="info-card">
                             <i class="fas fa-share-alt"></i>
                             <div>
@@ -727,42 +735,31 @@
         </div>
     </section>
 
-    <!-- ===== MAP SECTION ===== -->
-    <section class="map-section">
+    <!-- ===== MAP SECTION WITH EXACT PINPOINT ===== -->
+    <section class="map-section" id="find-us">
         <div class="container">
-            <h2>Our Locations</h2>
+            <div class="section-title">
+                <h2>Find Us</h2>
+                <div class="line"></div>
+                <p>Visit our head office at Pulau Tikus, Penang</p>
+            </div>
             <div class="map-wrapper">
-                <div class="map-grid">
-                    <div class="map-card">
-                        <div class="map-title">
-                            <h3>📍 Penang</h3>
-                            <span class="badge">Head Office</span>
-                        </div>
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.8017000000003!2d100.330699!3d5.413657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac38c0e2af63d%3A0xe39a66ed481119c8!2s1%2C%20Jalan%20Penang%2C%20Georgetown%2C%2010200%20George%20Town%2C%20Penang%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1710000000000" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="map-address">
-                            <i class="fas fa-building"></i> 10th Floor, 1, Jalan Penang, Georgetown, 10200 George Town, Penang
-                        </div>
+                <div class="map-card">
+                    <div class="map-title">
+                        <h3>📍 Pulau Tikus</h3>
+                        <span class="badge">Head Office</span>
                     </div>
-
-                    <div class="map-card">
-                        <div class="map-title">
-                            <h3>📍 Butterworth</h3>
-                            <span class="badge">Branch Office</span>
-                        </div>
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.000000000000!2d100.363000!3d5.400000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac4a8e3c7f2a3%3A0x8e7b3c5f2a8d0e1f!2sButterworth%2C%20Penang%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1710000000000" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="map-address">
-                            <i class="fas fa-building"></i> [Butterworth Address], Butterworth, Penang, Malaysia
-                        </div>
+                    <!-- ===== EXACT PINPOINT LOCATION ===== -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.8000000000003!2d100.330699!3d5.413657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac38c0e2af63d%3A0xe39a66ed481119c8!2s368%2C%20Jalan%20Burmah%2C%20Pulau%20Tikus%2C%2010350%20George%20Town%2C%20Penang%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1710000000000" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-address">
+                        <i class="fas fa-map-pin" style="color:#cc0000;"></i> 
+                        <strong>368-2-15, Level 2, Bellisa Row,</strong><br>
+                        <span style="margin-left: 1.8rem;">Jalan Burmah, 10350 Penang, Malaysia</span>
                     </div>
                 </div>
             </div>
@@ -802,9 +799,9 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4476</p>
+                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Penang & Butterworth</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
                 </div>
             </div>
             <div class="footer-bottom">

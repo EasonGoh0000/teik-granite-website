@@ -7,7 +7,6 @@
     <title>Products · Teik Granite Quarry Sdn Bhd</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ===== SAME STYLES AS INDEX.HTML ===== */
         * {
             margin: 0;
             padding: 0;
@@ -276,7 +275,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
@@ -287,6 +286,7 @@
             border: 1px solid #e8eaed;
             transition: 0.3s;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            text-align: center;
         }
 
         .product-card:hover {
@@ -297,14 +297,13 @@
 
         .product-card .product-image {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             display: block;
         }
 
         .product-card .product-body {
             padding: 1.8rem;
-            text-align: center;
         }
 
         .product-card .product-body h3 {
@@ -326,6 +325,18 @@
             font-size: 0.95rem;
             line-height: 1.7;
             margin-bottom: 1.2rem;
+        }
+
+        .product-card .product-body .product-tag {
+            display: inline-block;
+            background: #fce8e8;
+            color: #cc0000;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .product-card .product-body .btn-product {
@@ -393,6 +404,7 @@
             color: #6a7a7a;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 820px) {
             .header .container {
                 flex-direction: column;
@@ -411,6 +423,9 @@
             }
             .products-wrapper {
                 padding: 1.5rem;
+            }
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -484,7 +499,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Our Products</h1>
-            <p>Premium quarry materials for construction and infrastructure</p>
+            <p>Premium granite and quarry materials for construction and infrastructure</p>
         </div>
     </section>
 
@@ -493,62 +508,80 @@
         <div class="container">
             <div class="products-wrapper">
                 <div class="products-grid">
+                    <!-- 1. 3/4" AGGREGATE -->
                     <div class="product-card">
-                        <img src="granite_aggregate_photo.png" alt="Granite Aggregates" class="product-image">
+                        <img src="granite_aggregate_photo.png" alt="3/4 Aggregate" class="product-image">
                         <div class="product-body">
-                            <h3>Granite Aggregates</h3>
-                            <div class="spec">Sizes: 5-20mm, 20-40mm</div>
-                            <p>High-quality crushed granite for concrete production, asphalt paving, and road construction. SIRIM certified.</p>
+                            <h3>3/4" AGGREGATE</h3>
+                            <div class="spec">Size: 20mm</div>
+                            <p>High-quality crushed granite aggregate for concrete production, asphalt paving, and road construction. SIRIM certified.</p>
+                            <span class="product-tag">SIRIM Certified</span>
+                            <br><br>
                             <a href="contact.html" class="btn-product">Request Quote</a>
                         </div>
                     </div>
 
+                    <!-- 2. 1 1/2" AGGREGATE -->
                     <div class="product-card">
-                        <img src="sand_aggregate_photo.png" alt="Sand & Aggregates" class="product-image">
+                        <img src="granite_aggregate_photo.png" alt="1 1/2 Aggregate" class="product-image">
                         <div class="product-body">
-                            <h3>Sand & Aggregates</h3>
-                            <div class="spec">Fine & Coarse</div>
-                            <p>Premium sand and aggregates for construction, backfilling, and building material production.</p>
+                            <h3>1 1/2" AGGREGATE</h3>
+                            <div class="spec">Size: 40mm</div>
+                            <p>Premium granite aggregate for heavy-duty concrete works, large-scale construction, and foundation projects.</p>
+                            <span class="product-tag">SIRIM Certified</span>
+                            <br><br>
                             <a href="contact.html" class="btn-product">Request Quote</a>
                         </div>
                     </div>
 
+                    <!-- 3. M.SAND (QUARRY DUST) -->
                     <div class="product-card">
-                        <img src="earth_materials_photo.png" alt="Earth Materials" class="product-image">
+                        <img src="sand_aggregate_photo.png" alt="M.Sand Quarry Dust" class="product-image">
                         <div class="product-body">
-                            <h3>Earth Materials</h3>
-                            <div class="spec">Graded Materials</div>
-                            <p>Earth supply for foundation works, road base, sub-base, and civil construction projects.</p>
+                            <h3>M.SAND (QUARRY DUST)</h3>
+                            <div class="spec">Fine Powder</div>
+                            <p>Manufactured sand and quarry dust for construction, backfilling, plastering, and building material production.</p>
+                            <span class="product-tag">Premium Quality</span>
+                            <br><br>
                             <a href="contact.html" class="btn-product">Request Quote</a>
                         </div>
                     </div>
 
+                    <!-- 4. 2" CRUSHER RUN -->
                     <div class="product-card">
-                        <img src="dimension_stone_photo.png" alt="Dimension Stones" class="product-image">
+                        <img src="earth_materials_photo.png" alt="2 Crusher Run" class="product-image">
                         <div class="product-body">
-                            <h3>Dimension Stones</h3>
-                            <div class="spec">Cut-to-Size</div>
-                            <p>Cut-to-size granite blocks for architectural cladding, landscaping, and decorative applications.</p>
+                            <h3>2" CRUSHER RUN</h3>
+                            <div class="spec">Size: 50mm</div>
+                            <p>Granite crusher run material for road base, sub-base, foundation works, and civil construction projects.</p>
+                            <span class="product-tag">Infrastructure Grade</span>
+                            <br><br>
                             <a href="contact.html" class="btn-product">Request Quote</a>
                         </div>
                     </div>
 
+                    <!-- 5. 3" X 4" BLOCK -->
                     <div class="product-card">
-                        <img src="armor_stones_photo.png" alt="Armour Stones" class="product-image">
+                        <img src="dimension_stone_photo.png" alt="3 x 4 Block" class="product-image">
                         <div class="product-body">
-                            <h3>Armour Stones</h3>
-                            <div class="spec">200-400mm, 400-600mm</div>
-                            <p>Large granite stones for coastal protection, riverbank stabilization, and erosion control projects.</p>
+                            <h3>3" X 4" BLOCK</h3>
+                            <div class="spec">Size: 75mm x 100mm</div>
+                            <p>Cut-to-size granite blocks for architectural cladding, landscaping, retaining walls, and decorative stone applications.</p>
+                            <span class="product-tag">Custom Sizes</span>
+                            <br><br>
                             <a href="contact.html" class="btn-product">Request Quote</a>
                         </div>
                     </div>
 
+                    <!-- 6. 3/8" CHIPPING -->
                     <div class="product-card">
-                        <img src="bulk_haulage_services_photo.png" alt="Bulk Haulage Services" class="product-image">
+                        <img src="armor_stones_photo.png" alt="3/8 Chipping" class="product-image">
                         <div class="product-body">
-                            <h3>Bulk Haulage Services</h3>
-                            <div class="spec">Nationwide Delivery</div>
-                            <p>Reliable transportation of quarry materials with our own fleet of heavy-duty haulers and trucks.</p>
+                            <h3>3/8" CHIPPING</h3>
+                            <div class="spec">Size: 10mm</div>
+                            <p>Small granite chippings for landscaping, decorative pathways, drainage systems, and concrete finishing applications.</p>
+                            <span class="product-tag">Premium Quality</span>
+                            <br><br>
                             <a href="contact.html" class="btn-product">Request Quote</a>
                         </div>
                     </div>
@@ -590,9 +623,9 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4476</p>
+                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
-                    <p><i class="fas fa-map-marker-alt"></i> George Town, Penang, Malaysia</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
                 </div>
             </div>
             <div class="footer-bottom">
