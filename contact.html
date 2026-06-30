@@ -677,12 +677,11 @@
         .progress-bar {
             height: 100%;
             width: 0%;
-            background: #6b8c42;
             border-radius: 4px;
             transition: width 0.1s linear;
         }
 
-        .progress-bar.complete {
+        .progress-bar.success {
             background: #28a745;
         }
 
@@ -1303,7 +1302,8 @@
             titleEl.textContent = title;
             msgEl.textContent = message;
             
-            progressBar.className = 'progress-bar';
+            // Set progress bar color based on success/error
+            progressBar.className = isSuccess ? 'progress-bar success' : 'progress-bar error';
             progressBar.style.width = '0%';
             
             overlay.classList.add('show');
@@ -1323,11 +1323,6 @@
                 if (step >= totalSteps) {
                     clearInterval(alertProgressInterval);
                     progressBar.style.width = '100%';
-                    if (isSuccess) {
-                        progressBar.className = 'progress-bar complete';
-                    } else {
-                        progressBar.className = 'progress-bar error';
-                    }
                     
                     // Auto close after progress completes
                     alertTimer = setTimeout(function() {
@@ -1358,7 +1353,7 @@
             if (instant) {
                 overlay.classList.remove('show');
                 progressBar.style.width = '0%';
-                progressBar.className = 'progress-bar';
+                progressBar.className = '';
                 isAlertClosing = false;
             } else {
                 // Smooth close with a small delay
@@ -1366,7 +1361,7 @@
                     overlay.classList.remove('show');
                     setTimeout(function() {
                         progressBar.style.width = '0%';
-                        progressBar.className = 'progress-bar';
+                        progressBar.className = '';
                         isAlertClosing = false;
                     }, 300);
                 }, 300);
@@ -1407,7 +1402,7 @@
                         break;
                     }
                 }
-                showAlert('Error!', 'Please fill in all required fields correctly.', false, 3000);
+                showAlert('Invalid!', 'Please fill in all required fields correctly.', false, 3000);
                 return;
             }
             
@@ -1444,7 +1439,7 @@
             })
             .catch(function(error) {
                 console.error('EmailJS Error:', error);
-                showAlert('Error!', 'Something went wrong. Please try again or contact us directly via phone.', false, 4000);
+                showAlert('Invalid!', 'Something went wrong. Please try again or contact us directly via phone.', false, 4000);
                 
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Send Message <i class="fas fa-arrow-right"></i>';
