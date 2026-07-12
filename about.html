@@ -207,6 +207,122 @@
             background: #cc0000;
         }
 
+        /* ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== */
+        .hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-slides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            z-index: 1;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 20, 10, 0.55);
+            z-index: 1;
+        }
+
+        /* ===== HERO SLIDE INDICATORS ===== */
+        .hero-indicators {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .hero-indicators .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-indicators .dot.active {
+            background: #cc0000;
+            border-color: #cc0000;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+        }
+
+        .hero-indicators .dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        .hero-indicators .dot.active:hover {
+            background: #cc0000;
+            transform: scale(1.2);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+        }
+
+        .hero-content {
+            max-width: 60%;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            max-width: 600px;
+        }
+
         /* ===== FLOATING WHATSAPP BUTTON ===== */
         .whatsapp-float {
             position: fixed;
@@ -232,7 +348,48 @@
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
-        /* ===== SECTION TITLE ===== */
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 110px;
+            right: 35px;
+            z-index: 998;
+            width: 50px;
+            height: 50px;
+            background: #cc0000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #990000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
+        }
+
+        .back-to-top i {
+            font-size: 1.3rem;
+        }
+
+        /* ===== SECTION TITLE (SAME FORMAT) ===== */
         .section-title {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -258,49 +415,9 @@
             font-size: 1.1rem;
         }
 
-        /* ===== PAGE HEADER ===== */
-        .page-header {
-            background-image: url('homepage_photo.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 8rem 0 4rem;
-            position: relative;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 20, 10, 0.55);
-            z-index: 1;
-        }
-
-        .page-header .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-header h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        }
-
-        .page-header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
         /* ===== ABOUT CONTENT ===== */
         .about-content {
-            padding: 4rem 0;
+            padding: 4rem 0 2rem;
             background: #f0f2f5;
         }
 
@@ -314,16 +431,10 @@
 
         .about-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
-            align-items: start;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1a2a1d;
-            margin-bottom: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .about-text p {
@@ -357,45 +468,180 @@
             width: 1.5rem;
         }
 
-        .about-sidebar {
-            background: #f5f6f8;
-            padding: 2rem;
-            border-radius: 12px;
+        /* ===== MISSION, VISION, TIMELINE & WHY CHOOSE US (COMBINED CONTAINER) ===== */
+        .mission-timeline-section {
+            padding: 0 0 4rem;
+            background: #f0f2f5;
+        }
+
+        .mission-timeline-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
         }
 
-        .about-sidebar h3 {
-            font-size: 1.2rem;
+        /* ===== MISSION & VISION ===== */
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .mission-box, .vision-box {
+            background: #f5f6f8;
+            padding: 1.5rem 1.8rem;
+            border-radius: 12px;
+            border-left: 4px solid #cc0000;
+            transition: 0.3s;
+        }
+
+        .mission-box:hover, .vision-box:hover {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(204, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .mission-box h4, .vision-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a2a1d;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mission-box h4 i, .vision-box h4 i {
+            color: #cc0000;
+            font-size: 1rem;
+        }
+
+        .mission-box p, .vision-box p {
+            color: #2a3a3a;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ===== DIVIDER ===== */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: #e8eaed;
+            margin: 2rem 0;
+        }
+
+        /* ===== TIMELINE & WHY CHOOSE US GRID ===== */
+        .timeline-why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline-section h4 {
+            font-size: 1rem;
             font-weight: 700;
             color: #1a2a1d;
             margin-bottom: 1rem;
-        }
-
-        .about-sidebar .info-item {
             display: flex;
-            gap: 1rem;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #e8eaed;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .about-sidebar .info-item:last-child {
-            border-bottom: none;
-        }
-
-        .about-sidebar .info-item i {
+        .timeline-section h4 i {
             color: #cc0000;
-            font-size: 1.2rem;
-            width: 1.5rem;
-            margin-top: 0.2rem;
         }
 
-        .about-sidebar .info-item .label {
-            font-weight: 600;
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: #cc0000;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-item .dot {
+            width: 14px;
+            height: 14px;
+            background: #cc0000;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 2px #cc0000;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-item .year {
+            display: block;
+            font-weight: 800;
             color: #1a2a1d;
+            font-size: 0.8rem;
         }
 
-        .about-sidebar .info-item .value {
-            color: #4a5a5a;
+        .timeline-item .event {
+            display: block;
+            color: #5a6a6a;
+            font-size: 0.65rem;
+            line-height: 1.3;
+            margin-top: 0.1rem;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-choose-us h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a2a1d;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .why-choose-us h4 i {
+            color: #cc0000;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem 1.5rem;
+        }
+
+        .why-grid .why-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2a3a3a;
+            font-size: 0.85rem;
+            padding: 0.3rem 0;
+        }
+
+        .why-grid .why-item i {
+            color: #cc0000;
+            font-size: 0.8rem;
         }
 
         /* ===== ESG / SUSTAINABILITY WITH SDG ===== */
@@ -483,7 +729,7 @@
             border: 1px solid #fce8e8;
         }
 
-        /* ===== SUBSIDIARIES SECTION (WITH DROPDOWN) ===== */
+        /* ===== SUBSIDIARIES SECTION (SAME AS INDEX.HTML) ===== */
         .subsidiaries-section {
             background: #ffffff;
             padding: 4rem 0;
@@ -493,7 +739,7 @@
 
         .sub-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
 
@@ -502,7 +748,7 @@
             padding: 1.5rem 1rem;
             border: 1px solid #e0e2e5;
             border-radius: 12px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             background: #f8f9fa;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             cursor: pointer;
@@ -527,6 +773,32 @@
             margin-bottom: 0.4rem;
         }
 
+        .sub-item .level-badge {
+            display: inline-block;
+            font-size: 0.55rem;
+            font-weight: 700;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sub-item .level-badge.parent {
+            background: #cc0000;
+            color: white;
+        }
+
+        .sub-item .level-badge.subsidiary {
+            background: #fce8e8;
+            color: #cc0000;
+        }
+
+        .sub-item .level-badge.quarry {
+            background: #e8eaed;
+            color: #5a6a6a;
+        }
+
         .sub-item i {
             font-size: 1.6rem;
             color: #cc0000;
@@ -539,7 +811,7 @@
             color: #1a2a1d;
             font-size: 0.85rem;
             margin-bottom: 0.2rem;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .sub-item .reg {
@@ -680,13 +952,22 @@
             align-items: center;
             flex-wrap: wrap;
             font-size: 0.8rem;
-            color: #6a7a7a;
+            color: #6a7a6a;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .sub-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .timeline {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            .hero-content {
+                max-width: 80%;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
             }
         }
 
@@ -768,8 +1049,21 @@
             .esg-grid {
                 grid-template-columns: 1fr;
             }
-            .page-header h1 {
+            .hero {
+                min-height: 40vh;
+            }
+            .hero .container {
+                padding-top: 7rem;
+                padding-bottom: 3rem;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-content h1 {
                 font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
             }
             .esg-wrapper {
                 padding: 1.5rem;
@@ -777,11 +1071,52 @@
             .map-btn-wrapper {
                 text-align: center;
             }
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-why-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline {
+                grid-template-columns: repeat(5, 1fr);
+                overflow-x: auto;
+                gap: 0.8rem;
+                padding-bottom: 0.3rem;
+            }
+            .timeline::before {
+                display: none;
+            }
+            .timeline-item {
+                min-width: 70px;
+            }
+            .mission-timeline-wrapper {
+                padding: 1.5rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .hero-indicators {
+                bottom: 1.5rem;
+            }
+            .hero-indicators .dot {
+                width: 10px;
+                height: 10px;
+            }
+            .back-to-top {
+                bottom: 100px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
         }
 
         @media (max-width: 600px) {
             .sub-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
             }
             .sub-item .dropdown-details p {
                 flex-wrap: wrap;
@@ -795,6 +1130,33 @@
             .hamburger span {
                 width: 24px;
                 height: 2px;
+            }
+            .whatsapp-float {
+                bottom: 30px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                right: 20px;
+            }
+            .hero {
+                min-height: 35vh;
+            }
+            .hero .container {
+                padding-top: 6rem;
+                padding-bottom: 2.5rem;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+            .back-to-top {
+                bottom: 90px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
 
@@ -818,9 +1180,6 @@
             .logo-text .reg {
                 font-size: 0.5rem;
             }
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
             .about-wrapper {
                 padding: 1.5rem;
             }
@@ -828,15 +1187,74 @@
                 padding: 1.5rem;
             }
             .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-                bottom: 20px;
-                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                bottom: 30px;
+                right: 15px;
             }
             .nav-menu a {
                 font-size: 0.8rem;
                 padding: 0.7rem 1rem;
+            }
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-why-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-item {
+                min-width: 60px;
+            }
+            .timeline-item .year {
+                font-size: 0.65rem;
+            }
+            .timeline-item .event {
+                font-size: 0.55rem;
+            }
+            .timeline::before {
+                top: 22px;
+            }
+            .timeline-item .dot {
+                width: 10px;
+                height: 10px;
+            }
+            .mission-timeline-wrapper {
+                padding: 1rem;
+            }
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            .hero {
+                min-height: 30vh;
+            }
+            .hero .container {
+                padding-top: 5.5rem;
+                padding-bottom: 2rem;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .hero-content p {
+                font-size: 0.85rem;
+            }
+            .hero-indicators {
+                bottom: 1rem;
+                gap: 0.5rem;
+            }
+            .hero-indicators .dot {
+                width: 8px;
+                height: 8px;
+            }
+            .back-to-top {
+                bottom: 80px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -867,27 +1285,57 @@
         </div>
     </header>
 
+    <!-- ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== -->
+    <section class="hero">
+        <!-- Carousel Slides -->
+        <div class="hero-slides">
+            <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=10');"></div>
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=11');"></div>
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=12');"></div>
+            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=13');"></div>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="hero-indicators">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1>About Us</h1>
+                <p>Building Malaysia's infrastructure with quality granite since 1960</p>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
     <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" 
        class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== PAGE HEADER ===== -->
-    <section class="page-header">
-        <div class="container">
-            <h1>About Us</h1>
-            <p>Building Malaysia's infrastructure with quality granite since 1960</p>
-        </div>
-    </section>
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- ===== ABOUT CONTENT ===== -->
+    <!-- ===== COMPANY HISTORY (WITH SECTION TITLE FORMAT) ===== -->
     <section class="about-content">
         <div class="container">
             <div class="about-wrapper">
                 <div class="about-grid">
                     <div class="about-text">
-                        <h2>Company History</h2>
+                        <!-- ===== COMPANY HISTORY TITLE (CENTERED - SAME SIZE AS MISSION & VISION) ===== -->
+                        <div class="section-title" style="margin-bottom: 1.5rem;">
+                            <h2 style="font-size: 2.5rem;">Company History</h2>
+                            <div class="line" style="margin: 0.5rem auto;"></div>
+                        </div>
+
                         <p><span class="highlight">Teik Granite Quarry Sdn Bhd</span> was established on <strong>20 June 1960</strong> and is a reputable quarry and mining company based in <strong>George Town, Penang</strong>, Malaysia. We are registered under the registration number <strong>196001000153 (3821-P)</strong>.</p>
                         <p>We operate in the <strong>quarry and mining industry</strong>, specializing in:</p>
                         <ul>
@@ -896,51 +1344,83 @@
                             <li><i class="fas fa-check-circle"></i> Sand and aggregates supply</li>
                         </ul>
                         <p>Our materials are used in <strong>road construction, building projects, and infrastructure works</strong> across Malaysia. With over six decades of experience, we are committed to quality, reliability, and sustainable quarrying practices.</p>
-                        <p>Teik Granite Group comprises <strong>five subsidiary companies</strong> that work together to provide comprehensive quarry and construction material solutions.</p>
+                        <p>Teik Granite Group comprises <strong>four subsidiary companies</strong> that work together to provide comprehensive quarry and construction material solutions.</p>
                     </div>
-                    <div class="about-sidebar">
-                        <h3>Company Snapshot</h3>
-                        <div class="info-item">
-                            <i class="fas fa-calendar-alt"></i>
-                            <div>
-                                <div class="label">Established</div>
-                                <div class="value">20 June 1960</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MISSION, VISION, TIMELINE & WHY CHOOSE US (COMBINED CONTAINER) ===== -->
+    <section class="mission-timeline-section">
+        <div class="container">
+            <div class="mission-timeline-wrapper">
+                <!-- ===== MISSION & VISION TITLE (SAME FORMAT AS ESG) ===== -->
+                <div class="section-title">
+                    <h2>Our Mission &amp; Vision</h2>
+                    <div class="line"></div>
+                    <p>Driving excellence through purpose and commitment</p>
+                </div>
+
+                <!-- MISSION & VISION -->
+                <div class="mission-vision-grid">
+                    <div class="mission-box">
+                        <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                        <p>To provide permanent quality granite and construction materials that build Malaysia's future with reliability and sustainability. We are dedicated to delivering excellence in every project, ensuring that our materials meet the highest standards of quality and durability.</p>
+                    </div>
+                    <div class="vision-box">
+                        <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                        <p>To be Malaysia's leading quarrying company, committed to the environment, quality, and community sustainability. We strive to set the benchmark for responsible quarrying practices while contributing to the nation's infrastructure development.</p>
+                    </div>
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="section-divider"></div>
+
+                <!-- TIMELINE & WHY CHOOSE US -->
+                <div class="timeline-why-grid">
+                    <!-- TIMELINE -->
+                    <div class="timeline-section">
+                        <h4><i class="fas fa-history"></i> Our Journey</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="dot"></span>
+                                <span class="year">1960</span>
+                                <span class="event">Founded in Penang</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="dot"></span>
+                                <span class="year">1985</span>
+                                <span class="event">Expanded operations</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="dot"></span>
+                                <span class="year">2000</span>
+                                <span class="event">Modernized facilities</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="dot"></span>
+                                <span class="year">2015</span>
+                                <span class="event">New quarry sites</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="dot"></span>
+                                <span class="year">2026</span>
+                                <span class="event">60+ Years Strong</span>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-id-card"></i>
-                            <div>
-                                <div class="label">Registration No.</div>
-                                <div class="value">196001000153 (3821-P)</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <div class="label">Head Office</div>
-                                <div class="value">George Town, Penang, Malaysia</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-industry"></i>
-                            <div>
-                                <div class="label">Industry</div>
-                                <div class="value">Quarry & Mining</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-cubes"></i>
-                            <div>
-                                <div class="label">Products</div>
-                                <div class="value">Granite, Sand, Aggregates, Earth Materials</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-building"></i>
-                            <div>
-                                <div class="label">Group Companies</div>
-                                <div class="value">5 Entities</div>
-                            </div>
+                    </div>
+
+                    <!-- WHY CHOOSE US -->
+                    <div class="why-choose-us">
+                        <h4><i class="fas fa-star"></i> Why Choose Teik Granite?</h4>
+                        <div class="why-grid">
+                            <div class="why-item"><i class="fas fa-check-circle"></i> 60+ Years of Experience</div>
+                            <div class="why-item"><i class="fas fa-check-circle"></i> Competitive Pricing</div>
+                            <div class="why-item"><i class="fas fa-check-circle"></i> Reliable Supply Chain</div>
+                            <div class="why-item"><i class="fas fa-check-circle"></i> Modern Quarrying Technology</div>
+                            <div class="why-item"><i class="fas fa-check-circle"></i> SIRIM Certified Products</div>
+                            <div class="why-item"><i class="fas fa-check-circle"></i> Sustainable Practices</div>
                         </div>
                     </div>
                 </div>
@@ -999,7 +1479,7 @@
         </div>
     </section>
 
-    <!-- ===== SUBSIDIARIES WITH DROPDOWN & VIEW ON MAP ===== -->
+    <!-- ===== SUBSIDIARIES WITH DROPDOWN & VIEW ON MAP (SAME AS INDEX.HTML) ===== -->
     <section class="subsidiaries-section">
         <div class="container">
             <div class="section-title">
@@ -1008,9 +1488,10 @@
                 <p>Teik Granite Group comprises the following entities</p>
             </div>
             <div class="sub-grid">
-                <!-- 01 - Teik Granite Quarry Sdn Bhd -->
+                <!-- 01 - Teik Granite Quarry Sdn Bhd (Head Office) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">01</span>
+                    <span class="level-badge parent">Head Office</span>
                     <i class="fas fa-building"></i>
                     <h4>Teik Granite Quarry Sdn Bhd</h4>
                     <div class="reg">196001000153 (3821-P)</div>
@@ -1024,9 +1505,10 @@
                     </div>
                 </div>
 
-                <!-- 02 - Teik Granite Corporation Sdn Bhd -->
+                <!-- 02 - Teik Granite Corporation Sdn Bhd (Corporate Office) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">02</span>
+                    <span class="level-badge subsidiary">Corporate Office</span>
                     <i class="fas fa-building"></i>
                     <h4>Teik Granite Corporation Sdn Bhd</h4>
                     <div class="reg">198401016157 (128713-X)</div>
@@ -1040,9 +1522,10 @@
                     </div>
                 </div>
 
-                <!-- 03 - TGQ (Tanjung Bungah) Sdn Bhd -->
+                <!-- 03 - TGQ (Tanjung Bungah) Sdn Bhd (Quarry Site) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">03</span>
+                    <span class="level-badge quarry">Quarry Site</span>
                     <i class="fas fa-mountain"></i>
                     <h4>TGQ (Tanjung Bungah) Sdn Bhd</h4>
                     <div class="reg">198101008428 (74545-V)</div>
@@ -1057,9 +1540,10 @@
                     </div>
                 </div>
 
-                <!-- 04 - TGQ (Air Itam) Sdn Bhd -->
+                <!-- 04 - TGQ (Air Itam) Sdn Bhd (Quarry Site) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">04</span>
+                    <span class="level-badge quarry">Quarry Site</span>
                     <i class="fas fa-mountain"></i>
                     <h4>TGQ (Air Itam) Sdn Bhd</h4>
                     <div class="reg">198101005503 (71617-P)</div>
@@ -1070,22 +1554,6 @@
                         <p><span class="label">Phone:</span> 04-261 4477/8</p>
                         <p><span class="label">Fax:</span> 04-262 2818</p>
                         <p><span class="label">Site:</span> Tanjung Bungah 604-8991189, 8905537 | Penanti 604-5212151, 5212310</p>
-                        <p><span class="label">Website:</span> www.teikgranite.com</p>
-                    </div>
-                </div>
-
-                <!-- 05 - TGQ Transport Sdn Bhd -->
-                <div class="sub-item" onclick="toggleDropdown(this)">
-                    <span class="sub-number">05</span>
-                    <i class="fas fa-truck"></i>
-                    <h4>TGQ Transport Sdn Bhd</h4>
-                    <div class="reg">198301008263 (103517-H)</div>
-                    <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
-                    <div class="dropdown-details">
-                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
-                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
-                        <p><span class="label">Phone:</span> 04-261 4477</p>
-                        <p><span class="label">Fax:</span> 04-262 2818</p>
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
@@ -1124,7 +1592,6 @@
                     <a href="#">Teik Granite Corporation Sdn Bhd</a>
                     <a href="#">TGQ (Tanjung Bungah) Sdn Bhd</a>
                     <a href="#">TGQ (Air Itam) Sdn Bhd</a>
-                    <a href="#">TGQ Transport Sdn Bhd</a>
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
@@ -1157,6 +1624,24 @@
             }
         });
 
+        // ===== Back to Top Button =====
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // ===== Hamburger Menu Toggle =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
@@ -1180,6 +1665,51 @@
                     navMenu.classList.remove('open');
                 }
             });
+
+            // ===== Hero Carousel =====
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+            let currentSlide = 0;
+            let slideInterval;
+            const intervalTime = 5000;
+
+            function goToSlide(index) {
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let next = currentSlide + 1;
+                if (next >= slides.length) {
+                    next = 0;
+                }
+                goToSlide(next);
+            }
+
+            function startCarousel() {
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+
+            function stopCarousel() {
+                clearInterval(slideInterval);
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    stopCarousel();
+                    goToSlide(index);
+                    startCarousel();
+                });
+            });
+
+            startCarousel();
         });
 
         // ===== Dropdown Toggle Function =====
