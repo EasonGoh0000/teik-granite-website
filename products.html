@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="company_logo.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="company_logo.ico" />
     <title>Products · Teik Granite Quarry Sdn Bhd</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         * {
             margin: 0;
@@ -15,9 +15,40 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f0f2f5;
+            background: #e8e4e0;
             color: #1a1a2e;
             line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ===== BACKGROUND IMAGE ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: url('cracked-stone-stucco.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.5;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .container {
@@ -26,7 +57,7 @@
             padding: 0 2rem;
         }
 
-        /* ===== HEADER / NAVIGATION (TRANSPARENT) ===== */
+        /* ===== HEADER ===== */
         .header {
             background: transparent;
             border-bottom: none;
@@ -80,13 +111,13 @@
             letter-spacing: 0.5px;
             transition: color 0.4s ease;
             text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .company span {
             color: #ffffff;
             transition: color 0.4s ease;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .reg {
@@ -95,7 +126,7 @@
             font-weight: 500;
             letter-spacing: 0.3px;
             font-family: monospace;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         .header.scrolled .logo-text .company {
@@ -113,7 +144,7 @@
             text-shadow: none;
         }
 
-        /* ===== HAMBURGER MENU (MOBILE) ===== */
+        /* ===== HAMBURGER ===== */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -167,7 +198,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             position: relative;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
         }
 
         .nav-menu a:hover {
@@ -206,7 +237,7 @@
             background: #cc0000;
         }
 
-        /* ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== */
+        /* ===== HERO ===== */
         .hero {
             position: relative;
             min-height: 50vh;
@@ -254,7 +285,6 @@
             z-index: 1;
         }
 
-        /* ===== HERO SLIDE INDICATORS ===== */
         .hero-indicators {
             position: absolute;
             bottom: 2rem;
@@ -311,18 +341,18 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             color: white;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             margin-bottom: 0.5rem;
         }
 
         .hero-content p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             max-width: 600px;
         }
 
-        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        /* ===== FLOATING WHATSAPP ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -347,7 +377,7 @@
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
-        /* ===== BACK TO TOP BUTTON ===== */
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 110px;
@@ -417,7 +447,7 @@
         /* ===== PRODUCTS ===== */
         .products-main {
             padding: 4rem 0;
-            background: #f0f2f5;
+            background: transparent;
         }
 
         .products-wrapper {
@@ -540,7 +570,8 @@
             margin-bottom: 1rem;
         }
 
-        .footer p, .footer a {
+        .footer p,
+        .footer a {
             color: #b0b8b8;
             font-size: 0.9rem;
             text-decoration: none;
@@ -584,11 +615,11 @@
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            
+
             .hamburger {
                 display: flex;
             }
-            
+
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -600,11 +631,11 @@
                 margin-top: 0.5rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             }
-            
+
             .nav-menu.open {
                 display: flex;
             }
-            
+
             .nav-menu a {
                 color: #1a2a1d !important;
                 text-shadow: none !important;
@@ -614,36 +645,36 @@
                 border-bottom: 1px solid #e8eaed;
                 font-size: 0.9rem;
             }
-            
+
             .nav-menu a:last-child {
                 border-bottom: none;
             }
-            
+
             .nav-menu a:hover {
                 background: #f5f5f5;
                 color: #cc0000 !important;
             }
-            
+
             .nav-menu a.active {
                 color: #cc0000 !important;
             }
-            
+
             .nav-menu a.active::after {
                 display: none;
             }
-            
+
             .header.scrolled .nav-menu {
                 background: rgba(255, 255, 255, 0.98);
             }
-            
+
             .header.scrolled .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
+
             .header:not(.scrolled) .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
+
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -737,7 +768,7 @@
             }
             .logo-text .company {
                 font-size: 1rem;
-                text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             }
             .logo-text .reg {
                 font-size: 0.5rem;
@@ -788,20 +819,18 @@
     </style>
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION (TRANSPARENT) ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="header" id="mainHeader">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image">
+                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image" />
                 <div class="logo-text">
                     <span class="company">TEIK <span>GRANITE</span> QUARRY</span>
                     <span class="reg">196001000153 (3821-P)</span>
                 </div>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html">Company</a>
@@ -813,14 +842,19 @@
         </div>
     </header>
 
-    <!-- ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== -->
+    <!-- ===== HERO BANNER WITH UPDATED CAROUSEL IMAGES ===== -->
     <section class="hero">
         <div class="hero-slides">
-            <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=30');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=31');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=32');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=33');"></div>
+            <!-- Slide 1: homepage_photo.png -->
+            <div class="hero-slide active" style="background-image: url('Crushing_plant_photo.png');"></div>
+            <!-- Slide 2: drill_and_Blast_photo -->
+            <div class="hero-slide" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
+            <!-- Slide 3: Crushing_plant_photo -->
+            <div class="hero-slide" style="background-image: url('homepage_photo.png');"></div>
+            <!-- Slide 4: safety_environment_photo -->
+            <div class="hero-slide" style="background-image: url('safety_environment_photo.png');"></div>
+            <!-- Slide 5: earth_materials_photo -->
+            <div class="hero-slide" style="background-image: url('earth_materials_photo.png');"></div>
         </div>
 
         <div class="hero-indicators">
@@ -839,13 +873,12 @@
         </div>
     </section>
 
-    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" 
-       class="whatsapp-float" target="_blank">
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -857,7 +890,7 @@
                 <div class="products-grid">
                     <!-- 1. 3/4" AGGREGATE -->
                     <div class="product-card">
-                        <img src="granite_aggregate_photo.png" alt="3/4 Aggregate" class="product-image">
+                        <img src="3_4_Aggregate.jpg" alt="3/4 Aggregate" class="product-image" />
                         <div class="product-body">
                             <h3>3/4" AGGREGATE</h3>
                             <div class="spec">Size: 20mm</div>
@@ -870,7 +903,7 @@
 
                     <!-- 2. 1 1/2" AGGREGATE -->
                     <div class="product-card">
-                        <img src="granite_aggregate_photo.png" alt="1 1/2 Aggregate" class="product-image">
+                        <img src="1_2_1_Aggregate.png" alt="1 1/2 Aggregate" class="product-image" />
                         <div class="product-body">
                             <h3>1 1/2" AGGREGATE</h3>
                             <div class="spec">Size: 40mm</div>
@@ -883,7 +916,7 @@
 
                     <!-- 3. M.SAND (QUARRY DUST) -->
                     <div class="product-card">
-                        <img src="sand_aggregate_photo.png" alt="M.Sand Quarry Dust" class="product-image">
+                        <img src="M_Sand_Quarry_Dust.png" alt="M.Sand Quarry Dust" class="product-image" />
                         <div class="product-body">
                             <h3>M.SAND (QUARRY DUST)</h3>
                             <div class="spec">Fine Powder</div>
@@ -896,7 +929,7 @@
 
                     <!-- 4. 2" CRUSHER RUN -->
                     <div class="product-card">
-                        <img src="earth_materials_photo.png" alt="2 Crusher Run" class="product-image">
+                        <img src="crusher_run.jpg" alt="2 Crusher Run" class="product-image" />
                         <div class="product-body">
                             <h3>2" CRUSHER RUN</h3>
                             <div class="spec">Size: 50mm</div>
@@ -909,7 +942,7 @@
 
                     <!-- 5. 3" X 4" BLOCK -->
                     <div class="product-card">
-                        <img src="dimension_stone_photo.png" alt="3 x 4 Block" class="product-image">
+                        <img src="3_4_block.jpg" alt="3 x 4 Block" class="product-image" />
                         <div class="product-body">
                             <h3>3" X 4" BLOCK</h3>
                             <div class="spec">Size: 75mm x 100mm</div>
@@ -922,7 +955,7 @@
 
                     <!-- 6. 3/8" CHIPPING -->
                     <div class="product-card">
-                        <img src="armor_stones_photo.png" alt="3/8 Chipping" class="product-image">
+                        <img src="3_8_Chipping.jpg" alt="3/8 Chipping" class="product-image" />
                         <div class="product-body">
                             <h3>3/8" CHIPPING</h3>
                             <div class="spec">Size: 10mm</div>
@@ -964,11 +997,6 @@
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                     <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
                     <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
@@ -976,13 +1004,12 @@
             </div>
             <div class="footer-bottom">
                 <div>© 2026 Teik Granite Quarry Sdn Bhd (3821-P). All Rights Reserved.</div>
-                <div>Built with <i class="fas fa-heart" style="color: #cc0000;"></i></div>
             </div>
         </div>
     </footer>
 
     <script>
-        // ===== Scroll Header Effect =====
+        // ===== Scroll Header =====
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
@@ -992,9 +1019,8 @@
             }
         });
 
-        // ===== Back to Top Button =====
+        // ===== Back to Top =====
         const backToTopBtn = document.getElementById('backToTop');
-
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
                 backToTopBtn.classList.add('show');
@@ -1002,15 +1028,11 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== Hamburger Menu Toggle =====
+        // ===== Hamburger =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
@@ -1042,12 +1064,8 @@
             const intervalTime = 5000;
 
             function goToSlide(index) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
                 currentSlide = index;
@@ -1055,9 +1073,7 @@
 
             function nextSlide() {
                 let next = currentSlide + 1;
-                if (next >= slides.length) {
-                    next = 0;
-                }
+                if (next >= slides.length) next = 0;
                 goToSlide(next);
             }
 

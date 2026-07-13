@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="company_logo.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="company_logo.ico" />
     <title>Contact · Teik Granite Quarry Sdn Bhd</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         * {
             margin: 0;
@@ -15,9 +15,40 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f0f2f5;
+            background: #e8e4e0;
             color: #1a1a2e;
             line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ===== BACKGROUND IMAGE ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: url('cracked-stone-stucco.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.5;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .container {
@@ -26,7 +57,7 @@
             padding: 0 2rem;
         }
 
-        /* ===== HEADER / NAVIGATION (TRANSPARENT) ===== */
+        /* ===== HEADER ===== */
         .header {
             background: transparent;
             border-bottom: none;
@@ -80,13 +111,13 @@
             letter-spacing: 0.5px;
             transition: color 0.4s ease;
             text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .company span {
             color: #ffffff;
             transition: color 0.4s ease;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .reg {
@@ -95,25 +126,23 @@
             font-weight: 500;
             letter-spacing: 0.3px;
             font-family: monospace;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         .header.scrolled .logo-text .company {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .company span {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .reg {
             color: #cc0000;
             text-shadow: none;
         }
 
-        /* ===== HAMBURGER MENU (MOBILE) ===== */
+        /* ===== HAMBURGER ===== */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -124,7 +153,6 @@
             background: none;
             border: none;
         }
-
         .hamburger span {
             display: block;
             width: 28px;
@@ -133,19 +161,15 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
-
         .header.scrolled .hamburger span {
             background: #1a2a1d;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
@@ -157,7 +181,6 @@
             font-weight: 600;
             align-items: center;
         }
-
         .nav-menu a {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.9);
@@ -167,17 +190,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             position: relative;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
         }
-
         .nav-menu a:hover {
             color: #ff9999;
         }
-
         .nav-menu a.active {
             color: #ff9999;
         }
-
         .nav-menu a.active::after {
             content: '';
             position: absolute;
@@ -188,25 +208,21 @@
             background: #ff9999;
             transition: background 0.4s ease;
         }
-
         .header.scrolled .nav-menu a {
             color: #1a2a1d;
             text-shadow: none;
         }
-
         .header.scrolled .nav-menu a:hover {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active::after {
             background: #cc0000;
         }
 
-        /* ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== */
+        /* ===== HERO ===== */
         .hero {
             position: relative;
             min-height: 50vh;
@@ -214,7 +230,6 @@
             align-items: center;
             overflow: hidden;
         }
-
         .hero-slides {
             position: absolute;
             top: 0;
@@ -223,7 +238,6 @@
             height: 100%;
             z-index: 0;
         }
-
         .hero-slide {
             position: absolute;
             top: 0;
@@ -237,12 +251,10 @@
             transition: opacity 1.2s ease-in-out;
             z-index: 1;
         }
-
         .hero-slide.active {
             opacity: 1;
             z-index: 2;
         }
-
         .hero-slide::after {
             content: '';
             position: absolute;
@@ -263,7 +275,6 @@
             display: flex;
             gap: 0.8rem;
         }
-
         .hero-indicators .dot {
             width: 12px;
             height: 12px;
@@ -273,19 +284,16 @@
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
         .hero-indicators .dot.active {
             background: #cc0000;
             border-color: #cc0000;
             transform: scale(1.2);
             box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
         }
-
         .hero-indicators .dot:hover {
             background: rgba(255, 255, 255, 0.8);
             transform: scale(1.1);
         }
-
         .hero-indicators .dot.active:hover {
             background: #cc0000;
             transform: scale(1.2);
@@ -298,30 +306,27 @@
             padding-top: 8rem;
             padding-bottom: 4rem;
         }
-
         .hero-content {
             max-width: 60%;
             position: relative;
             z-index: 5;
         }
-
         .hero-content h1 {
             font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             color: white;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             margin-bottom: 0.5rem;
         }
-
         .hero-content p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             max-width: 600px;
         }
 
-        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        /* ===== FLOATING WHATSAPP ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -340,13 +345,12 @@
             transition: 0.3s;
             text-decoration: none;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
-        /* ===== BACK TO TOP BUTTON ===== */
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 110px;
@@ -370,19 +374,16 @@
             justify-content: center;
             text-decoration: none;
         }
-
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
         .back-to-top:hover {
             background: #990000;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
         }
-
         .back-to-top i {
             font-size: 1.3rem;
         }
@@ -392,14 +393,12 @@
             text-align: center;
             margin-bottom: 2.5rem;
         }
-
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 800;
             color: #1a2a1d;
             letter-spacing: -0.5px;
         }
-
         .section-title .line {
             width: 60px;
             height: 4px;
@@ -407,7 +406,6 @@
             margin: 0.5rem auto;
             border-radius: 2px;
         }
-
         .section-title p {
             color: #5a6a6a;
             font-size: 1.1rem;
@@ -415,10 +413,9 @@
 
         /* ===== CONTACT ===== */
         .contact-main {
-            padding: 4rem 0;
-            background: #f0f2f5;
+            padding: 5rem 0;
+            background: transparent;
         }
-
         .contact-wrapper {
             background: #ffffff;
             border-radius: 16px;
@@ -426,20 +423,17 @@
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
         }
-
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
         }
-
         .contact-form h2 {
             font-size: 1.8rem;
             font-weight: 700;
             color: #1a2a1d;
             margin-bottom: 0.5rem;
         }
-
         .contact-form p {
             color: #4a5a5a;
             margin-bottom: 1.5rem;
@@ -449,14 +443,12 @@
             margin-bottom: 1.5rem;
             position: relative;
         }
-
         .form-group label {
             display: block;
             font-weight: 600;
             margin-bottom: 0.3rem;
             color: #1a2a1d;
         }
-
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -469,33 +461,28 @@
             transition: 0.3s;
             background: #fafcfa;
         }
-
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #cc0000;
             box-shadow: 0 0 0 4px rgba(204, 0, 0, 0.1);
         }
-
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
         }
-
         .form-group.success input,
         .form-group.success textarea,
         .form-group.success select {
             border-color: #28a745;
             background: #f0fff4;
         }
-
         .form-group.error input,
         .form-group.error textarea,
         .form-group.error select {
             border-color: #dc3545;
             background: #fff5f5;
         }
-
         .form-group .error-message {
             display: none;
             color: #dc3545;
@@ -505,11 +492,9 @@
             align-items: center;
             gap: 0.4rem;
         }
-
         .form-group.error .error-message {
             display: flex;
         }
-
         .form-group .success-icon {
             display: none;
             position: absolute;
@@ -518,17 +503,15 @@
             color: #28a745;
             font-size: 1.2rem;
         }
-
         .form-group.success .success-icon {
             display: block;
         }
-
         .form-group.error .success-icon {
             display: none;
         }
 
         .btn-submit {
-            background: #1a2a1d;
+            background: #cc0000;
             color: white;
             padding: 0.9rem 2.5rem;
             border-radius: 8px;
@@ -543,13 +526,11 @@
             justify-content: center;
             gap: 0.5rem;
         }
-
         .btn-submit:hover {
-            background: #cc0000;
+            background: #990000;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.3);
         }
-
         .btn-submit:disabled {
             opacity: 0.7;
             cursor: not-allowed;
@@ -561,7 +542,6 @@
             flex-direction: column;
             gap: 1.5rem;
         }
-
         .info-card {
             background: #f5f6f8;
             padding: 1.5rem;
@@ -572,30 +552,25 @@
             gap: 1rem;
             transition: all 0.3s ease;
         }
-
         .info-card:hover {
             transform: translateX(4px);
             border-color: #cc0000;
             box-shadow: 0 4px 15px rgba(204, 0, 0, 0.06);
         }
-
         .info-card i {
             font-size: 1.8rem;
             color: #cc0000;
             width: 3rem;
             margin-top: 0.2rem;
         }
-
         .info-card h3 {
             font-weight: 700;
             color: #1a2a1d;
             margin-bottom: 0.2rem;
         }
-
         .info-card p {
             color: #2a3a3a;
         }
-
         .info-card .location-tag {
             display: inline-block;
             background: #fce8e8;
@@ -608,28 +583,11 @@
             text-transform: uppercase;
         }
 
-        .info-card .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .info-card .social-links a {
-            color: #475569;
-            font-size: 1.4rem;
-            transition: 0.2s;
-        }
-
-        .info-card .social-links a:hover {
-            color: #cc0000;
-        }
-
-        /* ===== MAP SECTION - ENHANCED ===== */
+        /* ===== MAP SECTION ===== */
         .map-section {
             padding-bottom: 4rem;
-            background: #f0f2f5;
+            background: transparent;
         }
-
         .map-wrapper {
             background: #ffffff;
             border-radius: 16px;
@@ -639,7 +597,6 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
         .map-card {
             background: #ffffff;
             border-radius: 12px;
@@ -649,17 +606,14 @@
             transition: all 0.3s ease;
             margin-bottom: 1.5rem;
         }
-
         .map-card:last-child {
             margin-bottom: 0;
         }
-
         .map-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 40px rgba(204, 0, 0, 0.08);
             border-color: #cc0000;
         }
-
         .map-card-header {
             display: flex;
             align-items: center;
@@ -670,13 +624,11 @@
             background: #f8f9fa;
             border-bottom: 1px solid #e8eaed;
         }
-
         .map-card-title {
             display: flex;
             align-items: center;
             gap: 0.8rem;
         }
-
         .map-icon {
             width: 40px;
             height: 40px;
@@ -689,21 +641,18 @@
             font-size: 1.1rem;
             flex-shrink: 0;
         }
-
         .map-card-title .map-name {
             font-size: 1rem;
             font-weight: 700;
             color: #1a2a1d;
             margin: 0;
         }
-
         .map-card-title .map-location {
             font-size: 0.75rem;
             color: #5a6a6a;
             font-weight: 400;
             display: block;
         }
-
         .badge {
             display: inline-block;
             font-size: 0.55rem;
@@ -715,29 +664,24 @@
             background: #cc0000;
             color: white;
         }
-
         .badge.corporate {
             background: #fce8e8;
             color: #cc0000;
         }
-
         .badge.quarry {
             background: #e8eaed;
             color: #5a6a6a;
         }
-
         .badge.head-office {
             background: #cc0000;
             color: white;
         }
-
         .map-container {
             position: relative;
             width: 100%;
             padding-bottom: 56.25%;
             background: #e8eaed;
         }
-
         .map-container iframe {
             position: absolute;
             top: 0;
@@ -747,7 +691,6 @@
             border: 0;
             display: block;
         }
-
         .map-card-footer {
             display: flex;
             align-items: center;
@@ -758,7 +701,6 @@
             flex-wrap: wrap;
             gap: 0.5rem;
         }
-
         .map-address {
             display: flex;
             align-items: center;
@@ -768,22 +710,18 @@
             color: #4a5a5a;
             line-height: 1.6;
         }
-
         .map-address i {
             color: #cc0000;
             font-size: 0.9rem;
             width: 1.2rem;
         }
-
         .map-address .company-name {
             font-weight: 600;
             color: #1a2a1d;
         }
-
         .map-address span:not(.company-name) {
             color: #4a5a5a;
         }
-
         .map-phone {
             display: flex;
             align-items: center;
@@ -792,25 +730,21 @@
             color: #4a5a5a;
             flex-wrap: wrap;
         }
-
         .map-phone i {
             color: #cc0000;
             font-size: 0.9rem;
             width: 1.2rem;
         }
-
         .map-phone .phone-link {
             color: #1a5a7a;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
-
         .map-phone .phone-link:hover {
             color: #cc0000;
             text-decoration: underline;
         }
-
         .map-phone .phone-separator {
             color: #b0b8b8;
             font-size: 0.8rem;
@@ -829,11 +763,9 @@
             justify-content: center;
             align-items: center;
         }
-
         .alert-overlay.show {
             display: flex;
         }
-
         .alert-box {
             background: white;
             border-radius: 16px;
@@ -845,7 +777,6 @@
             animation: popIn 0.3s ease;
             position: relative;
         }
-
         @keyframes popIn {
             from {
                 transform: scale(0.8);
@@ -856,7 +787,6 @@
                 opacity: 1;
             }
         }
-
         .alert-close {
             position: absolute;
             top: 12px;
@@ -871,37 +801,31 @@
             padding: 4px 8px;
             border-radius: 4px;
         }
-
         .alert-close:hover {
             color: #1a2a1d;
             background: #f0f2f5;
         }
-
         .alert-box .icon {
             font-size: 4rem;
             color: #28a745;
             margin-bottom: 1rem;
             margin-top: 0.5rem;
         }
-
         .alert-box .icon.error {
             color: #dc3545;
         }
-
         .alert-box h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: #1a2a1d;
             margin-bottom: 0.5rem;
         }
-
         .alert-box p {
             color: #4a5a5a;
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-
         .progress-container {
             width: 100%;
             height: 4px;
@@ -910,18 +834,15 @@
             overflow: hidden;
             margin-top: 0.5rem;
         }
-
         .progress-bar {
             height: 100%;
             width: 0%;
             border-radius: 4px;
             transition: width 0.1s linear;
         }
-
         .progress-bar.success {
             background: #28a745;
         }
-
         .progress-bar.error {
             background: #dc3545;
         }
@@ -932,7 +853,6 @@
             color: #b0b8b8;
             padding: 3rem 0 1.5rem;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -940,31 +860,27 @@
             padding-bottom: 2rem;
             border-bottom: 1px solid #333333;
         }
-
         .footer h4 {
             color: #ffffff;
             font-size: 1rem;
             margin-bottom: 1rem;
         }
-
-        .footer p, .footer a {
+        .footer p,
+        .footer a {
             color: #b0b8b8;
             font-size: 0.9rem;
             text-decoration: none;
             display: block;
             margin-bottom: 0.4rem;
         }
-
         .footer a:hover {
             color: #cc0000;
         }
-
         .footer .social-links a {
             display: inline-block;
             margin-right: 1rem;
             font-size: 1.2rem;
         }
-
         .footer-bottom {
             padding-top: 1.5rem;
             display: flex;
@@ -972,7 +888,7 @@
             align-items: center;
             flex-wrap: wrap;
             font-size: 0.8rem;
-            color: #6a7a7a;
+            color: #6a7a6a;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -988,11 +904,9 @@
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            
             .hamburger {
                 display: flex;
             }
-            
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -1004,11 +918,9 @@
                 margin-top: 0.5rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             }
-            
             .nav-menu.open {
                 display: flex;
             }
-            
             .nav-menu a {
                 color: #1a2a1d !important;
                 text-shadow: none !important;
@@ -1018,36 +930,29 @@
                 border-bottom: 1px solid #e8eaed;
                 font-size: 0.9rem;
             }
-            
             .nav-menu a:last-child {
                 border-bottom: none;
             }
-            
             .nav-menu a:hover {
                 background: #f5f5f5;
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active {
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active::after {
                 display: none;
             }
-            
             .header.scrolled .nav-menu {
                 background: rgba(255, 255, 255, 0.98);
             }
-            
             .header.scrolled .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
             .header:not(.scrolled) .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
+
             .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -1094,7 +999,6 @@
                 height: 45px;
                 font-size: 1.1rem;
             }
-
             .map-card-header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1167,7 +1071,7 @@
             }
             .logo-text .company {
                 font-size: 1rem;
-                text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             }
             .logo-text .reg {
                 font-size: 0.5rem;
@@ -1224,7 +1128,6 @@
                 height: 36px;
                 font-size: 0.85rem;
             }
-
             .map-card-header {
                 padding: 0.8rem 1rem;
             }
@@ -1250,20 +1153,18 @@
     </style>
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION (TRANSPARENT) ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="header" id="mainHeader">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image">
+                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image" />
                 <div class="logo-text">
                     <span class="company">TEIK <span>GRANITE</span> QUARRY</span>
                     <span class="reg">196001000153 (3821-P)</span>
                 </div>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html">Company</a>
@@ -1275,14 +1176,19 @@
         </div>
     </header>
 
-    <!-- ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== -->
+    <!-- ===== HERO BANNER WITH UPDATED CAROUSEL IMAGES ===== -->
     <section class="hero">
         <div class="hero-slides">
+            <!-- Slide 1: homepage_photo.png -->
             <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=50');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=51');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=52');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=53');"></div>
+            <!-- Slide 2: drill_and_Blast_photo -->
+            <div class="hero-slide" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
+            <!-- Slide 3: Crushing_plant_photo -->
+            <div class="hero-slide" style="background-image: url('Crushing_plant_photo.png');"></div>
+            <!-- Slide 4: safety_environment_photo -->
+            <div class="hero-slide" style="background-image: url('safety_environment_photo.png');"></div>
+            <!-- Slide 5: earth_materials_photo -->
+            <div class="hero-slide" style="background-image: url('earth_materials_photo.png');"></div> 
         </div>
 
         <div class="hero-indicators">
@@ -1301,13 +1207,12 @@
         </div>
     </section>
 
-    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/601116595751?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20your%20granite%20products" 
-       class="whatsapp-float" target="_blank">
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <a href="https://wa.me/601116595751?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20your%20granite%20products" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -1337,21 +1242,21 @@
                         <form id="contactForm" novalidate>
                             <div class="form-group" id="nameGroup">
                                 <label>Full Name</label>
-                                <input type="text" id="name" placeholder="Enter your full name" required>
+                                <input type="text" id="name" placeholder="Enter your full name" required />
                                 <span class="success-icon"><i class="fas fa-check-circle"></i></span>
                                 <span class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter your full name</span>
                             </div>
 
                             <div class="form-group" id="emailGroup">
                                 <label>Email Address</label>
-                                <input type="email" id="email" placeholder="you@example.com" required>
+                                <input type="email" id="email" placeholder="you@example.com" required />
                                 <span class="success-icon"><i class="fas fa-check-circle"></i></span>
                                 <span class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter a valid email address</span>
                             </div>
 
                             <div class="form-group" id="phoneGroup">
                                 <label>Phone Number</label>
-                                <input type="tel" id="phone" placeholder="012-345 6789" required>
+                                <input type="tel" id="phone" placeholder="012-345 6789" required />
                                 <span class="success-icon"><i class="fas fa-check-circle"></i></span>
                                 <span class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter your phone number</span>
                             </div>
@@ -1391,19 +1296,21 @@
                             <div>
                                 <h3>Head Office</h3>
                                 <span class="location-tag">Pulau Tikus</span>
-                                <p><strong>Teik Granite Quarry Sdn Bhd</strong><br>
-                                Unit No.: 368-2-15, Level 2, Bellisa Row,<br>
-                                Jalan Burmah, 10350 Penang, Malaysia</p>
+                                <p><strong>Teik Granite Quarry Sdn Bhd</strong><br />
+                                    Unit No.: 368-2-15, Level 2, Bellisa Row,<br />
+                                    Jalan Burmah, 10350 Penang, Malaysia</p>
                             </div>
                         </div>
 
-                        <!-- ===== QUARRY SITES ===== -->
+                        <!-- ===== CORPORATE OFFICE (changed from Quarry Sites) ===== -->
                         <div class="info-card">
-                            <i class="fas fa-mountain"></i>
+                            <i class="fas fa-building"></i>
                             <div>
-                                <h3>Quarry Sites</h3>
-                                <p><strong>Tanjung Bungah:</strong> 604-8991189, 8905537<br>
-                                <strong>Penanti:</strong> 604-5212151, 5212310</p>
+                                <h3>Corporate Office</h3>
+                                <span class="location-tag">Penanti</span>
+                                <p><strong>Teik Granite Corporation Sdn Bhd</strong><br />
+                                    Lot 401, Mukim 20, Penanti,<br />
+                                    Kubang Semang, Penang</p>
                             </div>
                         </div>
 
@@ -1412,8 +1319,8 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h3>Contact Numbers</h3>
-                                <p><strong>Phone:</strong> 04-261 4477<br>
-                                <strong>Fax:</strong> 04-262 2818</p>
+                                <p><strong>Phone:</strong> 04-261 4477<br />
+                                    <strong>Fax:</strong> 04-262 2818</p>
                             </div>
                         </div>
 
@@ -1422,8 +1329,8 @@
                             <i class="fas fa-building"></i>
                             <div>
                                 <h3>Company Information</h3>
-                                <p><strong>Registration:</strong> 196001000153 (3821-P)<br>
-                                <strong>Established:</strong> 20 June 1960</p>
+                                <p><strong>Registration:</strong> 196001000153 (3821-P)<br />
+                                    <strong>Established:</strong> 20 June 1960</p>
                             </div>
                         </div>
 
@@ -1432,21 +1339,8 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h3>Email</h3>
-                                <p><strong>General:</strong> tgc@teikgranite.com<br>
-                                <strong>Quarry:</strong> tqg@teikgranite.com</p>
-                            </div>
-                        </div>
-
-                        <!-- ===== SOCIAL MEDIA ===== -->
-                        <div class="info-card">
-                            <i class="fas fa-share-alt"></i>
-                            <div>
-                                <h3>Follow Us</h3>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                </div>
+                                <p><strong>General:</strong> tgc@teikgranite.com<br />
+                                    <strong>Quarry:</strong> tqg@teikgranite.com</p>
                             </div>
                         </div>
                     </div>
@@ -1465,7 +1359,7 @@
             </div>
 
             <div class="map-wrapper">
-                <!-- ===== LOCATION 1: PULAU TIKUS - TEIK GRANITE QUARRY SDN BHD ===== -->
+                <!-- ===== LOCATION 1: PULAU TIKUS ===== -->
                 <div class="map-card">
                     <div class="map-card-header">
                         <div class="map-card-title">
@@ -1480,27 +1374,23 @@
                         <span class="badge head-office">Head Office</span>
                     </div>
                     <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15888.12694484677!2d100.45995199715456!3d5.412137451620861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acfc029a12049%3A0x6b7bcd57ba31037a!2sTeik%20Granite%20Corporation%20Sdn.%20Bhd.!5e0!3m2!1sen!2sus!4v1783881616735!5m2!1sen!2sus" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="strict-origin-when-cross-origin">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15888.12694484677!2d100.45995199715456!3d5.412137451620861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acfc029a12049%3A0x6b7bcd57ba31037a!2sTeik%20Granite%20Corporation%20Sdn.%20Bhd.!5e0!3m2!1sen!2sus!4v1783881616735!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
                     </div>
                     <div class="map-card-footer">
                         <div class="map-address">
-                            <i class="fas fa-map-pin"></i> 
+                            <i class="fas fa-map-pin"></i>
                             <span class="company-name">Teik Granite Quarry Sdn Bhd</span>
                             <span>368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</span>
                         </div>
                         <div class="map-phone">
-                            <i class="fas fa-phone"></i> 
+                            <i class="fas fa-phone"></i>
                             <a href="tel:042614477" class="phone-link">04-261 4477</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- ===== LOCATION 2: PENANTI - TEIK GRANITE CORPORATION SDN BHD ===== -->
+                <!-- ===== LOCATION 2: PENANTI ===== -->
                 <div class="map-card">
                     <div class="map-card-header">
                         <div class="map-card-title">
@@ -1515,27 +1405,23 @@
                         <span class="badge corporate">Corporate Office</span>
                     </div>
                     <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15888.12694484677!2d100.45995199715456!3d5.412137451620861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acfc029a12049%3A0x6b7bcd57ba31037a!2sTeik%20Granite%20Corporation%20Sdn.%20Bhd.!5e0!3m2!1sen!2sus!4v1783881616735!5m2!1sen!2sus" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="strict-origin-when-cross-origin">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15888.12694484677!2d100.45995199715456!3d5.412137451620861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acfc029a12049%3A0x6b7bcd57ba31037a!2sTeik%20Granite%20Corporation%20Sdn.%20Bhd.!5e0!3m2!1sen!2sus!4v1783881616735!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
                     </div>
                     <div class="map-card-footer">
                         <div class="map-address">
-                            <i class="fas fa-map-pin"></i> 
+                            <i class="fas fa-map-pin"></i>
                             <span class="company-name">Teik Granite Corporation Sdn Bhd</span>
                             <span>Lot 401, Mukim 20, Penanti, Kubang Semang, Penang</span>
                         </div>
                         <div class="map-phone">
-                            <i class="fas fa-phone"></i> 
+                            <i class="fas fa-phone"></i>
                             <a href="tel:045212151" class="phone-link">04-521 2151</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- ===== LOCATION 3: TANJUNG BUNGAH - TGQ (TANJUNG BUNGAH) SDN BHD ===== -->
+                <!-- ===== LOCATION 3: TANJUNG BUNGAH ===== -->
                 <div class="map-card">
                     <div class="map-card-header">
                         <div class="map-card-title">
@@ -1550,29 +1436,25 @@
                         <span class="badge quarry">Quarry Site</span>
                     </div>
                     <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0273377508997!2d100.47168307474388!3d5.412807094566363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acf19f62cd39d%3A0x99453f31da187eac!2sTGQ%20Penanti%20Quarry!5e0!3m2!1sen!2sus!4v1783881746942!5m2!1sen!2sus" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="strict-origin-when-cross-origin">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0273377508997!2d100.47168307474388!3d5.412807094566363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acf19f62cd39d%3A0x99453f31da187eac!2sTGQ%20Penanti%20Quarry!5e0!3m2!1sen!2sus!4v1783881746942!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
                     </div>
                     <div class="map-card-footer">
                         <div class="map-address">
-                            <i class="fas fa-map-pin"></i> 
+                            <i class="fas fa-map-pin"></i>
                             <span class="company-name">TGQ (Tanjung Bungah) Sdn Bhd</span>
                             <span>Tanjung Bungah, 11200 Penang</span>
                         </div>
                         <div class="map-phone">
-                            <i class="fas fa-phone"></i> 
-                            <a href="tel:048991189" class="phone-link">04-899 1189</a> 
-                            <span class="phone-separator">/</span> 
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:048991189" class="phone-link">04-899 1189</a>
+                            <span class="phone-separator">/</span>
                             <a href="tel:048905537" class="phone-link">04-890 5537</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- ===== LOCATION 4: AIR ITAM - TGQ (AIR ITAM) SDN BHD ===== -->
+                <!-- ===== LOCATION 4: AIR ITAM ===== -->
                 <div class="map-card">
                     <div class="map-card-header">
                         <div class="map-card-title">
@@ -1587,23 +1469,19 @@
                         <span class="badge quarry">Quarry Site</span>
                     </div>
                     <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0273377508997!2d100.47168307474388!3d5.412807094566363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acf19f62cd39d%3A0x99453f31da187eac!2sTGQ%20Penanti%20Quarry!5e0!3m2!1sen!2sus!4v1783881746942!5m2!1sen!2sus" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="strict-origin-when-cross-origin">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0273377508997!2d100.47168307474388!3d5.412807094566363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acf19f62cd39d%3A0x99453f31da187eac!2sTGQ%20Penanti%20Quarry!5e0!3m2!1sen!2sus!4v1783881746942!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
                     </div>
                     <div class="map-card-footer">
                         <div class="map-address">
-                            <i class="fas fa-map-pin"></i> 
+                            <i class="fas fa-map-pin"></i>
                             <span class="company-name">TGQ (Air Itam) Sdn Bhd</span>
                             <span>Penanti Quarry, Kubang Semang, Penang</span>
                         </div>
                         <div class="map-phone">
-                            <i class="fas fa-phone"></i> 
-                            <a href="tel:045212151" class="phone-link">04-521 2151</a> 
-                            <span class="phone-separator">/</span> 
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:045212151" class="phone-link">04-521 2151</a>
+                            <span class="phone-separator">/</span>
                             <a href="tel:045212310" class="phone-link">04-521 2310</a>
                         </div>
                     </div>
@@ -1639,11 +1517,6 @@
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                     <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
                     <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
@@ -1651,7 +1524,6 @@
             </div>
             <div class="footer-bottom">
                 <div>© 2026 Teik Granite Quarry Sdn Bhd (3821-P). All Rights Reserved.</div>
-                <div>Built with <i class="fas fa-heart" style="color: #cc0000;"></i></div>
             </div>
         </div>
     </footer>
@@ -1659,9 +1531,9 @@
     <!-- ===== EMAILJS SCRIPTS ===== -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
-    
+
     <script>
-        // ===== Scroll Header Effect =====
+        // ===== Scroll Header =====
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
@@ -1671,9 +1543,8 @@
             }
         });
 
-        // ===== Back to Top Button =====
+        // ===== Back to Top =====
         const backToTopBtn = document.getElementById('backToTop');
-
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
                 backToTopBtn.classList.add('show');
@@ -1681,15 +1552,11 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== Hamburger Menu Toggle =====
+        // ===== Hamburger =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
@@ -1721,12 +1588,8 @@
             const intervalTime = 5000;
 
             function goToSlide(index) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
                 currentSlide = index;
@@ -1734,9 +1597,7 @@
 
             function nextSlide() {
                 let next = currentSlide + 1;
-                if (next >= slides.length) {
-                    next = 0;
-                }
+                if (next >= slides.length) next = 0;
                 goToSlide(next);
             }
 
@@ -1828,7 +1689,7 @@
             const field = fields[fieldKey];
             const value = field.element.value;
             const isValid = field.validate(value);
-            
+
             if (isValid) {
                 field.group.classList.remove('error');
                 field.group.classList.add('success');
@@ -1870,34 +1731,34 @@
 
         function showAlert(title, message, isSuccess, duration) {
             closeAlert(true);
-            
+
             const overlay = document.getElementById('alertOverlay');
             const icon = document.getElementById('alertIcon');
             const titleEl = document.getElementById('alertTitle');
             const msgEl = document.getElementById('alertMessage');
             const progressBar = document.getElementById('progressBar');
-            
+
             icon.innerHTML = isSuccess ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-exclamation-circle"></i>';
             icon.className = 'icon' + (isSuccess ? '' : ' error');
             titleEl.textContent = title;
             msgEl.textContent = message;
-            
+
             progressBar.className = isSuccess ? 'progress-bar success' : 'progress-bar error';
             progressBar.style.width = '0%';
-            
+
             overlay.classList.add('show');
             isAlertClosing = false;
-            
+
             let progress = 0;
             const interval = 30;
             const totalSteps = duration / interval;
             let step = 0;
-            
+
             alertProgressInterval = setInterval(function() {
                 step++;
                 progress = (step / totalSteps) * 100;
                 progressBar.style.width = Math.min(progress, 100) + '%';
-                
+
                 if (step >= totalSteps) {
                     clearInterval(alertProgressInterval);
                     progressBar.style.width = '100%';
@@ -1911,7 +1772,7 @@
         function closeAlert(instant) {
             if (isAlertClosing) return;
             isAlertClosing = true;
-            
+
             if (alertTimer) {
                 clearTimeout(alertTimer);
                 alertTimer = null;
@@ -1920,10 +1781,10 @@
                 clearInterval(alertProgressInterval);
                 alertProgressInterval = null;
             }
-            
+
             const overlay = document.getElementById('alertOverlay');
             const progressBar = document.getElementById('progressBar');
-            
+
             if (instant) {
                 overlay.classList.remove('show');
                 progressBar.style.width = '0%';
@@ -1962,7 +1823,7 @@
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             if (!validateAllFields()) {
                 for (const key in fields) {
                     const field = fields[key];
@@ -1974,18 +1835,18 @@
                 showAlert('Invalid!', 'Please fill in all required fields correctly.', false, 3000);
                 return;
             }
-            
+
             const submitBtn = document.getElementById('submitBtn');
-            
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
+
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-            
+
             emailjs.send('service_gpp51vb', 'template_pi9b4rh', {
                 from_name: name,
                 from_email: email,
@@ -1996,20 +1857,20 @@
             })
             .then(function(response) {
                 showAlert('Success!', 'Your message has been sent successfully! We will get back to you within 24 hours.', true, 5000);
-                
+
                 document.getElementById('contactForm').reset();
-                
+
                 for (const key in fields) {
                     fields[key].group.classList.remove('success', 'error');
                 }
-                
+
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Send Message <i class="fas fa-arrow-right"></i>';
             })
             .catch(function(error) {
                 console.error('EmailJS Error:', error);
                 showAlert('Invalid!', 'Something went wrong. Please try again or contact us directly via phone.', false, 4000);
-                
+
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Send Message <i class="fas fa-arrow-right"></i>';
             });

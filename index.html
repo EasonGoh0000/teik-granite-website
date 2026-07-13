@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="company_logo.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="company_logo.ico" />
     <title>Teik Granite Quarry Sdn Bhd · Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ===== PREVIOUS CSS (Keep all existing styles) ===== */
+        /* ===== ORIGINAL THEME WITH BACKGROUND IMAGE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -16,11 +16,41 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f0f2f5;
+            background: #e8e4e0;
             color: #1a1a2e;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: url('cracked-stone-stucco.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.5;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .container {
@@ -83,13 +113,13 @@
             letter-spacing: 0.5px;
             transition: color 0.4s ease;
             text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .company span {
             color: #ffffff;
             transition: color 0.4s ease;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .reg {
@@ -98,25 +128,23 @@
             font-weight: 500;
             letter-spacing: 0.3px;
             font-family: monospace;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         .header.scrolled .logo-text .company {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .company span {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .reg {
             color: #cc0000;
             text-shadow: none;
         }
 
-        /* ===== HAMBURGER MENU (MOBILE) ===== */
+        /* ===== HAMBURGER MENU ===== */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -127,7 +155,6 @@
             background: none;
             border: none;
         }
-
         .hamburger span {
             display: block;
             width: 28px;
@@ -136,19 +163,15 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
-
         .header.scrolled .hamburger span {
             background: #1a2a1d;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
@@ -160,7 +183,6 @@
             font-weight: 600;
             align-items: center;
         }
-
         .nav-menu a {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.9);
@@ -170,17 +192,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             position: relative;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
         }
-
         .nav-menu a:hover {
             color: #ff9999;
         }
-
         .nav-menu a.active {
             color: #ff9999;
         }
-
         .nav-menu a.active::after {
             content: '';
             position: absolute;
@@ -191,25 +210,21 @@
             background: #ff9999;
             transition: background 0.4s ease;
         }
-
         .header.scrolled .nav-menu a {
             color: #1a2a1d;
             text-shadow: none;
         }
-
         .header.scrolled .nav-menu a:hover {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active::after {
             background: #cc0000;
         }
 
-        /* ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== */
+        /* ===== HERO BANNER WITH CAROUSEL ===== */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -217,7 +232,6 @@
             align-items: center;
             overflow: hidden;
         }
-
         .hero-slides {
             position: absolute;
             top: 0;
@@ -226,7 +240,6 @@
             height: 100%;
             z-index: 0;
         }
-
         .hero-slide {
             position: absolute;
             top: 0;
@@ -240,17 +253,14 @@
             transition: opacity 1.2s ease-in-out;
             z-index: 1;
         }
-
         .hero-slide.active {
             opacity: 1;
             z-index: 2;
         }
-
         .hero-slide.fade-out {
             opacity: 0;
             z-index: 1;
         }
-
         .hero-slide::after {
             content: '';
             position: absolute;
@@ -262,7 +272,6 @@
             z-index: 1;
         }
 
-        /* ===== HERO SLIDE INDICATORS ===== */
         .hero-indicators {
             position: absolute;
             bottom: 3rem;
@@ -272,7 +281,6 @@
             display: flex;
             gap: 0.8rem;
         }
-
         .hero-indicators .dot {
             width: 12px;
             height: 12px;
@@ -282,19 +290,16 @@
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
         .hero-indicators .dot.active {
             background: #cc0000;
             border-color: #cc0000;
             transform: scale(1.2);
             box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
         }
-
         .hero-indicators .dot:hover {
             background: rgba(255, 255, 255, 0.8);
             transform: scale(1.1);
         }
-
         .hero-indicators .dot.active:hover {
             background: #cc0000;
             transform: scale(1.2);
@@ -307,13 +312,11 @@
             padding-top: 8rem;
             padding-bottom: 4rem;
         }
-
         .hero-content {
             max-width: 60%;
             position: relative;
             z-index: 5;
         }
-
         .hero-content .hero-badge {
             display: inline-block;
             background: #cc0000;
@@ -326,7 +329,6 @@
             letter-spacing: 1px;
             margin-bottom: 1rem;
         }
-
         .hero-content h1 {
             font-size: 4.2rem;
             font-weight: 800;
@@ -334,22 +336,19 @@
             line-height: 1.1;
             margin-bottom: 1rem;
             color: white;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
-
         .hero-content h1 .highlight-red {
             color: #ff6666;
         }
-
         .hero-content p {
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.95);
             margin-bottom: 1.5rem;
             line-height: 1.8;
             max-width: 600px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
         }
-
         .hero-content .btn-hero {
             display: inline-block;
             background: #cc0000;
@@ -364,14 +363,12 @@
             font-size: 0.9rem;
             box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
         }
-
         .hero-content .btn-hero:hover {
             background: #990000;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
         }
 
-        /* ===== SCROLL INDICATOR ===== */
         .scroll-indicator {
             position: absolute;
             bottom: 6rem;
@@ -382,18 +379,17 @@
             font-size: 0.8rem;
             text-align: center;
             animation: bounceDown 2s infinite;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-
         .scroll-indicator i {
             display: block;
             font-size: 1.5rem;
             margin-top: 0.3rem;
             color: rgba(255, 255, 255, 0.6);
         }
-
         @keyframes bounceDown {
-            0%, 100% {
+            0%,
+            100% {
                 transform: translateX(-50%) translateY(0);
             }
             50% {
@@ -401,7 +397,7 @@
             }
         }
 
-        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        /* ===== FLOATING WHATSAPP ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -420,13 +416,12 @@
             transition: 0.3s;
             text-decoration: none;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
-        /* ===== BACK TO TOP BUTTON ===== */
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 110px;
@@ -450,19 +445,16 @@
             justify-content: center;
             text-decoration: none;
         }
-
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
         .back-to-top:hover {
             background: #990000;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
         }
-
         .back-to-top i {
             font-size: 1.3rem;
         }
@@ -472,14 +464,12 @@
             text-align: center;
             margin-bottom: 2.5rem;
         }
-
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 800;
             color: #1a2a1d;
             letter-spacing: -0.5px;
         }
-
         .section-title .line {
             width: 60px;
             height: 4px;
@@ -487,18 +477,16 @@
             margin: 0.5rem auto;
             border-radius: 2px;
         }
-
         .section-title p {
             color: #5a6a6a;
             font-size: 1.1rem;
         }
 
-        /* ===== COMPANY OVERVIEW WITH ANIMATED STATS ===== */
+        /* ===== COMPANY OVERVIEW ===== */
         .company-overview {
             padding: 5rem 0;
-            background: #ffffff;
+            background: transparent;
         }
-
         .overview-wrapper {
             background: #ffffff;
             border-radius: 16px;
@@ -506,14 +494,12 @@
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
         }
-
         .overview-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
-
         .overview-text .badge-year {
             display: inline-block;
             background: #cc0000;
@@ -526,7 +512,6 @@
             letter-spacing: 0.5px;
             margin-bottom: 0.8rem;
         }
-
         .overview-text h2 {
             font-size: 2.2rem;
             font-weight: 800;
@@ -534,38 +519,31 @@
             letter-spacing: -0.5px;
             margin-bottom: 0.3rem;
         }
-
         .overview-text .sub-headline {
             color: #cc0000;
             font-weight: 500;
             font-size: 1.05rem;
             margin-bottom: 1.2rem;
         }
-
         .overview-text p {
             color: #2a3a3a;
             margin-bottom: 1rem;
             font-size: 1.05rem;
             line-height: 1.8;
         }
-
         .overview-text .highlight {
             color: #cc0000;
             font-weight: 600;
         }
-
         .overview-text .highlight-dark {
             color: #1a2a1d;
             font-weight: 700;
         }
-
-        /* ===== ANIMATED STATS INSIDE COMPANY OVERVIEW ===== */
         .overview-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
-
         .stat-box {
             background: #f5f6f8;
             padding: 1.8rem 1.5rem;
@@ -576,7 +554,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .stat-box::before {
             content: '';
             position: absolute;
@@ -588,35 +565,29 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-
         .stat-box:hover::before {
             opacity: 1;
         }
-
         .stat-box:hover {
             border-color: #cc0000;
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(204, 0, 0, 0.1);
             background: #ffffff;
         }
-
         .stat-box .icon {
             font-size: 1.8rem;
             color: #cc0000;
             margin-bottom: 0.3rem;
         }
-
         .stat-box .number {
             font-size: 2.8rem;
             font-weight: 800;
             color: #1a1a1a;
             line-height: 1.2;
         }
-
         .stat-box .number span {
             color: #1a1a1a;
         }
-
         .stat-box .label {
             color: #1a1a1a;
             font-size: 0.9rem;
@@ -624,39 +595,35 @@
             margin-top: 0.2rem;
         }
 
-        /* ===== GROUP OF COMPANIES (GRID LAYOUT) ===== */
+        /* ===== GROUP OF COMPANIES ===== */
         .subsidiaries {
-            background: #ffffff;
+            background: transparent;
             padding: 5rem 0;
-            border-top: 1px solid #e0e2e5;
-            border-bottom: 1px solid #e0e2e5;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-
         .sub-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
-
         .sub-item {
             text-align: center;
             padding: 1.5rem 1rem;
             border: 1px solid #e0e2e5;
             border-radius: 12px;
             transition: all 0.3s ease;
-            background: #f8f9fa;
+            background: #ffffff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             cursor: pointer;
             position: relative;
         }
-
         .sub-item:hover {
             border-color: #cc0000;
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(204, 0, 0, 0.08);
             background: #ffffff;
         }
-
         .sub-item .sub-number {
             font-size: 0.65rem;
             color: #cc0000;
@@ -667,7 +634,6 @@
             display: inline-block;
             margin-bottom: 0.4rem;
         }
-
         .sub-item .level-badge {
             display: inline-block;
             font-size: 0.55rem;
@@ -678,29 +644,24 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .sub-item .level-badge.parent {
             background: #cc0000;
             color: white;
         }
-
         .sub-item .level-badge.subsidiary {
             background: #fce8e8;
             color: #cc0000;
         }
-
         .sub-item .level-badge.quarry {
             background: #e8eaed;
             color: #5a6a6a;
         }
-
         .sub-item i {
             font-size: 1.6rem;
             color: #cc0000;
             margin-bottom: 0.4rem;
             display: block;
         }
-
         .sub-item h4 {
             font-weight: 700;
             color: #1a2a1d;
@@ -708,15 +669,12 @@
             margin-bottom: 0.2rem;
             line-height: 1.3;
         }
-
         .sub-item .reg {
             color: #5a6a6a;
             font-size: 0.7rem;
             font-family: monospace;
             letter-spacing: 0.3px;
         }
-
-        /* ===== DROPDOWN DETAILS ===== */
         .sub-item .dropdown-arrow {
             display: block;
             margin-top: 0.5rem;
@@ -724,13 +682,11 @@
             font-size: 0.8rem;
             transition: transform 0.3s ease;
         }
-
         .sub-item .dropdown-arrow i {
             display: inline;
             font-size: 0.8rem;
             margin: 0;
         }
-
         .sub-item .dropdown-details {
             max-height: 0;
             overflow: hidden;
@@ -741,19 +697,16 @@
             color: #4a5a5a;
             line-height: 1.8;
         }
-
         .sub-item .dropdown-details.open {
             max-height: 400px;
             padding: 0.8rem 0.5rem 0.3rem;
         }
-
         .sub-item .dropdown-details p {
             margin: 0.2rem 0;
             display: flex;
             align-items: flex-start;
             gap: 0.5rem;
         }
-
         .sub-item .dropdown-details i {
             font-size: 0.7rem;
             color: #cc0000;
@@ -761,19 +714,16 @@
             width: 1.2rem;
             margin: 0;
         }
-
         .sub-item .dropdown-details .label {
             font-weight: 600;
             color: #1a2a1d;
             min-width: 3.5rem;
         }
 
-        /* ===== VIEW ON MAP BUTTON ===== */
         .map-btn-wrapper {
             text-align: right;
             margin-top: 2rem;
         }
-
         .map-btn-wrapper .btn-map {
             display: inline-flex;
             align-items: center;
@@ -790,13 +740,11 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
         }
-
         .map-btn-wrapper .btn-map:hover {
             background: #990000;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4);
         }
-
         .map-btn-wrapper .btn-map i {
             font-size: 1.1rem;
         }
@@ -804,15 +752,13 @@
         /* ===== PRODUCTS ===== */
         .products-preview {
             padding: 5rem 0;
-            background: #f0f2f5;
+            background: transparent;
         }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
-
         .product-card {
             background: #ffffff;
             border-radius: 12px;
@@ -822,13 +768,11 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
             text-align: center;
         }
-
         .product-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 40px rgba(204, 0, 0, 0.08);
             border-color: #cc0000;
         }
-
         .product-card .product-image {
             width: 100%;
             height: 200px;
@@ -836,36 +780,30 @@
             display: block;
             transition: transform 0.5s ease;
         }
-
         .product-card:hover .product-image {
             transform: scale(1.05);
         }
-
         .product-card .product-body {
             padding: 1.5rem;
         }
-
         .product-card .product-body h3 {
             font-weight: 700;
             font-size: 1.1rem;
             margin-bottom: 0.3rem;
             color: #1a2a1d;
         }
-
         .product-card .product-body .spec {
             color: #cc0000;
             font-weight: 600;
             font-size: 0.8rem;
             margin-bottom: 0.5rem;
         }
-
         .product-card .product-body p {
             color: #3a4a4a;
             font-size: 0.9rem;
             line-height: 1.7;
             margin-bottom: 0.8rem;
         }
-
         .product-card .product-body .product-tag {
             display: inline-block;
             background: #fce8e8;
@@ -887,12 +825,10 @@
             border: 1px solid #e8eaed;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
-
         .industries-header {
             text-align: center;
             margin-bottom: 1.8rem;
         }
-
         .industries-header h3 {
             font-size: 1.8rem;
             font-weight: 800;
@@ -903,25 +839,21 @@
             gap: 0.8rem;
             margin-bottom: 0.3rem;
         }
-
         .industries-header h3 i {
             color: #cc0000;
             font-size: 1.8rem;
         }
-
         .industries-header p {
             color: #5a6a6a;
             font-size: 1.1rem;
             font-weight: 500;
         }
-
         .industries-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem 1.2rem;
         }
-
         .industry-tag {
             display: flex;
             align-items: center;
@@ -936,144 +868,26 @@
             color: #1a2a1d;
             cursor: default;
         }
-
         .industry-tag:hover {
             background: #ffffff;
             border-color: #cc0000;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(204, 0, 0, 0.08);
         }
-
         .industry-tag i {
             color: #cc0000;
             font-size: 1rem;
             width: 1.2rem;
             text-align: center;
         }
-
         .industry-tag span {
             font-size: 0.82rem;
         }
 
-        /* ===== PROCESS SECTION ===== */
-        .process-section {
-            padding: 5rem 0;
-            background: #f0f2f5;
-        }
-
-        .process-wrapper {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e8eaed;
-        }
-
-        .process-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .process-step {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 12px;
-            border: 1px solid #e8eaed;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .process-step:hover {
-            transform: translateX(6px);
-            border-color: #cc0000;
-            box-shadow: 0 4px 20px rgba(204, 0, 0, 0.08);
-            background: #ffffff;
-        }
-
-        .process-step .step-number {
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            background: #cc0000;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
-        }
-
-        .process-step .step-content {
-            flex: 1;
-        }
-
-        .process-step .step-content h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #1a2a1d;
-            margin-bottom: 0.2rem;
-        }
-
-        .process-step .step-content h4 i {
-            color: #cc0000;
-            margin-right: 0.5rem;
-        }
-
-        .process-step .step-content p {
-            color: #4a5a5a;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* ===== LARGER PROCESS IMAGES ===== */
-        .process-step .step-image {
-            flex-shrink: 0;
-            width: 280px;
-            height: 190px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 2px solid #e8eaed;
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover .step-image {
-            border-color: #cc0000;
-            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.15);
-        }
-
-        .process-step .step-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* ===== DOWN ARROW BETWEEN STEPS ===== */
-        .step-arrow {
-            text-align: center;
-            color: #cc0000;
-            font-size: 1.8rem;
-            padding: 0.2rem 0;
-            opacity: 0.6;
-        }
-
-        .step-arrow i {
-            animation: bounceDown 2s infinite;
-        }
-
-        /* ===== SHOW DETAILS BUTTON - RIGHT ALIGNED ===== */
         .show-more-wrapper {
             text-align: right;
             margin-top: 2.5rem;
         }
-
         .show-more-wrapper .btn-show-more {
             display: inline-flex;
             align-items: center;
@@ -1090,30 +904,123 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
         }
-
         .show-more-wrapper .btn-show-more:hover {
             background: #990000;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4);
         }
-
         .show-more-wrapper .btn-show-more i {
             font-size: 1rem;
             transition: transform 0.3s ease;
         }
-
         .show-more-wrapper .btn-show-more:hover i {
             transform: translateX(4px);
+        }
+
+        /* ===== PROCESS SECTION (UPDATED WITH NEW IMAGES) ===== */
+        .process-section {
+            padding: 5rem 0;
+            background: transparent;
+        }
+        .process-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e8eaed;
+        }
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e8eaed;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .process-step:hover {
+            transform: translateX(6px);
+            border-color: #cc0000;
+            box-shadow: 0 4px 20px rgba(204, 0, 0, 0.08);
+            background: #ffffff;
+        }
+        .process-step .step-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: #cc0000;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+        }
+        .process-step .step-content {
+            flex: 1;
+        }
+        .process-step .step-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a2a1d;
+            margin-bottom: 0.2rem;
+        }
+        .process-step .step-content h4 i {
+            color: #cc0000;
+            margin-right: 0.5rem;
+        }
+        .process-step .step-content p {
+            color: #4a5a5a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .process-step .step-image {
+            flex-shrink: 0;
+            width: 280px;
+            height: 190px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #e8eaed;
+            transition: all 0.3s ease;
+        }
+        .process-step:hover .step-image {
+            border-color: #cc0000;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.15);
+        }
+        .process-step .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .step-arrow {
+            text-align: center;
+            color: #cc0000;
+            font-size: 1.8rem;
+            padding: 0.2rem 0;
+            opacity: 0.6;
+        }
+        .step-arrow i {
+            animation: bounceDown 2s infinite;
         }
 
         /* ===== VIDEO SECTION ===== */
         .video-section {
             padding: 5rem 0;
-            background: #ffffff;
+            background: transparent;
         }
-
         .video-wrapper {
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
             border-radius: 16px;
             overflow: hidden;
@@ -1123,17 +1030,15 @@
             background: #1a1a1a;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .video-wrapper:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 50px rgba(204, 0, 0, 0.15);
         }
-
         .video-wrapper .video-thumbnail {
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
-
         .video-wrapper .play-icon-overlay {
             position: absolute;
             top: 50%;
@@ -1153,35 +1058,29 @@
             z-index: 5;
             box-shadow: 0 4px 30px rgba(204, 0, 0, 0.4);
         }
-
         .video-wrapper .play-icon-overlay:hover {
             background: #cc0000;
             transform: translate(-50%, -50%) scale(1.1);
             box-shadow: 0 8px 40px rgba(204, 0, 0, 0.6);
         }
-
         .video-wrapper .play-icon-overlay i {
             margin-left: 6px;
         }
-
         .video-wrapper video {
             width: 100%;
             height: auto;
             display: block;
             background: #0a0a0a;
-            min-height: 400px;
-            max-height: 600px;
+            min-height: 500px;
+            max-height: 700px;
             object-fit: cover;
         }
-
         .video-wrapper video::-webkit-media-controls-play-button {
             display: none;
         }
-
         .video-wrapper video::-webkit-media-controls-start-playback-button {
             display: none;
         }
-
         .video-caption {
             padding: 1.2rem 2rem;
             display: flex;
@@ -1195,32 +1094,26 @@
             border-top: 1px solid #e8eaed;
             transition: background 0.3s ease;
         }
-
         .video-wrapper:hover .video-caption {
             background: #ffffff;
         }
-
         .video-caption .caption-left {
             display: flex;
             align-items: center;
             gap: 0.8rem;
         }
-
         .video-caption .caption-left i {
             color: #cc0000;
             font-size: 1.2rem;
         }
-
         .video-caption .caption-left span {
             font-weight: 500;
         }
-
         .video-caption .caption-right {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-
         .video-caption .caption-right .video-badge {
             background: #fce8e8;
             color: #cc0000;
@@ -1231,7 +1124,6 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .video-caption .caption-right .video-duration {
             color: #8a9a9a;
             font-size: 0.85rem;
@@ -1239,7 +1131,6 @@
             align-items: center;
             gap: 0.3rem;
         }
-
         .video-caption .caption-right .video-duration i {
             color: #cc0000;
             font-size: 0.8rem;
@@ -1251,7 +1142,6 @@
             color: #b0b8b8;
             padding: 3rem 0 1.5rem;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -1259,31 +1149,27 @@
             padding-bottom: 2rem;
             border-bottom: 1px solid #333333;
         }
-
         .footer h4 {
             color: #ffffff;
             font-size: 1rem;
             margin-bottom: 1rem;
         }
-
-        .footer p, .footer a {
+        .footer p,
+        .footer a {
             color: #b0b8b8;
             font-size: 0.9rem;
             text-decoration: none;
             display: block;
             margin-bottom: 0.4rem;
         }
-
         .footer a:hover {
             color: #cc0000;
         }
-
         .footer .social-links a {
             display: inline-block;
             margin-right: 1rem;
             font-size: 1.2rem;
         }
-
         .footer-bottom {
             padding-top: 1.5rem;
             display: flex;
@@ -1291,10 +1177,10 @@
             align-items: center;
             flex-wrap: wrap;
             font-size: 0.8rem;
-            color: #6a7a7a;
+            color: #6a7a6a;
         }
 
-        /* ===== ANIMATION KEYFRAMES ===== */
+        /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1305,7 +1191,6 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.4);
@@ -1317,11 +1202,9 @@
                 box-shadow: 0 0 0 0 rgba(204, 0, 0, 0);
             }
         }
-
         .fade-in {
             animation: fadeInUp 0.8s ease forwards;
         }
-
         .pulse-animation {
             animation: pulse 2s infinite;
         }
@@ -1344,7 +1227,7 @@
                 max-width: 100%;
             }
             .video-wrapper video {
-                min-height: 300px;
+                min-height: 350px;
                 max-height: 500px;
             }
             .process-step .step-image {
@@ -1359,11 +1242,9 @@
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            
             .hamburger {
                 display: flex;
             }
-            
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -1375,11 +1256,9 @@
                 margin-top: 0.5rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             }
-            
             .nav-menu.open {
                 display: flex;
             }
-            
             .nav-menu a {
                 color: #1a2a1d !important;
                 text-shadow: none !important;
@@ -1389,36 +1268,28 @@
                 border-bottom: 1px solid #e8eaed;
                 font-size: 0.9rem;
             }
-            
             .nav-menu a:last-child {
                 border-bottom: none;
             }
-            
             .nav-menu a:hover {
                 background: #f5f5f5;
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active {
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active::after {
                 display: none;
             }
-            
             .header.scrolled .nav-menu {
                 background: rgba(255, 255, 255, 0.98);
             }
-            
             .header.scrolled .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
             .header:not(.scrolled) .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
             .overview-grid {
                 grid-template-columns: 1fr;
             }
@@ -1455,7 +1326,7 @@
                 font-size: 2rem;
             }
             .video-wrapper video {
-                min-height: 250px;
+                min-height: 280px;
                 max-height: 400px;
             }
             .video-caption {
@@ -1467,7 +1338,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .industries-section {
                 padding: 1.5rem 1rem;
             }
@@ -1484,7 +1354,6 @@
             .industry-tag i {
                 font-size: 0.85rem;
             }
-
             .process-wrapper {
                 padding: 1.5rem;
             }
@@ -1508,7 +1377,6 @@
             .step-arrow {
                 font-size: 1.4rem;
             }
-
             .scroll-indicator {
                 display: none;
             }
@@ -1519,7 +1387,6 @@
                 width: 10px;
                 height: 10px;
             }
-
             .back-to-top {
                 bottom: 100px;
                 right: 20px;
@@ -1552,7 +1419,6 @@
                 width: 24px;
                 height: 2px;
             }
-            
             .whatsapp-float {
                 bottom: 30px;
                 width: 50px;
@@ -1569,7 +1435,7 @@
                 font-size: 1.6rem;
             }
             .video-wrapper video {
-                min-height: 200px;
+                min-height: 220px;
                 max-height: 300px;
             }
             .video-caption {
@@ -1591,7 +1457,6 @@
             .process-step .step-content p {
                 font-size: 0.85rem;
             }
-
             .hero-content h1 {
                 font-size: 2.2rem;
             }
@@ -1601,7 +1466,6 @@
             .hero .container {
                 padding-top: 9rem;
             }
-
             .back-to-top {
                 bottom: 90px;
                 right: 15px;
@@ -1629,7 +1493,7 @@
             }
             .logo-text .company {
                 font-size: 1rem;
-                text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             }
             .logo-text .reg {
                 font-size: 0.5rem;
@@ -1675,7 +1539,7 @@
                 font-size: 1.3rem;
             }
             .video-wrapper video {
-                min-height: 160px;
+                min-height: 180px;
                 max-height: 250px;
             }
             .video-caption {
@@ -1694,7 +1558,6 @@
             .video-caption .caption-right .video-duration {
                 font-size: 0.7rem;
             }
-
             .industries-header h3 {
                 font-size: 1.2rem;
                 flex-wrap: wrap;
@@ -1714,7 +1577,6 @@
             .industries-grid {
                 gap: 0.4rem 0.6rem;
             }
-
             .process-wrapper {
                 padding: 1rem;
             }
@@ -1733,7 +1595,6 @@
                 font-size: 1.2rem;
                 padding: 0;
             }
-
             .hero-indicators {
                 bottom: 1.5rem;
                 gap: 0.5rem;
@@ -1742,7 +1603,6 @@
                 width: 8px;
                 height: 8px;
             }
-
             .back-to-top {
                 bottom: 80px;
                 right: 12px;
@@ -1754,20 +1614,18 @@
     </style>
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION (TRANSPARENT) ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="header" id="mainHeader">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image">
+                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image" />
                 <div class="logo-text">
                     <span class="company">TEIK <span>GRANITE</span> QUARRY</span>
                     <span class="reg">196001000153 (3821-P)</span>
                 </div>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" class="active">Company</a>
@@ -1779,18 +1637,21 @@
         </div>
     </header>
 
-    <!-- ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== -->
+    <!-- ===== HERO BANNER WITH CAROUSEL (UPDATED IMAGES) ===== -->
     <section class="hero">
-        <!-- Carousel Slides -->
         <div class="hero-slides">
+            <!-- Slide 1: remains homepage_photo.png -->
             <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/1080?random=1');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/1080?random=2');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/1080?random=3');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/1080?random=4');"></div>
+            <!-- Slide 2: drill_and_Blast_photo -->
+            <div class="hero-slide" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
+            <!-- Slide 3: Crushing_plant_photo -->
+            <div class="hero-slide" style="background-image: url('Crushing_plant_photo.png');"></div>
+            <!-- Slide 4: safety_environment_photo -->
+            <div class="hero-slide" style="background-image: url('safety_environment_photo.png');"></div>
+            <!-- Slide 5: earth_materials_photo -->
+            <div class="hero-slide" style="background-image: url('earth_materials_photo.png');"></div>
         </div>
 
-        <!-- Slide Indicators -->
         <div class="hero-indicators">
             <span class="dot active" data-index="0"></span>
             <span class="dot" data-index="1"></span>
@@ -1802,32 +1663,30 @@
         <div class="container">
             <div class="hero-content">
                 <span class="hero-badge">SINCE 1960</span>
-                <h1>Building Malaysia <br><span class="highlight-red">Since 1960</span></h1>
-                <p><strong>Trusted Quarry Solutions for Infrastructure &amp; Construction</strong><br>
-                Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang and Malaysia.</p>
+                <h1>Building Malaysia <br /><span class="highlight-red">Since 1960</span></h1>
+                <p><strong>Trusted Quarry Solutions for Infrastructure &amp; Construction</strong><br />
+                    Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang and Malaysia.</p>
                 <a href="about.html" class="btn-hero">Learn More →</a>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <span>Scroll</span>
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" 
-       class="whatsapp-float" target="_blank">
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- ===== COMPANY OVERVIEW WITH ANIMATED STATS ===== -->
+    <!-- ===== COMPANY OVERVIEW ===== -->
     <section class="company-overview">
         <div class="container">
             <div class="overview-wrapper">
@@ -1867,7 +1726,7 @@
         </div>
     </section>
 
-     <!-- ===== GROUP OF COMPANIES (GRID LAYOUT) ===== -->
+    <!-- ===== GROUP OF COMPANIES ===== -->
     <section class="subsidiaries">
         <div class="container">
             <div class="section-title">
@@ -1876,7 +1735,6 @@
                 <p>Teik Granite Group comprises the following entities</p>
             </div>
             <div class="sub-grid">
-                <!-- 01 - Teik Granite Quarry Sdn Bhd (Head Office) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">01</span>
                     <span class="level-badge parent">Head Office</span>
@@ -1892,8 +1750,6 @@
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
-
-                <!-- 02 - Teik Granite Corporation Sdn Bhd (Corporate Office) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">02</span>
                     <span class="level-badge subsidiary">Corporate Office</span>
@@ -1909,8 +1765,6 @@
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
-
-                <!-- 03 - TGQ (Tanjung Bungah) Sdn Bhd (Quarry Site) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">03</span>
                     <span class="level-badge quarry">Quarry Site</span>
@@ -1927,8 +1781,6 @@
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
-
-                <!-- 04 - TGQ (Air Itam) Sdn Bhd (Quarry Site) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">04</span>
                     <span class="level-badge quarry">Quarry Site</span>
@@ -1946,8 +1798,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- ===== VIEW ON MAP BUTTON ===== -->
             <div class="map-btn-wrapper">
                 <a href="contact.html#find-us" class="btn-map">
                     <i class="fas fa-location-dot"></i> View Locations on Map
@@ -1965,9 +1815,8 @@
                 <p>Premium quarry materials for construction and infrastructure</p>
             </div>
             <div class="product-grid">
-                <!-- 1. Crushed Stone -->
                 <div class="product-card">
-                    <img src="granite_aggregate_photo.png" alt="Crushed Stone" class="product-image">
+                    <img src="crushed_stone.jpg" alt="Crushed Stone" class="product-image" />
                     <div class="product-body">
                         <h3>Crushed Stone</h3>
                         <div class="spec">3/4" &amp; 1 1/2" &amp; 3/8"</div>
@@ -1975,10 +1824,8 @@
                         <span class="product-tag">SIRIM Certified</span>
                     </div>
                 </div>
-
-                <!-- 2. Gravel (Natural) -->
                 <div class="product-card">
-                    <img src="sand_aggregate_photo.png" alt="Gravel Natural" class="product-image">
+                    <img src="gravel_stone.jpg" alt="Gravel Natural" class="product-image" />
                     <div class="product-body">
                         <h3>Gravel (Natural)</h3>
                         <div class="spec">Washed &amp; Screened</div>
@@ -1986,10 +1833,8 @@
                         <span class="product-tag">Premium Quality</span>
                     </div>
                 </div>
-
-                <!-- 3. Sand (Manufactured / M-Sand) -->
                 <div class="product-card">
-                    <img src="earth_materials_photo.png" alt="Manufactured Sand" class="product-image">
+                    <img src="M_Sand_Quarry_Dust.png" alt="Manufactured Sand" class="product-image" />
                     <div class="product-body">
                         <h3>Sand (Manufactured / M-Sand)</h3>
                         <div class="spec">M.Sand / Quarry Dust</div>
@@ -1997,10 +1842,8 @@
                         <span class="product-tag">Infrastructure Grade</span>
                     </div>
                 </div>
-
-                <!-- 4. Recycled Aggregate -->
                 <div class="product-card">
-                    <img src="dimension_stone_photo.png" alt="Recycled Aggregate" class="product-image">
+                    <img src="recycle_aggregate.jpg" alt="Recycled Aggregate" class="product-image" />
                     <div class="product-body">
                         <h3>Recycled Aggregate</h3>
                         <div class="spec">Eco-Friendly</div>
@@ -2010,69 +1853,28 @@
                 </div>
             </div>
 
-            <!-- ===== SUITABLE INDUSTRIES SECTION ===== -->
             <div class="industries-section">
                 <div class="industries-header">
                     <h3><i class="fas fa-industry"></i> Suitable Industries</h3>
                     <p>Our products are widely used in:</p>
                 </div>
                 <div class="industries-grid">
-                    <div class="industry-tag">
-                        <i class="fas fa-road"></i>
-                        <span>Highway Construction</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-road"></i>
-                        <span>Road Works</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-archway"></i>
-                        <span>Bridge</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-building"></i>
-                        <span>Commercial Buildings</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-home"></i>
-                        <span>Residential Housing</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-industry"></i>
-                        <span>Industrial Factories</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-project-diagram"></i>
-                        <span>Infrastructure Projects</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-water"></i>
-                        <span>Land Reclamation</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-tint"></i>
-                        <span>Drainage Works</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-tree"></i>
-                        <span>Landscaping</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-truck"></i>
-                        <span>Ready-Mix Concrete Plants</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-oil-can"></i>
-                        <span>Asphalt Plants</span>
-                    </div>
-                    <div class="industry-tag">
-                        <i class="fas fa-hard-hat"></i>
-                        <span>Civil Engineering Projects</span>
-                    </div>
+                    <div class="industry-tag"><i class="fas fa-road"></i><span>Highway Construction</span></div>
+                    <div class="industry-tag"><i class="fas fa-road"></i><span>Road Works</span></div>
+                    <div class="industry-tag"><i class="fas fa-archway"></i><span>Bridge</span></div>
+                    <div class="industry-tag"><i class="fas fa-building"></i><span>Commercial Buildings</span></div>
+                    <div class="industry-tag"><i class="fas fa-home"></i><span>Residential Housing</span></div>
+                    <div class="industry-tag"><i class="fas fa-industry"></i><span>Industrial Factories</span></div>
+                    <div class="industry-tag"><i class="fas fa-project-diagram"></i><span>Infrastructure Projects</span></div>
+                    <div class="industry-tag"><i class="fas fa-water"></i><span>Land Reclamation</span></div>
+                    <div class="industry-tag"><i class="fas fa-tint"></i><span>Drainage Works</span></div>
+                    <div class="industry-tag"><i class="fas fa-tree"></i><span>Landscaping</span></div>
+                    <div class="industry-tag"><i class="fas fa-truck"></i><span>Ready-Mix Concrete Plants</span></div>
+                    <div class="industry-tag"><i class="fas fa-oil-can"></i><span>Asphalt Plants</span></div>
+                    <div class="industry-tag"><i class="fas fa-hard-hat"></i><span>Civil Engineering Projects</span></div>
                 </div>
             </div>
 
-            <!-- ===== SHOW PRODUCT DETAILS BUTTON - RIGHT ALIGNED ===== -->
             <div class="show-more-wrapper">
                 <a href="products.html" class="btn-show-more">
                     Show Product Details <i class="fas fa-arrow-right"></i>
@@ -2081,7 +1883,7 @@
         </div>
     </section>
 
-    <!-- ===== PROCESS SECTION (FROM ROCK TO RELIABLE CONSTRUCTION MATERIALS) ===== -->
+    <!-- ===== PROCESS SECTION (UPDATED WITH NEW IMAGES) ===== -->
     <section class="process-section">
         <div class="container">
             <div class="process-wrapper">
@@ -2090,7 +1892,6 @@
                     <div class="line"></div>
                     <p>Our quarry process ensures quality at every step</p>
                 </div>
-
                 <div class="process-steps">
                     <!-- Step 1: Drill & Blast -->
                     <div class="process-step">
@@ -2100,7 +1901,7 @@
                             <p>Controlled blasting to extract quality granite</p>
                         </div>
                         <div class="step-image">
-                            <img src="https://picsum.photos/400/250?random=20" alt="Drill & Blast">
+                            <img src="drill_and_Blast_photo.jpg" alt="Drill & Blast" />
                         </div>
                     </div>
 
@@ -2114,7 +1915,7 @@
                             <p>Hydraulic excavators remove blasted rock safely and efficiently</p>
                         </div>
                         <div class="step-image">
-                            <img src="https://picsum.photos/400/250?random=21" alt="Excavate">
+                            <img src="excavate.jpg" alt="Excavate" />
                         </div>
                     </div>
 
@@ -2128,7 +1929,7 @@
                             <p>Heavy-duty dump trucks transport granite to the crushing plant</p>
                         </div>
                         <div class="step-image">
-                            <img src="https://picsum.photos/400/250?random=22" alt="Load & Haul">
+                            <img src="transport_fleet_photo.png" alt="Load & Haul" />
                         </div>
                     </div>
 
@@ -2142,7 +1943,7 @@
                             <p>Primary and secondary crushing produce different aggregate sizes</p>
                         </div>
                         <div class="step-image">
-                            <img src="https://picsum.photos/400/250?random=23" alt="Crushing Plant">
+                            <img src="crushing_plant.png" alt="Crushing Plant" />
                         </div>
                     </div>
 
@@ -2156,7 +1957,7 @@
                             <p>Materials are separated according to required specifications</p>
                         </div>
                         <div class="step-image">
-                            <img src="https://picsum.photos/400/250?random=24" alt="Screening">
+                            <img src="screening.jpg" alt="Screening" />
                         </div>
                     </div>
 
@@ -2170,7 +1971,7 @@
                             <p>Products are stored and supplied promptly to customers</p>
                         </div>
                         <div class="step-image">
-                            <img src="https://picsum.photos/400/250?random=25" alt="Stockpile & Delivery">
+                            <img src="stockpile_delivery.jpg" alt="Stockpile & Delivery" />
                         </div>
                     </div>
                 </div>
@@ -2178,7 +1979,7 @@
         </div>
     </section>
 
-    <!-- ===== VIDEO SECTION ===== -->
+    <!-- ===== VIDEO SECTION - AUTOPLAY & FULL SCREEN SIZE ===== -->
     <section class="video-section">
         <div class="container">
             <div class="section-title">
@@ -2191,8 +1992,8 @@
                     <div class="play-icon-overlay pulse-animation" id="playButton">
                         <i class="fas fa-play"></i>
                     </div>
-                    <video id="quarryVideo" controls playsinline>
-                        <source src="explotion_video.mp4" type="video/mp4">
+                    <video id="quarryVideo" controls playsinline autoplay muted loop>
+                        <source src="explotion_video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -2239,11 +2040,6 @@
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                     <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
                     <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
@@ -2251,14 +2047,13 @@
             </div>
             <div class="footer-bottom">
                 <div>© 2026 Teik Granite Quarry Sdn Bhd (3821-P). All Rights Reserved.</div>
-                <div>Built with <i class="fas fa-heart" style="color: #cc0000;"></i></div>
             </div>
         </div>
     </footer>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ===== Scroll Header Effect =====
+        // ===== Scroll Header =====
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
@@ -2268,9 +2063,8 @@
             }
         });
 
-        // ===== Back to Top Button =====
+        // ===== Back to Top =====
         const backToTopBtn = document.getElementById('backToTop');
-
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
                 backToTopBtn.classList.add('show');
@@ -2278,15 +2072,11 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== Hamburger Menu Toggle =====
+        // ===== Hamburger =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
@@ -2318,12 +2108,8 @@
             const intervalTime = 5000;
 
             function goToSlide(index) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
                 currentSlide = index;
@@ -2331,9 +2117,7 @@
 
             function nextSlide() {
                 let next = currentSlide + 1;
-                if (next >= slides.length) {
-                    next = 0;
-                }
+                if (next >= slides.length) next = 0;
                 goToSlide(next);
             }
 
@@ -2355,75 +2139,56 @@
 
             startCarousel();
 
-            // ===== Counter Animation (Smooth Ease-Out) =====
+            // ===== Counter Animation =====
             const counters = document.querySelectorAll('.counter');
-            
             const animateCounter = (counter) => {
                 const target = parseInt(counter.getAttribute('data-target'));
                 const duration = 2000;
                 const startTime = performance.now();
-                
                 const updateCounter = (currentTime) => {
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / duration, 1);
-                    
-                    // Ease-out cubic: smooth deceleration, reaches exactly target
                     const eased = 1 - Math.pow(1 - progress, 3);
                     const current = Math.round(eased * target);
-                    
                     counter.textContent = current;
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
+                    if (progress < 1) requestAnimationFrame(updateCounter);
+                    else counter.textContent = target;
                 };
-                
                 requestAnimationFrame(updateCounter);
             };
-            
+
             const textCounters = document.querySelectorAll('.counter-text');
-            
             const animateTextCounter = (element) => {
                 const text = element.getAttribute('data-text');
                 const letters = text.split('');
                 let currentIndex = 0;
-                
                 const updateText = () => {
                     if (currentIndex <= letters.length) {
                         element.textContent = letters.slice(0, currentIndex).join('');
                         currentIndex++;
-                        if (currentIndex <= letters.length) {
-                            setTimeout(updateText, 80);
-                        }
+                        if (currentIndex <= letters.length) setTimeout(updateText, 80);
                     }
                 };
-                
                 updateText();
             };
-            
+
             const counterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const counter = entry.target;
-                        if (counter.classList.contains('counter')) {
-                            animateCounter(counter);
-                        } else if (counter.classList.contains('counter-text')) {
-                            animateTextCounter(counter);
-                        }
+                        if (counter.classList.contains('counter')) animateCounter(counter);
+                        else if (counter.classList.contains('counter-text')) animateTextCounter(counter);
                         counterObserver.unobserve(counter);
                     }
                 });
             }, { threshold: 0.3 });
-            
+
             counters.forEach(counter => counterObserver.observe(counter));
             textCounters.forEach(counter => counterObserver.observe(counter));
 
             // ===== Video Duration =====
             const video = document.getElementById('quarryVideo');
             const durationDisplay = document.getElementById('videoDuration');
-            
             if (video && durationDisplay) {
                 video.addEventListener('loadedmetadata', function() {
                     const minutes = Math.floor(video.duration / 60);
@@ -2432,10 +2197,9 @@
                 });
             }
 
-            // ===== Play Button Overlay =====
+            // ===== Play Button =====
             const playButton = document.getElementById('playButton');
             const videoElement = document.getElementById('quarryVideo');
-            
             if (playButton && videoElement) {
                 playButton.addEventListener('click', function() {
                     if (videoElement.paused) {
@@ -2446,43 +2210,28 @@
                         playButton.style.display = 'flex';
                     }
                 });
-
-                videoElement.addEventListener('play', function() {
-                    playButton.style.display = 'none';
-                });
-
-                videoElement.addEventListener('pause', function() {
-                    playButton.style.display = 'flex';
-                });
-
-                videoElement.addEventListener('ended', function() {
-                    playButton.style.display = 'flex';
-                });
+                videoElement.addEventListener('play', function() { playButton.style.display = 'none'; });
+                videoElement.addEventListener('pause', function() { playButton.style.display = 'flex'; });
+                videoElement.addEventListener('ended', function() { playButton.style.display = 'flex'; });
             }
         });
 
-        // ===== Dropdown Toggle Function =====
+        // ===== Dropdown Toggle =====
         function toggleDropdown(element) {
             const details = element.querySelector('.dropdown-details');
             const arrow = element.querySelector('.dropdown-arrow i');
-            
             const allDetails = document.querySelectorAll('.dropdown-details');
             const allArrows = document.querySelectorAll('.dropdown-arrow i');
-            
+
             allDetails.forEach((detail, index) => {
                 if (detail !== details && detail.classList.contains('open')) {
                     detail.classList.remove('open');
                     allArrows[index].className = 'fas fa-chevron-down';
                 }
             });
-            
+
             details.classList.toggle('open');
-            
-            if (details.classList.contains('open')) {
-                arrow.className = 'fas fa-chevron-up';
-            } else {
-                arrow.className = 'fas fa-chevron-down';
-            }
+            arrow.className = details.classList.contains('open') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
         }
     </script>
 </body>

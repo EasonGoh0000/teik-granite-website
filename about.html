@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="company_logo.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="company_logo.ico" />
     <title>About · Teik Granite Quarry Sdn Bhd</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ===== SAME STYLES AS INDEX.HTML ===== */
+        /* ===== ORIGINAL THEME (SAME AS INDEX) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -16,9 +16,39 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f0f2f5;
+            background: #e8e4e0;
             color: #1a1a2e;
             line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: url('cracked-stone-stucco.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.5;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .container {
@@ -27,7 +57,7 @@
             padding: 0 2rem;
         }
 
-        /* ===== HEADER / NAVIGATION (TRANSPARENT) ===== */
+        /* ===== HEADER ===== */
         .header {
             background: transparent;
             border-bottom: none;
@@ -81,13 +111,13 @@
             letter-spacing: 0.5px;
             transition: color 0.4s ease;
             text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .company span {
             color: #ffffff;
             transition: color 0.4s ease;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .reg {
@@ -96,25 +126,23 @@
             font-weight: 500;
             letter-spacing: 0.3px;
             font-family: monospace;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         .header.scrolled .logo-text .company {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .company span {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .reg {
             color: #cc0000;
             text-shadow: none;
         }
 
-        /* ===== HAMBURGER MENU (MOBILE) ===== */
+        /* ===== HAMBURGER ===== */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -125,7 +153,6 @@
             background: none;
             border: none;
         }
-
         .hamburger span {
             display: block;
             width: 28px;
@@ -134,19 +161,15 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
-
         .header.scrolled .hamburger span {
             background: #1a2a1d;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
@@ -158,7 +181,6 @@
             font-weight: 600;
             align-items: center;
         }
-
         .nav-menu a {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.9);
@@ -168,17 +190,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             position: relative;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
         }
-
         .nav-menu a:hover {
             color: #ff9999;
         }
-
         .nav-menu a.active {
             color: #ff9999;
         }
-
         .nav-menu a.active::after {
             content: '';
             position: absolute;
@@ -189,25 +208,21 @@
             background: #ff9999;
             transition: background 0.4s ease;
         }
-
         .header.scrolled .nav-menu a {
             color: #1a2a1d;
             text-shadow: none;
         }
-
         .header.scrolled .nav-menu a:hover {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active::after {
             background: #cc0000;
         }
 
-        /* ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== */
+        /* ===== HERO ===== */
         .hero {
             position: relative;
             min-height: 50vh;
@@ -215,7 +230,6 @@
             align-items: center;
             overflow: hidden;
         }
-
         .hero-slides {
             position: absolute;
             top: 0;
@@ -224,7 +238,6 @@
             height: 100%;
             z-index: 0;
         }
-
         .hero-slide {
             position: absolute;
             top: 0;
@@ -238,12 +251,10 @@
             transition: opacity 1.2s ease-in-out;
             z-index: 1;
         }
-
         .hero-slide.active {
             opacity: 1;
             z-index: 2;
         }
-
         .hero-slide::after {
             content: '';
             position: absolute;
@@ -255,7 +266,6 @@
             z-index: 1;
         }
 
-        /* ===== HERO SLIDE INDICATORS ===== */
         .hero-indicators {
             position: absolute;
             bottom: 2rem;
@@ -265,7 +275,6 @@
             display: flex;
             gap: 0.8rem;
         }
-
         .hero-indicators .dot {
             width: 12px;
             height: 12px;
@@ -275,19 +284,16 @@
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
         .hero-indicators .dot.active {
             background: #cc0000;
             border-color: #cc0000;
             transform: scale(1.2);
             box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
         }
-
         .hero-indicators .dot:hover {
             background: rgba(255, 255, 255, 0.8);
             transform: scale(1.1);
         }
-
         .hero-indicators .dot.active:hover {
             background: #cc0000;
             transform: scale(1.2);
@@ -300,30 +306,27 @@
             padding-top: 8rem;
             padding-bottom: 4rem;
         }
-
         .hero-content {
             max-width: 60%;
             position: relative;
             z-index: 5;
         }
-
         .hero-content h1 {
             font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             color: white;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             margin-bottom: 0.5rem;
         }
-
         .hero-content p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             max-width: 600px;
         }
 
-        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        /* ===== FLOATING WHATSAPP ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -342,13 +345,12 @@
             transition: 0.3s;
             text-decoration: none;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
-        /* ===== BACK TO TOP BUTTON ===== */
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 110px;
@@ -372,36 +374,31 @@
             justify-content: center;
             text-decoration: none;
         }
-
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
         .back-to-top:hover {
             background: #990000;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
         }
-
         .back-to-top i {
             font-size: 1.3rem;
         }
 
-        /* ===== SECTION TITLE (SAME FORMAT) ===== */
+        /* ===== SECTION TITLE ===== */
         .section-title {
             text-align: center;
             margin-bottom: 2.5rem;
         }
-
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 800;
             color: #1a2a1d;
             letter-spacing: -0.5px;
         }
-
         .section-title .line {
             width: 60px;
             height: 4px;
@@ -409,7 +406,6 @@
             margin: 0.5rem auto;
             border-radius: 2px;
         }
-
         .section-title p {
             color: #5a6a6a;
             font-size: 1.1rem;
@@ -417,10 +413,9 @@
 
         /* ===== ABOUT CONTENT ===== */
         .about-content {
-            padding: 4rem 0 2rem;
-            background: #f0f2f5;
+            padding: 5rem 0;
+            background: transparent;
         }
-
         .about-wrapper {
             background: #ffffff;
             border-radius: 16px;
@@ -428,7 +423,6 @@
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
         }
-
         .about-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -436,24 +430,20 @@
             max-width: 900px;
             margin: 0 auto;
         }
-
         .about-text p {
             color: #2a3a3a;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             font-size: 1.05rem;
             line-height: 1.8;
         }
-
         .about-text .highlight {
             color: #cc0000;
             font-weight: 600;
         }
-
         .about-text ul {
             list-style: none;
             margin: 1.5rem 0;
         }
-
         .about-text ul li {
             padding: 0.5rem 0;
             border-bottom: 1px solid #e8eaed;
@@ -462,49 +452,46 @@
             align-items: center;
             gap: 0.8rem;
         }
-
         .about-text ul li i {
             color: #cc0000;
             width: 1.5rem;
         }
 
-        /* ===== MISSION, VISION, TIMELINE & WHY CHOOSE US (COMBINED CONTAINER) ===== */
+        /* ===== MISSION, VISION, TIMELINE & WHY CHOOSE US ===== */
         .mission-timeline-section {
-            padding: 0 0 4rem;
-            background: #f0f2f5;
+            padding: 5rem 0;
+            background: transparent;
         }
-
         .mission-timeline-wrapper {
             background: #ffffff;
             border-radius: 16px;
-            padding: 2.5rem 3rem;
+            padding: 3rem;
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
         }
 
-        /* ===== MISSION & VISION ===== */
         .mission-vision-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
             margin-bottom: 2.5rem;
         }
-
-        .mission-box, .vision-box {
+        .mission-box,
+        .vision-box {
             background: #f5f6f8;
             padding: 1.5rem 1.8rem;
             border-radius: 12px;
             border-left: 4px solid #cc0000;
             transition: 0.3s;
         }
-
-        .mission-box:hover, .vision-box:hover {
+        .mission-box:hover,
+        .vision-box:hover {
             background: #ffffff;
             box-shadow: 0 4px 20px rgba(204, 0, 0, 0.08);
             transform: translateY(-2px);
         }
-
-        .mission-box h4, .vision-box h4 {
+        .mission-box h4,
+        .vision-box h4 {
             font-size: 1rem;
             font-weight: 700;
             color: #1a2a1d;
@@ -513,20 +500,19 @@
             align-items: center;
             gap: 0.5rem;
         }
-
-        .mission-box h4 i, .vision-box h4 i {
+        .mission-box h4 i,
+        .vision-box h4 i {
             color: #cc0000;
             font-size: 1rem;
         }
-
-        .mission-box p, .vision-box p {
+        .mission-box p,
+        .vision-box p {
             color: #2a3a3a;
             font-size: 0.95rem;
             line-height: 1.7;
             margin-bottom: 0;
         }
 
-        /* ===== DIVIDER ===== */
         .section-divider {
             width: 100%;
             height: 1px;
@@ -534,7 +520,6 @@
             margin: 2rem 0;
         }
 
-        /* ===== TIMELINE & WHY CHOOSE US GRID ===== */
         .timeline-why-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -542,7 +527,6 @@
             align-items: start;
         }
 
-        /* ===== TIMELINE ===== */
         .timeline-section h4 {
             font-size: 1rem;
             font-weight: 700;
@@ -552,11 +536,9 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .timeline-section h4 i {
             color: #cc0000;
         }
-
         .timeline {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -564,7 +546,6 @@
             position: relative;
             padding: 0.5rem 0;
         }
-
         .timeline::before {
             content: '';
             position: absolute;
@@ -575,12 +556,10 @@
             background: #cc0000;
             border-radius: 2px;
         }
-
         .timeline-item {
             text-align: center;
             position: relative;
         }
-
         .timeline-item .dot {
             width: 14px;
             height: 14px;
@@ -593,14 +572,12 @@
             position: relative;
             z-index: 2;
         }
-
         .timeline-item .year {
             display: block;
             font-weight: 800;
             color: #1a2a1d;
             font-size: 0.8rem;
         }
-
         .timeline-item .event {
             display: block;
             color: #5a6a6a;
@@ -609,7 +586,6 @@
             margin-top: 0.1rem;
         }
 
-        /* ===== WHY CHOOSE US ===== */
         .why-choose-us h4 {
             font-size: 1rem;
             font-weight: 700;
@@ -619,17 +595,14 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .why-choose-us h4 i {
             color: #cc0000;
         }
-
         .why-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.3rem 1.5rem;
         }
-
         .why-grid .why-item {
             display: flex;
             align-items: center;
@@ -638,18 +611,16 @@
             font-size: 0.85rem;
             padding: 0.3rem 0;
         }
-
         .why-grid .why-item i {
             color: #cc0000;
             font-size: 0.8rem;
         }
 
-        /* ===== ESG / SUSTAINABILITY WITH SDG ===== */
+        /* ===== ESG / SUSTAINABILITY WITH BACKGROUND IMAGES ===== */
         .esg-section {
-            padding: 4rem 0;
-            background: #f0f2f5;
+            padding: 5rem 0;
+            background: transparent;
         }
-
         .esg-wrapper {
             background: #ffffff;
             border-radius: 16px;
@@ -657,27 +628,78 @@
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
         }
-
         .esg-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
+        /* ESG Cards with Background Images */
         .esg-card {
             text-align: center;
             padding: 2rem;
-            background: #f5f6f8;
             border-radius: 12px;
             border: 1px solid #e8eaed;
             transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Environmental Card */
+        .esg-card:nth-child(1) {
+            background-image: url('environmental.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Safety Card */
+        .esg-card:nth-child(2) {
+            background-image: url('safety.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Community Card */
+        .esg-card:nth-child(3) {
+            background-image: url('safety_environment_photo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Overlay for better text readability */
+        .esg-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        /* Content above overlay */
+        .esg-card .esg-icon,
+        .esg-card .sdg-badge,
+        .esg-card h3,
+        .esg-card p,
+        .esg-card .sdg-list {
+            position: relative;
+            z-index: 2;
         }
 
         .esg-card:hover {
             transform: translateY(-4px);
             border-color: #cc0000;
             box-shadow: 0 12px 30px rgba(204, 0, 0, 0.08);
-            background: #ffffff;
+        }
+
+        .esg-card:hover::before {
+            background: rgba(255, 255, 255, 0.92);
         }
 
         .esg-card .esg-icon {
@@ -685,7 +707,6 @@
             color: #cc0000;
             margin-bottom: 0.5rem;
         }
-
         .esg-card .sdg-badge {
             display: inline-block;
             background: #cc0000;
@@ -698,19 +719,16 @@
             letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
         }
-
         .esg-card h3 {
             font-weight: 700;
             color: #1a2a1d;
             margin-bottom: 0.5rem;
         }
-
         .esg-card p {
             color: #4a5a5a;
             font-size: 0.95rem;
             line-height: 1.7;
         }
-
         .esg-card .sdg-list {
             margin-top: 1rem;
             display: flex;
@@ -718,7 +736,6 @@
             justify-content: center;
             gap: 0.5rem;
         }
-
         .esg-card .sdg-list .sdg-tag {
             background: #fce8e8;
             color: #cc0000;
@@ -729,39 +746,35 @@
             border: 1px solid #fce8e8;
         }
 
-        /* ===== SUBSIDIARIES SECTION (SAME AS INDEX.HTML) ===== */
+        /* ===== SUBSIDIARIES ===== */
         .subsidiaries-section {
-            background: #ffffff;
-            padding: 4rem 0;
-            border-top: 1px solid #e0e2e5;
-            border-bottom: 1px solid #e0e2e5;
+            background: transparent;
+            padding: 5rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-
         .sub-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
-
         .sub-item {
             text-align: center;
             padding: 1.5rem 1rem;
             border: 1px solid #e0e2e5;
             border-radius: 12px;
             transition: all 0.3s ease;
-            background: #f8f9fa;
+            background: #ffffff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             cursor: pointer;
             position: relative;
         }
-
         .sub-item:hover {
             border-color: #cc0000;
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(204, 0, 0, 0.08);
             background: #ffffff;
         }
-
         .sub-item .sub-number {
             font-size: 0.65rem;
             color: #cc0000;
@@ -772,7 +785,6 @@
             display: inline-block;
             margin-bottom: 0.4rem;
         }
-
         .sub-item .level-badge {
             display: inline-block;
             font-size: 0.55rem;
@@ -783,29 +795,24 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .sub-item .level-badge.parent {
             background: #cc0000;
             color: white;
         }
-
         .sub-item .level-badge.subsidiary {
             background: #fce8e8;
             color: #cc0000;
         }
-
         .sub-item .level-badge.quarry {
             background: #e8eaed;
             color: #5a6a6a;
         }
-
         .sub-item i {
             font-size: 1.6rem;
             color: #cc0000;
             margin-bottom: 0.4rem;
             display: block;
         }
-
         .sub-item h4 {
             font-weight: 700;
             color: #1a2a1d;
@@ -813,15 +820,12 @@
             margin-bottom: 0.2rem;
             line-height: 1.3;
         }
-
         .sub-item .reg {
             color: #5a6a6a;
             font-size: 0.7rem;
             font-family: monospace;
             letter-spacing: 0.3px;
         }
-
-        /* ===== DROPDOWN DETAILS ===== */
         .sub-item .dropdown-arrow {
             display: block;
             margin-top: 0.5rem;
@@ -829,13 +833,11 @@
             font-size: 0.8rem;
             transition: transform 0.3s ease;
         }
-
         .sub-item .dropdown-arrow i {
             display: inline;
             font-size: 0.8rem;
             margin: 0;
         }
-
         .sub-item .dropdown-details {
             max-height: 0;
             overflow: hidden;
@@ -846,19 +848,16 @@
             color: #4a5a5a;
             line-height: 1.8;
         }
-
         .sub-item .dropdown-details.open {
             max-height: 400px;
             padding: 0.8rem 0.5rem 0.3rem;
         }
-
         .sub-item .dropdown-details p {
             margin: 0.2rem 0;
             display: flex;
             align-items: flex-start;
             gap: 0.5rem;
         }
-
         .sub-item .dropdown-details i {
             font-size: 0.7rem;
             color: #cc0000;
@@ -866,19 +865,16 @@
             width: 1.2rem;
             margin: 0;
         }
-
         .sub-item .dropdown-details .label {
             font-weight: 600;
             color: #1a2a1d;
             min-width: 3.5rem;
         }
 
-        /* ===== VIEW ON MAP BUTTON ===== */
         .map-btn-wrapper {
             text-align: right;
             margin-top: 2rem;
         }
-
         .map-btn-wrapper .btn-map {
             display: inline-flex;
             align-items: center;
@@ -895,13 +891,11 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
         }
-
         .map-btn-wrapper .btn-map:hover {
             background: #990000;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4);
         }
-
         .map-btn-wrapper .btn-map i {
             font-size: 1.1rem;
         }
@@ -912,7 +906,6 @@
             color: #b0b8b8;
             padding: 3rem 0 1.5rem;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -920,31 +913,27 @@
             padding-bottom: 2rem;
             border-bottom: 1px solid #333333;
         }
-
         .footer h4 {
             color: #ffffff;
             font-size: 1rem;
             margin-bottom: 1rem;
         }
-
-        .footer p, .footer a {
+        .footer p,
+        .footer a {
             color: #b0b8b8;
             font-size: 0.9rem;
             text-decoration: none;
             display: block;
             margin-bottom: 0.4rem;
         }
-
         .footer a:hover {
             color: #cc0000;
         }
-
         .footer .social-links a {
             display: inline-block;
             margin-right: 1rem;
             font-size: 1.2rem;
         }
-
         .footer-bottom {
             padding-top: 1.5rem;
             display: flex;
@@ -977,11 +966,9 @@
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            
             .hamburger {
                 display: flex;
             }
-            
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -993,11 +980,9 @@
                 margin-top: 0.5rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             }
-            
             .nav-menu.open {
                 display: flex;
             }
-            
             .nav-menu a {
                 color: #1a2a1d !important;
                 text-shadow: none !important;
@@ -1007,36 +992,29 @@
                 border-bottom: 1px solid #e8eaed;
                 font-size: 0.9rem;
             }
-            
             .nav-menu a:last-child {
                 border-bottom: none;
             }
-            
             .nav-menu a:hover {
                 background: #f5f5f5;
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active {
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active::after {
                 display: none;
             }
-            
             .header.scrolled .nav-menu {
                 background: rgba(255, 255, 255, 0.98);
             }
-            
             .header.scrolled .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
             .header:not(.scrolled) .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
+
             .about-grid {
                 grid-template-columns: 1fr;
             }
@@ -1065,6 +1043,12 @@
             .hero-content p {
                 font-size: 1rem;
             }
+            .about-wrapper {
+                padding: 1.5rem;
+            }
+            .mission-timeline-wrapper {
+                padding: 1.5rem;
+            }
             .esg-wrapper {
                 padding: 1.5rem;
             }
@@ -1091,9 +1075,6 @@
             }
             .timeline-item {
                 min-width: 70px;
-            }
-            .mission-timeline-wrapper {
-                padding: 1.5rem;
             }
             .section-title h2 {
                 font-size: 2rem;
@@ -1158,6 +1139,18 @@
                 height: 40px;
                 font-size: 1rem;
             }
+            .about-content {
+                padding: 4rem 0;
+            }
+            .mission-timeline-section {
+                padding: 4rem 0;
+            }
+            .esg-section {
+                padding: 4rem 0;
+            }
+            .subsidiaries-section {
+                padding: 4rem 0;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1175,12 +1168,18 @@
             }
             .logo-text .company {
                 font-size: 1rem;
-                text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             }
             .logo-text .reg {
                 font-size: 0.5rem;
             }
             .about-wrapper {
+                padding: 1.5rem;
+            }
+            .mission-timeline-wrapper {
+                padding: 1rem;
+            }
+            .esg-wrapper {
                 padding: 1.5rem;
             }
             .esg-card {
@@ -1222,9 +1221,6 @@
                 width: 10px;
                 height: 10px;
             }
-            .mission-timeline-wrapper {
-                padding: 1rem;
-            }
             .section-title h2 {
                 font-size: 1.5rem;
             }
@@ -1256,24 +1252,34 @@
                 height: 36px;
                 font-size: 0.85rem;
             }
+            .about-content {
+                padding: 3rem 0;
+            }
+            .mission-timeline-section {
+                padding: 3rem 0;
+            }
+            .esg-section {
+                padding: 3rem 0;
+            }
+            .subsidiaries-section {
+                padding: 3rem 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION (TRANSPARENT) ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="header" id="mainHeader">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image">
+                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image" />
                 <div class="logo-text">
                     <span class="company">TEIK <span>GRANITE</span> QUARRY</span>
                     <span class="reg">196001000153 (3821-P)</span>
                 </div>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html">Company</a>
@@ -1285,18 +1291,21 @@
         </div>
     </header>
 
-    <!-- ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== -->
+    <!-- ===== HERO BANNER WITH UPDATED CAROUSEL IMAGES ===== -->
     <section class="hero">
-        <!-- Carousel Slides -->
         <div class="hero-slides">
-            <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=10');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=11');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=12');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=13');"></div>
+            <!-- Slide 1: homepage_photo.png -->
+            <div class="hero-slide active" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
+            <!-- Slide 2: drill_and_Blast_photo -->
+            <div class="hero-slide" style="background-image: url('homepage_photo.png');"></div>
+            <!-- Slide 3: Crushing_plant_photo -->
+            <div class="hero-slide" style="background-image: url('Crushing_plant_photo.png');"></div>
+            <!-- Slide 4: safety_environment_photo -->
+            <div class="hero-slide" style="background-image: url('safety_environment_photo.png');"></div>
+            <!-- Slide 5: earth_materials_photo -->
+            <div class="hero-slide" style="background-image: url('earth_materials_photo.png');"></div>
         </div>
 
-        <!-- Slide Indicators -->
         <div class="hero-indicators">
             <span class="dot active" data-index="0"></span>
             <span class="dot" data-index="1"></span>
@@ -1313,29 +1322,26 @@
         </div>
     </section>
 
-    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" 
-       class="whatsapp-float" target="_blank">
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- ===== COMPANY HISTORY (WITH SECTION TITLE FORMAT) ===== -->
+    <!-- ===== COMPANY HISTORY ===== -->
     <section class="about-content">
         <div class="container">
             <div class="about-wrapper">
                 <div class="about-grid">
                     <div class="about-text">
-                        <!-- ===== COMPANY HISTORY TITLE (CENTERED - SAME SIZE AS MISSION & VISION) ===== -->
                         <div class="section-title" style="margin-bottom: 1.5rem;">
                             <h2 style="font-size: 2.5rem;">Company History</h2>
                             <div class="line" style="margin: 0.5rem auto;"></div>
                         </div>
-
                         <p><span class="highlight">Teik Granite Quarry Sdn Bhd</span> was established on <strong>20 June 1960</strong> and is a reputable quarry and mining company based in <strong>George Town, Penang</strong>, Malaysia. We are registered under the registration number <strong>196001000153 (3821-P)</strong>.</p>
                         <p>We operate in the <strong>quarry and mining industry</strong>, specializing in:</p>
                         <ul>
@@ -1351,18 +1357,16 @@
         </div>
     </section>
 
-    <!-- ===== MISSION, VISION, TIMELINE & WHY CHOOSE US (COMBINED CONTAINER) ===== -->
+    <!-- ===== MISSION, VISION, TIMELINE & WHY CHOOSE US ===== -->
     <section class="mission-timeline-section">
         <div class="container">
             <div class="mission-timeline-wrapper">
-                <!-- ===== MISSION & VISION TITLE (SAME FORMAT AS ESG) ===== -->
                 <div class="section-title">
                     <h2>Our Mission &amp; Vision</h2>
                     <div class="line"></div>
                     <p>Driving excellence through purpose and commitment</p>
                 </div>
 
-                <!-- MISSION & VISION -->
                 <div class="mission-vision-grid">
                     <div class="mission-box">
                         <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
@@ -1374,12 +1378,9 @@
                     </div>
                 </div>
 
-                <!-- DIVIDER -->
                 <div class="section-divider"></div>
 
-                <!-- TIMELINE & WHY CHOOSE US -->
                 <div class="timeline-why-grid">
-                    <!-- TIMELINE -->
                     <div class="timeline-section">
                         <h4><i class="fas fa-history"></i> Our Journey</h4>
                         <div class="timeline">
@@ -1411,7 +1412,6 @@
                         </div>
                     </div>
 
-                    <!-- WHY CHOOSE US -->
                     <div class="why-choose-us">
                         <h4><i class="fas fa-star"></i> Why Choose Teik Granite?</h4>
                         <div class="why-grid">
@@ -1428,7 +1428,7 @@
         </div>
     </section>
 
-    <!-- ===== ESG / SUSTAINABILITY SECTION WITH SDG ===== -->
+    <!-- ===== ESG / SUSTAINABILITY WITH BACKGROUND IMAGES ===== -->
     <section class="esg-section">
         <div class="container">
             <div class="esg-wrapper">
@@ -1438,7 +1438,7 @@
                     <p>Building a greener future through responsible quarrying</p>
                 </div>
                 <div class="esg-grid">
-                    <!-- Environmental -->
+                    <!-- Environmental Card -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-leaf"></i></div>
                         <span class="sdg-badge">SDG 13, 15</span>
@@ -1450,7 +1450,7 @@
                         </div>
                     </div>
 
-                    <!-- Safety -->
+                    <!-- Safety Card -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-shield-alt"></i></div>
                         <span class="sdg-badge">SDG 3, 8</span>
@@ -1462,7 +1462,7 @@
                         </div>
                     </div>
 
-                    <!-- Community -->
+                    <!-- Community Card -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-handshake"></i></div>
                         <span class="sdg-badge">SDG 1, 8, 11</span>
@@ -1479,7 +1479,7 @@
         </div>
     </section>
 
-    <!-- ===== SUBSIDIARIES WITH DROPDOWN & VIEW ON MAP (SAME AS INDEX.HTML) ===== -->
+    <!-- ===== SUBSIDIARIES ===== -->
     <section class="subsidiaries-section">
         <div class="container">
             <div class="section-title">
@@ -1488,7 +1488,6 @@
                 <p>Teik Granite Group comprises the following entities</p>
             </div>
             <div class="sub-grid">
-                <!-- 01 - Teik Granite Quarry Sdn Bhd (Head Office) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">01</span>
                     <span class="level-badge parent">Head Office</span>
@@ -1504,8 +1503,6 @@
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
-
-                <!-- 02 - Teik Granite Corporation Sdn Bhd (Corporate Office) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">02</span>
                     <span class="level-badge subsidiary">Corporate Office</span>
@@ -1521,8 +1518,6 @@
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
-
-                <!-- 03 - TGQ (Tanjung Bungah) Sdn Bhd (Quarry Site) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">03</span>
                     <span class="level-badge quarry">Quarry Site</span>
@@ -1539,8 +1534,6 @@
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
-
-                <!-- 04 - TGQ (Air Itam) Sdn Bhd (Quarry Site) -->
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">04</span>
                     <span class="level-badge quarry">Quarry Site</span>
@@ -1558,8 +1551,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- ===== VIEW ON MAP BUTTON ===== -->
             <div class="map-btn-wrapper">
                 <a href="contact.html#find-us" class="btn-map">
                     <i class="fas fa-location-dot"></i> View Locations on Map
@@ -1595,11 +1586,6 @@
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                     <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
                     <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
@@ -1607,14 +1593,13 @@
             </div>
             <div class="footer-bottom">
                 <div>© 2026 Teik Granite Quarry Sdn Bhd (3821-P). All Rights Reserved.</div>
-                <div>Built with <i class="fas fa-heart" style="color: #cc0000;"></i></div>
             </div>
         </div>
     </footer>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ===== Scroll Header Effect =====
+        // ===== Scroll Header =====
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
@@ -1624,9 +1609,8 @@
             }
         });
 
-        // ===== Back to Top Button =====
+        // ===== Back to Top =====
         const backToTopBtn = document.getElementById('backToTop');
-
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
                 backToTopBtn.classList.add('show');
@@ -1634,15 +1618,11 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== Hamburger Menu Toggle =====
+        // ===== Hamburger =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
@@ -1674,12 +1654,8 @@
             const intervalTime = 5000;
 
             function goToSlide(index) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
                 currentSlide = index;
@@ -1687,9 +1663,7 @@
 
             function nextSlide() {
                 let next = currentSlide + 1;
-                if (next >= slides.length) {
-                    next = 0;
-                }
+                if (next >= slides.length) next = 0;
                 goToSlide(next);
             }
 
@@ -1712,28 +1686,22 @@
             startCarousel();
         });
 
-        // ===== Dropdown Toggle Function =====
+        // ===== Dropdown Toggle =====
         function toggleDropdown(element) {
             const details = element.querySelector('.dropdown-details');
             const arrow = element.querySelector('.dropdown-arrow i');
-            
             const allDetails = document.querySelectorAll('.dropdown-details');
             const allArrows = document.querySelectorAll('.dropdown-arrow i');
-            
+
             allDetails.forEach((detail, index) => {
                 if (detail !== details && detail.classList.contains('open')) {
                     detail.classList.remove('open');
                     allArrows[index].className = 'fas fa-chevron-down';
                 }
             });
-            
+
             details.classList.toggle('open');
-            
-            if (details.classList.contains('open')) {
-                arrow.className = 'fas fa-chevron-up';
-            } else {
-                arrow.className = 'fas fa-chevron-down';
-            }
+            arrow.className = details.classList.contains('open') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
         }
     </script>
 </body>

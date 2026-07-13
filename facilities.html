@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="company_logo.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="company_logo.ico" />
     <title>Facilities · Teik Granite Quarry Sdn Bhd</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         /* ===== SAME STYLES AS INDEX.HTML ===== */
         * {
@@ -16,9 +16,40 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f0f2f5;
+            background: #e8e4e0;
             color: #1a1a2e;
             line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ===== BACKGROUND IMAGE ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: url('cracked-stone-stucco.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.5;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .container {
@@ -27,7 +58,7 @@
             padding: 0 2rem;
         }
 
-        /* ===== HEADER / NAVIGATION (TRANSPARENT) ===== */
+        /* ===== HEADER ===== */
         .header {
             background: transparent;
             border-bottom: none;
@@ -81,13 +112,13 @@
             letter-spacing: 0.5px;
             transition: color 0.4s ease;
             text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .company span {
             color: #ffffff;
             transition: color 0.4s ease;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text .reg {
@@ -96,25 +127,23 @@
             font-weight: 500;
             letter-spacing: 0.3px;
             font-family: monospace;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         .header.scrolled .logo-text .company {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .company span {
             color: #1a1a1a;
             text-shadow: none;
         }
-
         .header.scrolled .logo-text .reg {
             color: #cc0000;
             text-shadow: none;
         }
 
-        /* ===== HAMBURGER MENU (MOBILE) ===== */
+        /* ===== HAMBURGER ===== */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -125,7 +154,6 @@
             background: none;
             border: none;
         }
-
         .hamburger span {
             display: block;
             width: 28px;
@@ -134,19 +162,15 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
-
         .header.scrolled .hamburger span {
             background: #1a2a1d;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
@@ -158,7 +182,6 @@
             font-weight: 600;
             align-items: center;
         }
-
         .nav-menu a {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.9);
@@ -168,17 +191,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             position: relative;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
         }
-
         .nav-menu a:hover {
             color: #ff9999;
         }
-
         .nav-menu a.active {
             color: #ff9999;
         }
-
         .nav-menu a.active::after {
             content: '';
             position: absolute;
@@ -189,25 +209,21 @@
             background: #ff9999;
             transition: background 0.4s ease;
         }
-
         .header.scrolled .nav-menu a {
             color: #1a2a1d;
             text-shadow: none;
         }
-
         .header.scrolled .nav-menu a:hover {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active {
             color: #cc0000;
         }
-
         .header.scrolled .nav-menu a.active::after {
             background: #cc0000;
         }
 
-        /* ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== */
+        /* ===== HERO ===== */
         .hero {
             position: relative;
             min-height: 50vh;
@@ -215,7 +231,6 @@
             align-items: center;
             overflow: hidden;
         }
-
         .hero-slides {
             position: absolute;
             top: 0;
@@ -224,7 +239,6 @@
             height: 100%;
             z-index: 0;
         }
-
         .hero-slide {
             position: absolute;
             top: 0;
@@ -238,12 +252,10 @@
             transition: opacity 1.2s ease-in-out;
             z-index: 1;
         }
-
         .hero-slide.active {
             opacity: 1;
             z-index: 2;
         }
-
         .hero-slide::after {
             content: '';
             position: absolute;
@@ -264,7 +276,6 @@
             display: flex;
             gap: 0.8rem;
         }
-
         .hero-indicators .dot {
             width: 12px;
             height: 12px;
@@ -274,19 +285,16 @@
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
         .hero-indicators .dot.active {
             background: #cc0000;
             border-color: #cc0000;
             transform: scale(1.2);
             box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
         }
-
         .hero-indicators .dot:hover {
             background: rgba(255, 255, 255, 0.8);
             transform: scale(1.1);
         }
-
         .hero-indicators .dot.active:hover {
             background: #cc0000;
             transform: scale(1.2);
@@ -299,30 +307,27 @@
             padding-top: 8rem;
             padding-bottom: 4rem;
         }
-
         .hero-content {
             max-width: 60%;
             position: relative;
             z-index: 5;
         }
-
         .hero-content h1 {
             font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             color: white;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             margin-bottom: 0.5rem;
         }
-
         .hero-content p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             max-width: 600px;
         }
 
-        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        /* ===== FLOATING WHATSAPP ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -341,13 +346,12 @@
             transition: 0.3s;
             text-decoration: none;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
-        /* ===== BACK TO TOP BUTTON ===== */
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 110px;
@@ -371,19 +375,16 @@
             justify-content: center;
             text-decoration: none;
         }
-
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
         .back-to-top:hover {
             background: #990000;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
         }
-
         .back-to-top i {
             font-size: 1.3rem;
         }
@@ -393,14 +394,12 @@
             text-align: center;
             margin-bottom: 2.5rem;
         }
-
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 800;
             color: #1a2a1d;
             letter-spacing: -0.5px;
         }
-
         .section-title .line {
             width: 60px;
             height: 4px;
@@ -408,7 +407,6 @@
             margin: 0.5rem auto;
             border-radius: 2px;
         }
-
         .section-title p {
             color: #5a6a6a;
             font-size: 1.1rem;
@@ -416,10 +414,9 @@
 
         /* ===== FACILITIES ===== */
         .facilities-main {
-            padding: 4rem 0;
-            background: #f0f2f5;
+            padding: 5rem 0;
+            background: transparent;
         }
-
         .facilities-wrapper {
             background: #ffffff;
             border-radius: 16px;
@@ -428,6 +425,7 @@
             border: 1px solid #e8eaed;
         }
 
+        /* ===== FACILITIES GRID WITH CENTERED BOTTOM CARDS ===== */
         .facilities-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -436,15 +434,18 @@
             margin: 0 auto;
         }
 
-        /* Center the last two items */
-        .facility-card:nth-child(4) {
-            grid-column: 1 / 2;
-            justify-self: end;
+        /* Bottom row - center the two cards */
+        .facilities-grid .bottom-row {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 0;
         }
 
-        .facility-card:nth-child(5) {
-            grid-column: 2 / 3;
-            justify-self: start;
+        .facilities-grid .bottom-row .facility-card {
+            flex: 0 1 calc(33.333% - 1.33rem);
+            max-width: calc(33.333% - 1.33rem);
         }
 
         .facility-card {
@@ -455,32 +456,27 @@
             transition: 0.3s;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
-
         .facility-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 40px rgba(204, 0, 0, 0.08);
             border-color: #cc0000;
         }
-
         .facility-card .facility-image {
             width: 100%;
             height: 220px;
             object-fit: cover;
             display: block;
         }
-
         .facility-card .facility-body {
             padding: 1.8rem;
             text-align: center;
         }
-
         .facility-card .facility-body h3 {
             font-size: 1.3rem;
             font-weight: 700;
             color: #1a2a1d;
             margin-bottom: 0.5rem;
         }
-
         .facility-card .facility-body p {
             color: #3a4a4a;
             font-size: 0.95rem;
@@ -493,7 +489,6 @@
             color: #b0b8b8;
             padding: 3rem 0 1.5rem;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -501,31 +496,27 @@
             padding-bottom: 2rem;
             border-bottom: 1px solid #333333;
         }
-
         .footer h4 {
             color: #ffffff;
             font-size: 1rem;
             margin-bottom: 1rem;
         }
-
-        .footer p, .footer a {
+        .footer p,
+        .footer a {
             color: #b0b8b8;
             font-size: 0.9rem;
             text-decoration: none;
             display: block;
             margin-bottom: 0.4rem;
         }
-
         .footer a:hover {
             color: #cc0000;
         }
-
         .footer .social-links a {
             display: inline-block;
             margin-right: 1rem;
             font-size: 1.2rem;
         }
-
         .footer-bottom {
             padding-top: 1.5rem;
             display: flex;
@@ -533,7 +524,7 @@
             align-items: center;
             flex-wrap: wrap;
             font-size: 0.8rem;
-            color: #6a7a7a;
+            color: #6a7a6a;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -545,10 +536,16 @@
             .hero-content h1 {
                 font-size: 2.4rem;
             }
-            .facility-card:nth-child(4),
-            .facility-card:nth-child(5) {
-                grid-column: auto;
-                justify-self: auto;
+            .facilities-grid .bottom-row {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                width: 100%;
+            }
+            .facilities-grid .bottom-row .facility-card {
+                flex: 1 1 auto;
+                max-width: 100%;
             }
         }
 
@@ -558,11 +555,9 @@
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            
             .hamburger {
                 display: flex;
             }
-            
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -574,11 +569,9 @@
                 margin-top: 0.5rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             }
-            
             .nav-menu.open {
                 display: flex;
             }
-            
             .nav-menu a {
                 color: #1a2a1d !important;
                 text-shadow: none !important;
@@ -588,36 +581,29 @@
                 border-bottom: 1px solid #e8eaed;
                 font-size: 0.9rem;
             }
-            
             .nav-menu a:last-child {
                 border-bottom: none;
             }
-            
             .nav-menu a:hover {
                 background: #f5f5f5;
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active {
                 color: #cc0000 !important;
             }
-            
             .nav-menu a.active::after {
                 display: none;
             }
-            
             .header.scrolled .nav-menu {
                 background: rgba(255, 255, 255, 0.98);
             }
-            
             .header.scrolled .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
             .header:not(.scrolled) .nav-menu a {
                 color: #1a2a1d !important;
             }
-            
+
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -643,10 +629,16 @@
             .facilities-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .facility-card:nth-child(4),
-            .facility-card:nth-child(5) {
-                grid-column: auto;
-                justify-self: auto;
+            .facilities-grid .bottom-row {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                width: 100%;
+            }
+            .facilities-grid .bottom-row .facility-card {
+                flex: 1 1 auto;
+                max-width: 100%;
             }
             .hero-indicators {
                 bottom: 1.5rem;
@@ -667,6 +659,17 @@
         @media (max-width: 600px) {
             .facilities-grid {
                 grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+            .facilities-grid .bottom-row {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                width: 100%;
+            }
+            .facilities-grid .bottom-row .facility-card {
+                flex: 1 1 auto;
                 max-width: 100%;
             }
             .footer-grid {
@@ -703,11 +706,6 @@
                 height: 40px;
                 font-size: 1rem;
             }
-            .facility-card:nth-child(4),
-            .facility-card:nth-child(5) {
-                grid-column: auto;
-                justify-self: auto;
-            }
         }
 
         @media (max-width: 480px) {
@@ -722,7 +720,7 @@
             }
             .logo-text .company {
                 font-size: 1rem;
-                text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             }
             .logo-text .reg {
                 font-size: 0.5rem;
@@ -769,29 +767,22 @@
                 height: 36px;
                 font-size: 0.85rem;
             }
-            .facility-card:nth-child(4),
-            .facility-card:nth-child(5) {
-                grid-column: auto;
-                justify-self: auto;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION (TRANSPARENT) ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="header" id="mainHeader">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image">
+                <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image" />
                 <div class="logo-text">
                     <span class="company">TEIK <span>GRANITE</span> QUARRY</span>
                     <span class="reg">196001000153 (3821-P)</span>
                 </div>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html">Company</a>
@@ -803,14 +794,19 @@
         </div>
     </header>
 
-    <!-- ===== HERO BANNER WITH CAROUSEL BACKGROUND ===== -->
+    <!-- ===== HERO BANNER WITH UPDATED CAROUSEL IMAGES ===== -->
     <section class="hero">
         <div class="hero-slides">
+            <!-- Slide 1: homepage_photo.png -->
             <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=40');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=41');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=42');"></div>
-            <div class="hero-slide" style="background-image: url('https://picsum.photos/1920/800?random=43');"></div>
+            <!-- Slide 2: drill_and_Blast_photo -->
+            <div class="hero-slide" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
+            <!-- Slide 3: Crushing_plant_photo -->
+            <div class="hero-slide" style="background-image: url('Crushing_plant_photo.png');"></div>
+            <!-- Slide 4: safety_environment_photo -->
+            <div class="hero-slide" style="background-image: url('safety_environment_photo.png');"></div>
+            <!-- Slide 5: earth_materials_photo -->
+            <div class="hero-slide" style="background-image: url('earth_materials_photo.png');"></div>
         </div>
 
         <div class="hero-indicators">
@@ -829,13 +825,12 @@
         </div>
     </section>
 
-    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" 
-       class="whatsapp-float" target="_blank">
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <a href="https://wa.me/60123456789?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -845,9 +840,10 @@
         <div class="container">
             <div class="facilities-wrapper">
                 <div class="facilities-grid">
+                    <!-- TOP ROW - 3 Cards -->
                     <!-- 1. Granite Quarry -->
                     <div class="facility-card">
-                        <img src="granite_quarry_photo.png" alt="Granite Quarry" class="facility-image">
+                        <img src="granite_quarry_photo.png" alt="Granite Quarry" class="facility-image" />
                         <div class="facility-body">
                             <h3>Granite Quarry</h3>
                             <p>Our main quarry operation spans over decades of granite extraction. Equipped with modern drilling and blasting technology.</p>
@@ -856,7 +852,7 @@
 
                     <!-- 2. Crushing Plant -->
                     <div class="facility-card">
-                        <img src="Crushing_plant_photo.png" alt="Crushing Plant" class="facility-image">
+                        <img src="Crushing_plant_photo.png" alt="Crushing Plant" class="facility-image" />
                         <div class="facility-body">
                             <h3>Crushing Plant</h3>
                             <p>State-of-the-art crushing and screening plant producing high-quality aggregates of various sizes.</p>
@@ -865,28 +861,31 @@
 
                     <!-- 3. Storage Facilities -->
                     <div class="facility-card">
-                        <img src="storage_facilities_photo.png" alt="Storage Facilities" class="facility-image">
+                        <img src="storage_facilities_photo.png" alt="Storage Facilities" class="facility-image" />
                         <div class="facility-body">
                             <h3>Storage Facilities</h3>
                             <p>Large covered storage areas for finished products, ensuring materials remain dry and ready for dispatch.</p>
                         </div>
                     </div>
 
-                    <!-- 4. Transport Fleet -->
-                    <div class="facility-card">
-                        <img src="transport_fleet_photo.png" alt="Transport Fleet" class="facility-image">
-                        <div class="facility-body">
-                            <h3>Transport Fleet</h3>
-                            <p>Our own fleet of heavy-duty haulers and trucks ensures timely and reliable delivery across Malaysia.</p>
+                    <!-- BOTTOM ROW - 2 Cards Centered -->
+                    <div class="bottom-row">
+                        <!-- 4. Transport Fleet -->
+                        <div class="facility-card">
+                            <img src="transport_fleet_photo.png" alt="Transport Fleet" class="facility-image" />
+                            <div class="facility-body">
+                                <h3>Transport Fleet</h3>
+                                <p>Our own fleet of heavy-duty haulers and trucks ensures timely and reliable delivery across Malaysia.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- 5. Safety & Environment -->
-                    <div class="facility-card">
-                        <img src="safety_environment_photo.png" alt="Safety & Environment" class="facility-image">
-                        <div class="facility-body">
-                            <h3>Safety & Environment</h3>
-                            <p>Committed to sustainable quarrying practices with comprehensive safety and environmental management.</p>
+                        <!-- 5. Safety & Environment -->
+                        <div class="facility-card">
+                            <img src="safety_environment_photo.png" alt="Safety & Environment" class="facility-image" />
+                            <div class="facility-body">
+                                <h3>Safety & Environment</h3>
+                                <p>Committed to sustainable quarrying practices with comprehensive safety and environmental management.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -921,11 +920,6 @@
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                     <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
                     <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
@@ -933,13 +927,12 @@
             </div>
             <div class="footer-bottom">
                 <div>© 2026 Teik Granite Quarry Sdn Bhd (3821-P). All Rights Reserved.</div>
-                <div>Built with <i class="fas fa-heart" style="color: #cc0000;"></i></div>
             </div>
         </div>
     </footer>
 
     <script>
-        // ===== Scroll Header Effect =====
+        // ===== Scroll Header =====
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
@@ -949,9 +942,8 @@
             }
         });
 
-        // ===== Back to Top Button =====
+        // ===== Back to Top =====
         const backToTopBtn = document.getElementById('backToTop');
-
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
                 backToTopBtn.classList.add('show');
@@ -959,15 +951,11 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== Hamburger Menu Toggle =====
+        // ===== Hamburger =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
@@ -999,12 +987,8 @@
             const intervalTime = 5000;
 
             function goToSlide(index) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
                 currentSlide = index;
@@ -1012,9 +996,7 @@
 
             function nextSlide() {
                 let next = currentSlide + 1;
-                if (next >= slides.length) {
-                    next = 0;
-                }
+                if (next >= slides.length) next = 0;
                 goToSlide(next);
             }
 
