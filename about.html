@@ -35,7 +35,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
             opacity: 0.5;
         }
 
@@ -49,6 +48,15 @@
             pointer-events: none;
             z-index: -1;
             background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Mobile background fix - remove fixed attachment on small screens */
+        @media (max-width: 768px) {
+            body::before {
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center;
+            }
         }
 
         .container {
@@ -825,6 +833,8 @@
             font-size: 0.7rem;
             font-family: monospace;
             letter-spacing: 0.3px;
+            text-decoration: none;
+            cursor: default;
         }
         .sub-item .dropdown-arrow {
             display: block;
@@ -928,11 +938,6 @@
         }
         .footer a:hover {
             color: #cc0000;
-        }
-        .footer .social-links a {
-            display: inline-block;
-            margin-right: 1rem;
-            font-size: 1.2rem;
         }
         .footer-bottom {
             padding-top: 1.5rem;
@@ -1295,9 +1300,9 @@
     <section class="hero">
         <div class="hero-slides">
             <!-- Slide 1: homepage_photo.png -->
-            <div class="hero-slide active" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
+            <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
             <!-- Slide 2: drill_and_Blast_photo -->
-            <div class="hero-slide" style="background-image: url('homepage_photo.png');"></div>
+            <div class="hero-slide" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
             <!-- Slide 3: Crushing_plant_photo -->
             <div class="hero-slide" style="background-image: url('Crushing_plant_photo.png');"></div>
             <!-- Slide 4: safety_environment_photo -->
