@@ -35,7 +35,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
             opacity: 0.5;
         }
 
@@ -49,6 +48,15 @@
             pointer-events: none;
             z-index: -1;
             background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Mobile background fix - remove fixed attachment on small screens */
+        @media (max-width: 768px) {
+            body::before {
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center;
+            }
         }
 
         .container {
@@ -876,11 +884,6 @@
         .footer a:hover {
             color: #cc0000;
         }
-        .footer .social-links a {
-            display: inline-block;
-            margin-right: 1rem;
-            font-size: 1.2rem;
-        }
         .footer-bottom {
             padding-top: 1.5rem;
             display: flex;
@@ -1517,11 +1520,6 @@
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                     <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
                     <p><i class="fas fa-fax"></i> 04-262 2818</p>
                     <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
@@ -1529,7 +1527,6 @@
             </div>
             <div class="footer-bottom">
                 <div>© 2026 Teik Granite Quarry Sdn Bhd (3821-P). All Rights Reserved.</div>
-                <div>Built with <i class="fas fa-heart" style="color: #cc0000;"></i></div>
             </div>
         </div>
     </footer>
