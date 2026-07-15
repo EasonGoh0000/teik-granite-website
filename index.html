@@ -1024,30 +1024,28 @@
             animation: bounceDown 2s infinite;
         }
 
-        /* ===== VIDEO SECTION ===== */
+        /* ===== VIDEO SECTION - FULL SCREEN WITH CONTAINER ===== */
         .video-section {
-            padding: 5rem 0;
+            padding: 2rem 0;
             background: transparent;
         }
         .video-wrapper {
             max-width: 100%;
             margin: 0 auto;
-            border-radius: 16px;
+            border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e8eaed;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: none;
             position: relative;
-            background: #1a1a1a;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .video-wrapper:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 50px rgba(204, 0, 0, 0.15);
+            background: #0a0a0a;
+            width: 100%;
+            height: 80vh;
         }
         .video-wrapper .video-thumbnail {
             position: relative;
             overflow: hidden;
             width: 100%;
+            height: 100%;
         }
         .video-wrapper .play-icon-overlay {
             position: absolute;
@@ -1078,11 +1076,9 @@
         }
         .video-wrapper video {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             background: #0a0a0a;
-            min-height: 500px;
-            max-height: 700px;
             object-fit: cover;
         }
         .video-wrapper video::-webkit-media-controls-play-button {
@@ -1092,58 +1088,7 @@
             display: none;
         }
         .video-caption {
-            padding: 1.2rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            color: #4a5a5a;
-            font-size: 0.95rem;
-            background: #fafcfa;
-            border-top: 1px solid #e8eaed;
-            transition: background 0.3s ease;
-        }
-        .video-wrapper:hover .video-caption {
-            background: #ffffff;
-        }
-        .video-caption .caption-left {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .video-caption .caption-left i {
-            color: #cc0000;
-            font-size: 1.2rem;
-        }
-        .video-caption .caption-left span {
-            font-weight: 500;
-        }
-        .video-caption .caption-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .video-caption .caption-right .video-badge {
-            background: #fce8e8;
-            color: #cc0000;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .video-caption .caption-right .video-duration {
-            color: #8a9a9a;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .video-caption .caption-right .video-duration i {
-            color: #cc0000;
-            font-size: 0.8rem;
+            display: none;
         }
 
         /* ===== FOOTER ===== */
@@ -1229,11 +1174,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             .video-wrapper {
-                max-width: 100%;
-            }
-            .video-wrapper video {
-                min-height: 350px;
-                max-height: 500px;
+                height: 70vh;
             }
             .process-step .step-image {
                 width: 220px;
@@ -1325,23 +1266,14 @@
             .show-more-wrapper {
                 text-align: center;
             }
+            .video-wrapper {
+                height: 60vh;
+                border-radius: 20px;
+            }
             .video-wrapper .play-icon-overlay {
                 width: 70px;
                 height: 70px;
                 font-size: 2rem;
-            }
-            .video-wrapper video {
-                min-height: 280px;
-                max-height: 400px;
-            }
-            .video-caption {
-                flex-direction: column;
-                text-align: center;
-                padding: 1rem 1.5rem;
-            }
-            .video-caption .caption-right {
-                flex-wrap: wrap;
-                justify-content: center;
             }
             .industries-section {
                 padding: 1.5rem 1rem;
@@ -1434,23 +1366,14 @@
             .show-more-wrapper {
                 text-align: center;
             }
+            .video-wrapper {
+                height: 50vh;
+                border-radius: 15px;
+            }
             .video-wrapper .play-icon-overlay {
                 width: 60px;
                 height: 60px;
                 font-size: 1.6rem;
-            }
-            .video-wrapper video {
-                min-height: 220px;
-                max-height: 300px;
-            }
-            .video-caption {
-                padding: 0.8rem 1rem;
-            }
-            .video-caption .caption-left {
-                font-size: 0.85rem;
-            }
-            .video-caption .caption-right .video-badge {
-                font-size: 0.5rem;
             }
             .process-step .step-image {
                 max-width: 100%;
@@ -1538,30 +1461,14 @@
             .show-more-wrapper {
                 text-align: center;
             }
+            .video-wrapper {
+                height: 40vh;
+                border-radius: 10px;
+            }
             .video-wrapper .play-icon-overlay {
                 width: 50px;
                 height: 50px;
                 font-size: 1.3rem;
-            }
-            .video-wrapper video {
-                min-height: 180px;
-                max-height: 250px;
-            }
-            .video-caption {
-                padding: 0.6rem 0.8rem;
-            }
-            .video-caption .caption-left {
-                font-size: 0.75rem;
-            }
-            .video-caption .caption-left i {
-                font-size: 0.9rem;
-            }
-            .video-caption .caption-right .video-badge {
-                font-size: 0.45rem;
-                padding: 0.15rem 0.6rem;
-            }
-            .video-caption .caption-right .video-duration {
-                font-size: 0.7rem;
             }
             .industries-header h3 {
                 font-size: 1.2rem;
@@ -1916,7 +1823,7 @@
                     <div class="process-step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h4><i class="fas fa-excavator"></i> Excavate</h4>
+                            <h4><i class="fas fa-tractor"></i> Excavate</h4>
                             <p>Hydraulic excavators remove blasted rock safely and efficiently</p>
                         </div>
                         <div class="step-image">
@@ -1984,7 +1891,7 @@
         </div>
     </section>
 
-    <!-- ===== VIDEO SECTION - AUTOPLAY & FULL SCREEN SIZE ===== -->
+    <!-- ===== VIDEO SECTION - WITH CONTAINER & BORDER RADIUS ===== -->
     <section class="video-section">
         <div class="container">
             <div class="section-title">
@@ -1998,21 +1905,9 @@
                         <i class="fas fa-play"></i>
                     </div>
                     <video id="quarryVideo" controls playsinline autoplay muted loop>
-                        <source src="explotion_video.mp4" type="video/mp4" />
+                        <source src="teik_granite_quarry.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                </div>
-                <div class="video-caption">
-                    <div class="caption-left">
-                        <i class="fas fa-video"></i>
-                        <span>Granite blasting and extraction at Teik Granite Quarry</span>
-                    </div>
-                    <div class="caption-right">
-                        <span class="video-badge"><i class="fas fa-play"></i> HD</span>
-                        <span class="video-duration">
-                            <i class="fas fa-clock"></i> <span id="videoDuration">0:00</span>
-                        </span>
-                    </div>
                 </div>
             </div>
         </div>
