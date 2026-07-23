@@ -20,6 +20,12 @@
             color: #1a1a2e;
             line-height: 1.6;
             min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.01s ease;
+        }
+
+        body.translated {
+            opacity: 1;
         }
 
         body::before {
@@ -147,6 +153,103 @@
         .header.scrolled .logo-text .reg {
             color: #cc0000;
             text-shadow: none;
+        }
+
+        /* ===== LANGUAGE SELECTOR IN NAV ===== */
+        .lang-selector {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+        }
+
+        .lang-selector:hover {
+            color: #ff9999;
+        }
+
+        .header.scrolled .lang-selector {
+            color: #1a2a1d;
+            text-shadow: none;
+        }
+
+        .header.scrolled .lang-selector:hover {
+            color: #cc0000;
+        }
+
+        .lang-selector .arrow {
+            font-size: 0.6rem;
+            margin-left: 0.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-selector .arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-nav {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            min-width: 190px;
+            padding: 0.4rem;
+            z-index: 1000;
+            border: 1px solid #e8eaed;
+        }
+
+        .lang-dropdown-nav.open {
+            display: block;
+        }
+
+        .lang-option-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1a2a1d;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .lang-option-nav:hover {
+            background: #f5f5f5;
+            color: #cc0000;
+        }
+
+        .lang-option-nav.active {
+            background: #fce8e8;
+            color: #cc0000;
+        }
+
+        .lang-option-nav .check {
+            margin-left: auto;
+            color: #cc0000;
+            font-size: 0.7rem;
+            flex-shrink: 0;
         }
 
         /* ===== HAMBURGER ===== */
@@ -681,7 +784,6 @@
             color: #721c24;
         }
 
-
         .historical-item.air-itam .historical-body {
             display: block;
             width: 100%;
@@ -1193,6 +1295,42 @@
                 color: #1a2a1d !important;
             }
 
+            /* Mobile language selector */
+            .lang-selector {
+                width: 100%;
+                justify-content: center;
+                padding: 0.8rem 1.5rem;
+                color: #1a2a1d !important;
+                text-shadow: none !important;
+                border-bottom: 1px solid #e8eaed;
+                font-size: 0.9rem;
+            }
+            .header:not(.scrolled) .lang-selector {
+                color: #1a2a1d !important;
+            }
+            .lang-dropdown-nav {
+                position: relative;
+                top: 0;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                padding: 0;
+                background: transparent;
+                width: 100%;
+            }
+            .lang-dropdown-nav.open {
+                display: block;
+            }
+            .lang-option-nav {
+                padding: 0.6rem 1.5rem;
+                border-bottom: 1px solid #f0f0f0;
+                border-radius: 0;
+                justify-content: center;
+            }
+            .lang-option-nav:last-child {
+                border-bottom: none;
+            }
+
             .about-grid {
                 grid-template-columns: 1fr;
             }
@@ -1460,6 +1598,14 @@
             .historical-item.air-itam .historical-body .image-grid .image-item img {
                 height: 200px;
             }
+            .lang-selector {
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
+            .lang-option-nav {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
         }
     </style>
 </head>
@@ -1470,19 +1616,37 @@
             <a href="index.html" class="logo">
                 <img src="company_logo.png" alt="Teik Granite Quarry Sdn Bhd" class="logo-image" />
                 <div class="logo-text">
-                    <span class="company">TEIK <span>GRANITE</span> QUARRY</span>
-                    <span class="reg">196001000153 (3821-P)</span>
+                    <span class="company" data-i18n="logo.company">TEIK <span>GRANITE</span> QUARRY</span>
+                    <span class="reg" data-i18n="logo.reg">196001000153 (3821-P)</span>
                 </div>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
-                <a href="index.html">Company</a>
-                <a href="about.html" class="active">About</a>
-                <a href="products.html">Products</a>
-                <a href="facilities.html">Facilities</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.html" data-i18n="nav.company">Company</a>
+                <a href="about.html" class="active" data-i18n="nav.about">About</a>
+                <a href="products.html" data-i18n="nav.products">Products</a>
+                <a href="facilities.html" data-i18n="nav.facilities">Facilities</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+                
+                <!-- ===== LANGUAGE SELECTOR (IN NAV) ===== -->
+                <div style="position:relative; display:inline-block;">
+                    <button class="lang-selector" id="langToggle">
+                        EN <span class="arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown-nav" id="langDropdown">
+                        <button class="lang-option-nav active" data-lang="en">
+                            🇬🇧 English <span class="check">✓</span>
+                        </button>
+                        <button class="lang-option-nav" data-lang="ms">
+                            🇲🇾 Bahasa Malaysia
+                        </button>
+                        <button class="lang-option-nav" data-lang="zh">
+                            🇨🇳 中文
+                        </button>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -1507,8 +1671,8 @@
 
         <div class="container">
             <div class="hero-content">
-                <h1>About Us</h1>
-                <p>Building Malaysia's infrastructure with quality granite since 1960</p>
+                <h1 data-i18n="about.hero.title">About Us</h1>
+                <p data-i18n="about.hero.subtitle">Building Malaysia's infrastructure with quality granite since 1960</p>
             </div>
         </div>
     </section>
@@ -1530,45 +1694,45 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <div class="section-title" style="margin-bottom: 1.5rem;">
-                            <h2 style="font-size: 2.5rem;">Company History</h2>
+                            <h2 style="font-size: 2.5rem;" data-i18n="about.history.title">Company History</h2>
                             <div class="line" style="margin: 0.5rem auto;"></div>
                         </div>
 
-                        <p><span class="highlight">Teik Granite Quarry (TGQ)</span> is a pioneer in the quarry industry in the state of Penang. TGQ was founded in the early 1950's by the family's patriarch, <strong>Mr. Loh Poh Heng</strong> when he first operated a quarry at <strong>Air Itam</strong> at the foothill of Penang Hill.</p>
+                        <p data-i18n="about.history.p1"><span class="highlight">Teik Granite Quarry (TGQ)</span> is a pioneer in the quarry industry in the state of Penang. TGQ was founded in the early 1950's by the family's patriarch, <strong>Mr. Loh Poh Heng</strong> when he first operated a quarry at <strong>Air Itam</strong> at the foothill of Penang Hill.</p>
 
-                        <p>During the 1960's, the quarry business was expanded to <strong>Tanjung Bungah</strong>, then <strong>Bayan Lepas</strong> in the Island and <strong>Penanti, Bukit Mertajam</strong> in the mainland. During the peak, there were four quarries operating in Penang. However, the Bayan Lepas quarry which was operated as a project quarry lasted for a few years only. The Air Itam quarry too ceased operation around <strong>1992</strong>, a decision taken on a voluntary basis.</p>
+                        <p data-i18n="about.history.p2">During the 1960's, the quarry business was expanded to <strong>Tanjung Bungah</strong>, then <strong>Bayan Lepas</strong> in the Island and <strong>Penanti, Bukit Mertajam</strong> in the mainland. During the peak, there were four quarries operating in Penang. However, the Bayan Lepas quarry which was operated as a project quarry lasted for a few years only. The Air Itam quarry too ceased operation around <strong>1992</strong>, a decision taken on a voluntary basis.</p>
 
-                        <p>To date the <strong>Tanjong Bungah</strong> and <strong>Penanti</strong> quarries are still active and remain operating as commercial quarries both in the Island and mainland.</p>
+                        <p data-i18n="about.history.p3">To date the <strong>Tanjong Bungah</strong> and <strong>Penanti</strong> quarries are still active and remain operating as commercial quarries both in the Island and mainland.</p>
 
                         <div class="quarry-timeline">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Time Line</th>
-                                        <th>Location of Quarry</th>
-                                        <th>Status</th>
+                                        <th data-i18n="about.history.timeline.title">Time Line</th>
+                                        <th data-i18n="about.history.timeline.location">Location of Quarry</th>
+                                        <th data-i18n="about.history.timeline.status">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1952 - 1992</td>
-                                        <td>Air Itam, Penang</td>
-                                        <td><span class="status-badge ceased">Ceased</span></td>
+                                        <td data-i18n="about.history.timeline.airItam">Air Itam, Penang</td>
+                                        <td><span class="status-badge ceased" data-i18n="about.history.timeline.ceased">Ceased</span></td>
                                     </tr>
                                     <tr>
                                         <td>1960's</td>
-                                        <td>Bayan Lepas, Penang</td>
-                                        <td><span class="status-badge ceased">Ceased</span></td>
+                                        <td data-i18n="about.history.timeline.bayanLepas">Bayan Lepas, Penang</td>
+                                        <td><span class="status-badge ceased" data-i18n="about.history.timeline.ceased">Ceased</span></td>
                                     </tr>
                                     <tr>
                                         <td>1960's - To Date</td>
-                                        <td>Tanjung Bungah, Penang</td>
-                                        <td><span class="status-badge active">Active</span></td>
+                                        <td data-i18n="about.history.timeline.tanjungBungah">Tanjung Bungah, Penang</td>
+                                        <td><span class="status-badge active" data-i18n="about.history.timeline.active">Active</span></td>
                                     </tr>
                                     <tr>
                                         <td>1960's - To Date</td>
-                                        <td>Penanti, Bukit Mertajam</td>
-                                        <td><span class="status-badge active">Active</span></td>
+                                        <td data-i18n="about.history.timeline.penanti">Penanti, Bukit Mertajam</td>
+                                        <td><span class="status-badge active" data-i18n="about.history.timeline.active">Active</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1584,74 +1748,74 @@
         <div class="container">
             <div class="projects-wrapper">
                 <div class="section-title">
-                    <h2>Participation in Major Projects in Penang</h2>
+                    <h2 data-i18n="about.projects.title">Participation in Major Projects in Penang</h2>
                     <div class="line"></div>
-                    <p>Throughout the year of operation, TGQ has participated in many major infrastructures and building projects, both as a material supplier and also as a contractor</p>
+                    <p data-i18n="about.projects.subtitle">Throughout the year of operation, TGQ has participated in many major infrastructures and building projects, both as a material supplier and also as a contractor</p>
                 </div>
 
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-plane-departure"></i></div>
                         <span class="project-year">1970's</span>
-                        <h4>Penang International Airport</h4>
-                        <p>Worked with Maeda Construction Co. as a subcontractor and also as the supplier of all rock materials.</p>
-                        <span class="project-company">Maeda Construction Co.</span>
+                        <h4 data-i18n="about.projects.airport.title">Penang International Airport</h4>
+                        <p data-i18n="about.projects.airport.desc">Worked with Maeda Construction Co. as a subcontractor and also as the supplier of all rock materials.</p>
+                        <span class="project-company" data-i18n="about.projects.airport.company">Maeda Construction Co.</span>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-road"></i></div>
                         <span class="project-year">1980's</span>
-                        <h4>Penang Bridge 1st &amp; Lim Chong Eu Expressway</h4>
-                        <p>Worked with Hyundai Engineering and Construction Company as a supplier of rock materials and as a road constructor for a portion of the Lim Chong Eu Expressway.</p>
-                        <span class="project-company">Hyundai Engineering &amp; Construction</span>
+                        <h4 data-i18n="about.projects.bridge.title">Penang Bridge 1st &amp; Lim Chong Eu Expressway</h4>
+                        <p data-i18n="about.projects.bridge.desc">Worked with Hyundai Engineering and Construction Company as a supplier of rock materials and as a road constructor for a portion of the Lim Chong Eu Expressway.</p>
+                        <span class="project-company" data-i18n="about.projects.bridge.company">Hyundai Engineering &amp; Construction</span>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-archway"></i></div>
                         <span class="project-year">1980's</span>
-                        <h4>Komtar Tower</h4>
-                        <p>Worked with Lim Kah Ngam Malaysia as their main supplier of aggregates for their concrete requirement for all building works.</p>
-                        <span class="project-company">Lim Kah Ngam Malaysia</span>
+                        <h4 data-i18n="about.projects.komtar.title">Komtar Tower</h4>
+                        <p data-i18n="about.projects.komtar.desc">Worked with Lim Kah Ngam Malaysia as their main supplier of aggregates for their concrete requirement for all building works.</p>
+                        <span class="project-company" data-i18n="about.projects.komtar.company">Lim Kah Ngam Malaysia</span>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-building"></i></div>
                         <span class="project-year">Various</span>
-                        <h4>Major Skyscrapers in Penang Island</h4>
-                        <p>Major supplier of aggregates to contractors and readymixed concrete producers for numerous high rise projects throughout Penang Island.</p>
-                        <span class="project-company">Various Contractors</span>
+                        <h4 data-i18n="about.projects.skyscrapers.title">Major Skyscrapers in Penang Island</h4>
+                        <p data-i18n="about.projects.skyscrapers.desc">Major supplier of aggregates to contractors and readymixed concrete producers for numerous high rise projects throughout Penang Island.</p>
+                        <span class="project-company" data-i18n="about.projects.skyscrapers.company">Various Contractors</span>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-road"></i></div>
                         <span class="project-year">1990's</span>
-                        <h4>North-South Expressway</h4>
-                        <p>Supplier of road-based rock materials and aggregates for concrete plants to United Engineers contractors for the northern region.</p>
-                        <span class="project-company">United Engineers</span>
+                        <h4 data-i18n="about.projects.northSouth.title">North-South Expressway</h4>
+                        <p data-i18n="about.projects.northSouth.desc">Supplier of road-based rock materials and aggregates for concrete plants to United Engineers contractors for the northern region.</p>
+                        <span class="project-company" data-i18n="about.projects.northSouth.company">United Engineers</span>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-ship"></i></div>
                         <span class="project-year">1990's</span>
-                        <h4>North Butterworth Container Terminal</h4>
-                        <p>Supplier of armour rocks &amp; stones to IJM Construction for the port's seashore protection.</p>
-                        <span class="project-company">IJM Construction</span>
+                        <h4 data-i18n="about.projects.container.title">North Butterworth Container Terminal</h4>
+                        <p data-i18n="about.projects.container.desc">Supplier of armour rocks &amp; stones to IJM Construction for the port's seashore protection.</p>
+                        <span class="project-company" data-i18n="about.projects.container.company">IJM Construction</span>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-road"></i></div>
                         <span class="project-year">2010's</span>
-                        <h4>Penang 2nd Bridge</h4>
-                        <p>Worked with China Harbour Engineering Co. as a supplier of quality aggregates for their high grade concrete production.</p>
-                        <span class="project-company">China Harbour Engineering Co.</span>
+                        <h4 data-i18n="about.projects.secondBridge.title">Penang 2nd Bridge</h4>
+                        <p data-i18n="about.projects.secondBridge.desc">Worked with China Harbour Engineering Co. as a supplier of quality aggregates for their high grade concrete production.</p>
+                        <span class="project-company" data-i18n="about.projects.secondBridge.company">China Harbour Engineering Co.</span>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-train"></i></div>
                         <span class="project-year">2010's</span>
-                        <h4>Electrified Double Track Project</h4>
-                        <p>Supplier of ballast stones for railway tracks and stone materials for road base and concrete requirements.</p>
-                        <span class="project-company">Various Contractors</span>
+                        <h4 data-i18n="about.projects.doubleTrack.title">Electrified Double Track Project</h4>
+                        <p data-i18n="about.projects.doubleTrack.desc">Supplier of ballast stones for railway tracks and stone materials for road base and concrete requirements.</p>
+                        <span class="project-company" data-i18n="about.projects.doubleTrack.company">Various Contractors</span>
                     </div>
                 </div>
             </div>
@@ -1663,9 +1827,9 @@
         <div class="container">
             <div class="historical-wrapper">
                 <div class="section-title">
-                    <h2>Historical Quarry Sites</h2>
+                    <h2 data-i18n="about.historical.title">Historical Quarry Sites</h2>
                     <div class="line"></div>
-                    <p>Preserving the rich heritage of Penang's quarrying industry</p>
+                    <p data-i18n="about.historical.subtitle">Preserving the rich heritage of Penang's quarrying industry</p>
                 </div>
 
                 <div class="historical-grid">
@@ -1676,33 +1840,33 @@
                                 <i class="fas fa-mountain"></i>
                             </div>
                             <div class="header-title">
-                                <h3>Air Itam Quarry</h3>
-                                <span class="sub-location">Where it all began...</span>
+                                <h3 data-i18n="about.historical.airItam.title">Air Itam Quarry</h3>
+                                <span class="sub-location" data-i18n="about.historical.airItam.subtitle">Where it all began...</span>
                             </div>
-                            <span class="location-tag ceased">Ceased</span>
+                            <span class="location-tag ceased" data-i18n="about.historical.airItam.ceased">Ceased</span>
                         </div>
 
                         <div class="historical-body">
                             <div class="air-itam-row">
                                 <div class="text-content">
-                                    <p><span class="highlight-text">1957 painting</span> by well known artist <strong>Yong Mun Sen</strong> of Air Itam Quarry operations in the early days (1950's) where use of jack hammers and rock breaking by manual labour using hammers were the norm.</p>
+                                    <p data-i18n="about.historical.airItam.text1"><span class="highlight-text">1957 painting</span> by well known artist <strong>Yong Mun Sen</strong> of Air Itam Quarry operations in the early days (1950's) where use of jack hammers and rock breaking by manual labour using hammers were the norm.</p>
                                 </div>
                                 <div class="image-grid">
                                     <div class="image-item">
                                         <img src="painting_YongMunSen.jpeg" alt="Air Itam Quarry 1957 Painting by Yong Mun Sen" />
-                                        <div class="caption">1957 painting by Yong Mun Sen - Air Itam Quarry operations</div>
+                                        <div class="caption" data-i18n="about.historical.airItam.caption1">1957 painting by Yong Mun Sen - Air Itam Quarry operations</div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="air-itam-row" style="margin-top: 1.5rem;">
                                 <div class="text-content">
-                                    <p>Air Itam Quarry's old <span class="highlight-text">concrete stone bunkers</span>. Stones/rocks broken down to suitable sizes were then transported to the bunkers by <span class="highlight-text">wheel buckets on rail tracks</span> for storage and subsequent sales.</p>
+                                    <p data-i18n="about.historical.airItam.text2">Air Itam Quarry's old <span class="highlight-text">concrete stone bunkers</span>. Stones/rocks broken down to suitable sizes were then transported to the bunkers by <span class="highlight-text">wheel buckets on rail tracks</span> for storage and subsequent sales.</p>
                                 </div>
                                 <div class="image-grid">
                                     <div class="image-item">
                                         <img src="OldConcreteStoneBunker.jpeg" alt="Air Itam Quarry Concrete Stone Bunkers" />
-                                        <div class="caption">Old concrete stone bunkers with rail tracks for transportation</div>
+                                        <div class="caption" data-i18n="about.historical.airItam.caption2">Old concrete stone bunkers with rail tracks for transportation</div>
                                     </div>
                                 </div>
                             </div>
@@ -1716,21 +1880,21 @@
                                 <i class="fas fa-mountain"></i>
                             </div>
                             <div class="header-title">
-                                <h3>Tanjong Bungah Quarry</h3>
-                                <span class="sub-location">Active commercial quarry</span>
+                                <h3 data-i18n="about.historical.tanjungBungah.title">Tanjong Bungah Quarry</h3>
+                                <span class="sub-location" data-i18n="about.historical.tanjungBungah.subtitle">Active commercial quarry</span>
                             </div>
-                            <span class="location-tag active">Active</span>
+                            <span class="location-tag active" data-i18n="about.historical.tanjungBungah.active">Active</span>
                         </div>
 
                         <div class="historical-body">
                             <div class="image-grid">
                                 <div class="image-item">
                                     <img src="JKM_TGBUNGAH_ QUARRY.jpg" alt="Tanjong Bungah Quarry Aerial View" />
-                                    <div class="caption">Aerial photograph of Tanjong Bungah Quarry area</div>
+                                    <div class="caption" data-i18n="about.historical.tanjungBungah.caption1">Aerial photograph of Tanjong Bungah Quarry area</div>
                                 </div>
                                 <div class="image-item">
                                     <img src="Tanjung_Bungah_Quarry.jpeg" alt="Tanjong Bungah Quarry Aerial View 2" />
-                                    <div class="caption">Aerial view of the quarry operations</div>
+                                    <div class="caption" data-i18n="about.historical.tanjungBungah.caption2">Aerial view of the quarry operations</div>
                                 </div>
                             </div>
                         </div>
@@ -1743,21 +1907,21 @@
                                 <i class="fas fa-mountain"></i>
                             </div>
                             <div class="header-title">
-                                <h3>Penanti Quarry</h3>
-                                <span class="sub-location">Active commercial quarry</span>
+                                <h3 data-i18n="about.historical.penanti.title">Penanti Quarry</h3>
+                                <span class="sub-location" data-i18n="about.historical.penanti.subtitle">Active commercial quarry</span>
                             </div>
-                            <span class="location-tag active">Active</span>
+                            <span class="location-tag active" data-i18n="about.historical.penanti.active">Active</span>
                         </div>
 
                         <div class="historical-body">
                             <div class="image-grid">
                                 <div class="image-item">
                                     <img src="JKM_TGQ _PENANTI _QUARRY.jpg" alt="Penanti Quarry Aerial View" />
-                                    <div class="caption">Aerial photograph of Penanti Quarry area</div>
+                                    <div class="caption" data-i18n="about.historical.penanti.caption1">Aerial photograph of Penanti Quarry area</div>
                                 </div>
                                 <div class="image-item">
                                     <img src="Penanti_Quarry.jpeg" alt="Penanti Quarry Aerial View 2" />
-                                    <div class="caption">Aerial view of the quarry operations</div>
+                                    <div class="caption" data-i18n="about.historical.penanti.caption2">Aerial view of the quarry operations</div>
                                 </div>
                             </div>
                         </div>
@@ -1772,42 +1936,42 @@
         <div class="container">
             <div class="esg-wrapper">
                 <div class="section-title">
-                    <h2>Our Commitment to Sustainability</h2>
+                    <h2 data-i18n="about.esg.title">Our Commitment to Sustainability</h2>
                     <div class="line"></div>
-                    <p>Building a greener future through responsible quarrying</p>
+                    <p data-i18n="about.esg.subtitle">Building a greener future through responsible quarrying</p>
                 </div>
                 <div class="esg-grid">
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-leaf"></i></div>
                         <span class="sdg-badge">SDG 13, 15</span>
-                        <h3>Environmental</h3>
-                        <p>We are committed to sustainable quarrying practices, including responsible land rehabilitation, dust suppression, and water conservation to minimize our environmental footprint.</p>
+                        <h3 data-i18n="about.esg.environmental.title">Environmental</h3>
+                        <p data-i18n="about.esg.environmental.desc">We are committed to sustainable quarrying practices, including responsible land rehabilitation, dust suppression, and water conservation to minimize our environmental footprint.</p>
                         <div class="sdg-list">
-                            <span class="sdg-tag">Climate Action</span>
-                            <span class="sdg-tag">Life on Land</span>
+                            <span class="sdg-tag" data-i18n="about.esg.environmental.tags.0">Climate Action</span>
+                            <span class="sdg-tag" data-i18n="about.esg.environmental.tags.1">Life on Land</span>
                         </div>
                     </div>
 
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-shield-alt"></i></div>
                         <span class="sdg-badge">SDG 3, 8</span>
-                        <h3>Safety</h3>
-                        <p>Comprehensive safety protocols and regular training ensure the well-being of our workforce and compliance with the highest industry safety standards.</p>
+                        <h3 data-i18n="about.esg.safety.title">Safety</h3>
+                        <p data-i18n="about.esg.safety.desc">Comprehensive safety protocols and regular training ensure the well-being of our workforce and compliance with the highest industry safety standards.</p>
                         <div class="sdg-list">
-                            <span class="sdg-tag">Good Health</span>
-                            <span class="sdg-tag">Decent Work</span>
+                            <span class="sdg-tag" data-i18n="about.esg.safety.tags.0">Good Health</span>
+                            <span class="sdg-tag" data-i18n="about.esg.safety.tags.1">Decent Work</span>
                         </div>
                     </div>
 
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-handshake"></i></div>
                         <span class="sdg-badge">SDG 1, 8, 11</span>
-                        <h3>Community</h3>
-                        <p>We actively engage with local communities, supporting economic development and creating employment opportunities in the regions where we operate.</p>
+                        <h3 data-i18n="about.esg.community.title">Community</h3>
+                        <p data-i18n="about.esg.community.desc">We actively engage with local communities, supporting economic development and creating employment opportunities in the regions where we operate.</p>
                         <div class="sdg-list">
-                            <span class="sdg-tag">No Poverty</span>
-                            <span class="sdg-tag">Decent Work</span>
-                            <span class="sdg-tag">Sustainable Cities</span>
+                            <span class="sdg-tag" data-i18n="about.esg.community.tags.0">No Poverty</span>
+                            <span class="sdg-tag" data-i18n="about.esg.community.tags.1">Decent Work</span>
+                            <span class="sdg-tag" data-i18n="about.esg.community.tags.2">Sustainable Cities</span>
                         </div>
                     </div>
                 </div>
@@ -1819,76 +1983,76 @@
     <section class="subsidiaries-section">
         <div class="container">
             <div class="section-title">
-                <h2>Group of Companies</h2>
+                <h2 data-i18n="index.subsidiaries.title">Group of Companies</h2>
                 <div class="line"></div>
-                <p>Teik Granite Group comprises the following entities</p>
+                <p data-i18n="index.subsidiaries.subtitle">Teik Granite Group comprises the following entities</p>
             </div>
             <div class="sub-grid">
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">01</span>
-                    <span class="level-badge parent">Head Office</span>
+                    <span class="level-badge parent" data-i18n="index.subsidiaries.headOffice">Head Office</span>
                     <i class="fas fa-building"></i>
                     <h4>Teik Granite Quarry Sdn Bhd</h4>
                     <div class="reg">196001000153 (3821-P)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
-                        <p><span class="label">Email:</span> tgq@teikgranite.com</p>
-                        <p><span class="label">Phone:</span> 04-261 4477</p>
-                        <p><span class="label">Fax:</span> 04-262 2818</p>
-                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.address">Address:</span> 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.email">Email:</span> tgq@teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.phone">Phone:</span> 04-261 4477</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.fax">Fax:</span> 04-262 2818</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.website">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">02</span>
-                    <span class="level-badge subsidiary">Corporate Office</span>
+                    <span class="level-badge subsidiary" data-i18n="index.subsidiaries.corporateOffice">Corporate Office</span>
                     <i class="fas fa-building"></i>
                     <h4>Teik Granite Corporation Sdn Bhd</h4>
                     <div class="reg">198401016157 (128713-X)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
-                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
-                        <p><span class="label">Phone:</span> 04-261 4477</p>
-                        <p><span class="label">Fax:</span> 04-262 2818</p>
-                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.address">Address:</span> 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.email">Email:</span> tgc@teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.phone">Phone:</span> 04-261 4477</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.fax">Fax:</span> 04-262 2818</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.website">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">03</span>
-                    <span class="level-badge quarry">Quarry Site</span>
+                    <span class="level-badge quarry" data-i18n="index.subsidiaries.quarrySite">Quarry Site</span>
                     <i class="fas fa-mountain"></i>
                     <h4>TGQ (Tanjung Bungah) Sdn Bhd</h4>
                     <div class="reg">198101008428 (74545-V)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> Lot 89, Jalan Lembah Permai, 11200 Tanjong Bungah, Penang</p>
-                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
-                        <p><span class="label">Phone:</span> 04-261 4477/8</p>
-                        <p><span class="label">Fax:</span> 04-262 2818</p>
-                        <p><span class="label">Site:</span> Tanjung Bungah 604-8991189, 8905537</p>
-                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.address">Address:</span> Lot 89, Jalan Lembah Permai, 11200 Tanjong Bungah, Penang</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.email">Email:</span> tgc@teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.phone">Phone:</span> 04-261 4477/8</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.fax">Fax:</span> 04-262 2818</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.site">Site:</span> Tanjung Bungah 604-8991189, 8905537</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.website">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
                 <div class="sub-item" onclick="toggleDropdown(this)">
                     <span class="sub-number">04</span>
-                    <span class="level-badge quarry">Quarry Site</span>
+                    <span class="level-badge quarry" data-i18n="index.subsidiaries.quarrySite">Quarry Site</span>
                     <i class="fas fa-mountain"></i>
                     <h4>TGQ (Air Itam) Sdn Bhd</h4>
                     <div class="reg">198101005503 (71617-P)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> Lot 401(1), Mukim 20, Penanti, 14400 Bukit Mertajam, Penang</p>
-                        <p><span class="label">Email:</span> tgc@teikgranite.com</p>
-                        <p><span class="label">Phone:</span> 04-261 4477/8</p>
-                        <p><span class="label">Fax:</span> 04-262 2818</p>
-                        <p><span class="label">Site:</span> Penanti 604-5212151, 5212310</p>
-                        <p><span class="label">Website:</span> www.teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.address">Address:</span> Lot 401(1), Mukim 20, Penanti, 14400 Bukit Mertajam, Penang</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.email">Email:</span> tgc@teikgranite.com</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.phone">Phone:</span> 04-261 4477/8</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.fax">Fax:</span> 04-262 2818</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.site">Site:</span> Penanti 604-5212151, 5212310</p>
+                        <p><span class="label" data-i18n="index.subsidiaries.website">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
             </div>
             <div class="map-btn-wrapper">
-                <a href="contact.html#find-us" class="btn-map">
+                <a href="contact.html#find-us" class="btn-map" data-i18n="common.viewMap">
                     <i class="fas fa-location-dot"></i> View Locations on Map
                 </a>
             </div>
@@ -1900,38 +2064,42 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4>Teik Granite Quarry Sdn Bhd</h4>
-                    <p>Registration No: 196001000153 (3821-P)</p>
-                    <p>Established: 20 June 1960</p>
-                    <p style="margin-top: 0.5rem;">A trusted Malaysian quarry company supplying premium granite and construction materials for over 60 years.</p>
+                    <h4 data-i18n="logo.company">Teik Granite Quarry Sdn Bhd</h4>
+                    <p data-i18n="common.regNo">Registration No: 196001000153 (3821-P)</p>
+                    <p data-i18n="common.established">Established: 20 June 1960</p>
+                    <p style="margin-top: 0.5rem;" data-i18n="common.tagline">A trusted Malaysian quarry company supplying premium granite and construction materials for over 60 years.</p>
                 </div>
                 <div>
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Company</a>
-                    <a href="about.html">About</a>
-                    <a href="products.html">Products</a>
-                    <a href="facilities.html">Facilities</a>
-                    <a href="contact.html">Contact</a>
+                    <h4 data-i18n="common.quickLinks">Quick Links</h4>
+                    <a href="index.html" data-i18n="nav.company">Company</a>
+                    <a href="about.html" data-i18n="nav.about">About</a>
+                    <a href="products.html" data-i18n="nav.products">Products</a>
+                    <a href="facilities.html" data-i18n="nav.facilities">Facilities</a>
+                    <a href="contact.html" data-i18n="nav.contact">Contact</a>
                 </div>
                 <div>
-                    <h4>Group Companies</h4>
+                    <h4 data-i18n="common.groupCompanies">Group Companies</h4>
                     <a href="contact.html#map-pulau-tikus">Teik Granite Quarry Sdn Bhd</a>
                     <a href="contact.html#map-pulau-tikus">Teik Granite Corporation Sdn Bhd</a>
                     <a href="contact.html#map-tanjung-bungah">TGQ (Tanjung Bungah) Sdn Bhd</a>
                     <a href="contact.html#map-penanti">TGQ (Air Itam) Sdn Bhd</a>
                 </div>
                 <div>
-                    <h4>Connect With Us</h4>
-                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> 04-261 4477</p>
-                    <p><i class="fas fa-fax"></i> 04-262 2818</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Pulau Tikus, Penang, Malaysia</p>
+                    <h4 data-i18n="common.connectWithUs">Connect With Us</h4>
+                    <p style="margin-top: 1rem;"><i class="fas fa-phone"></i> <span data-i18n="common.phone">04-261 4477</span></p>
+                    <p><i class="fas fa-fax"></i> <span data-i18n="common.fax">04-262 2818</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="common.location">Pulau Tikus, Penang, Malaysia</span></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div>© 2026 Teik Granite Quarry Sdn Bhd. All Rights Reserved.</div>
+                <div data-i18n="common.copyright">© 2026 Teik Granite Quarry Sdn Bhd. All Rights Reserved.</div>
             </div>
         </div>
     </footer>
+
+    <!-- ===== MULTI-LANGUAGE SCRIPTS ===== -->
+    <script src="js/translations.js"></script>
+    <script src="js/language.js"></script>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
