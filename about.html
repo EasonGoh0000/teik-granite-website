@@ -50,7 +50,6 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
-        /* Mobile background fix - remove fixed attachment on small screens */
         @media (max-width: 768px) {
             body::before {
                 background-attachment: scroll;
@@ -465,12 +464,139 @@
             width: 1.5rem;
         }
 
-        /* ===== MISSION, VISION, TIMELINE & WHY CHOOSE US ===== */
-        .mission-timeline-section {
+        /* ===== QUARRY TIMELINE TABLE ===== */
+        .quarry-timeline {
+            margin-top: 2rem;
+            overflow-x: auto;
+        }
+        .quarry-timeline table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+        .quarry-timeline table thead {
+            background: #cc0000;
+            color: white;
+        }
+        .quarry-timeline table th {
+            padding: 0.8rem 1.2rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .quarry-timeline table td {
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid #e8eaed;
+            color: #2a3a3a;
+            font-size: 0.95rem;
+        }
+        .quarry-timeline table tr:last-child td {
+            border-bottom: none;
+        }
+        .quarry-timeline table tbody tr:hover {
+            background: #f5f6f8;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .status-badge.active {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-badge.ceased {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* ===== MAJOR PROJECTS ===== */
+        .projects-section {
             padding: 5rem 0;
             background: transparent;
         }
-        .mission-timeline-wrapper {
+        .projects-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e8eaed;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.8rem;
+            border: 1px solid #e8eaed;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #cc0000;
+            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.08);
+            background: #ffffff;
+        }
+        .project-card .project-icon {
+            font-size: 2rem;
+            color: #cc0000;
+            margin-bottom: 0.5rem;
+        }
+        .project-card .project-year {
+            display: inline-block;
+            background: #cc0000;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        .project-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a2a1d;
+            margin-bottom: 0.3rem;
+        }
+        .project-card p {
+            color: #4a5a5a;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .project-card .project-company {
+            display: inline-block;
+            background: #fce8e8;
+            color: #cc0000;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== HISTORICAL QUARRY SITES ===== */
+        .historical-section {
+            padding: 5rem 0;
+            background: transparent;
+        }
+        .historical-wrapper {
             background: #ffffff;
             border-radius: 16px;
             padding: 3rem;
@@ -478,150 +604,196 @@
             border: 1px solid #e8eaed;
         }
 
-        .mission-vision-grid {
+        .historical-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .historical-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid #e8eaed;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+        .historical-item:hover {
+            transform: translateY(-4px);
+            border-color: #cc0000;
+            box-shadow: 0 12px 30px rgba(204, 0, 0, 0.08);
+        }
+
+        .historical-item .historical-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f2f5;
+        }
+        .historical-item .historical-header .header-icon {
+            width: 50px;
+            height: 50px;
+            background: #fce8e8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #cc0000;
+            flex-shrink: 0;
+        }
+        .historical-item .historical-header .header-title {
+            flex: 1;
+        }
+        .historical-item .historical-header .header-title h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a2a1d;
+            margin: 0;
+        }
+        .historical-item .historical-header .header-title .sub-location {
+            font-size: 0.8rem;
+            color: #5a6a6a;
+            font-weight: 400;
+        }
+        .historical-item .historical-header .location-tag {
+            display: inline-block;
+            background: #fce8e8;
+            color: #cc0000;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+        .historical-item .historical-header .location-tag.active {
+            background: #d4edda;
+            color: #155724;
+        }
+        .historical-item .historical-header .location-tag.ceased {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+
+        .historical-item.air-itam .historical-body {
+            display: block;
+            width: 100%;
+        }
+
+        .historical-item.air-itam .historical-body .air-itam-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin-bottom: 2.5rem;
+            width: 100%;
+            margin-bottom: 2rem;
         }
-        .mission-box,
-        .vision-box {
-            background: #f5f6f8;
-            padding: 1.5rem 1.8rem;
-            border-radius: 12px;
-            border-left: 4px solid #cc0000;
-            transition: 0.3s;
-        }
-        .mission-box:hover,
-        .vision-box:hover {
-            background: #ffffff;
-            box-shadow: 0 4px 20px rgba(204, 0, 0, 0.08);
-            transform: translateY(-2px);
-        }
-        .mission-box h4,
-        .vision-box h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #1a2a1d;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .mission-box h4 i,
-        .vision-box h4 i {
-            color: #cc0000;
-            font-size: 1rem;
-        }
-        .mission-box p,
-        .vision-box p {
-            color: #2a3a3a;
-            font-size: 0.95rem;
-            line-height: 1.7;
+
+        .historical-item.air-itam .historical-body .air-itam-row:last-child {
             margin-bottom: 0;
         }
 
-        .section-divider {
-            width: 100%;
-            height: 1px;
-            background: #e8eaed;
-            margin: 2rem 0;
-        }
-
-        .timeline-why-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .timeline-section h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #1a2a1d;
-            margin-bottom: 1rem;
+        .historical-item.air-itam .historical-body .text-content {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
+            justify-content: center;
         }
-        .timeline-section h4 i {
-            color: #cc0000;
-        }
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 0.5rem;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 5%;
-            right: 5%;
-            height: 3px;
-            background: #cc0000;
-            border-radius: 2px;
-        }
-        .timeline-item {
-            text-align: center;
-            position: relative;
-        }
-        .timeline-item .dot {
-            width: 14px;
-            height: 14px;
-            background: #cc0000;
-            border-radius: 50%;
-            display: inline-block;
-            margin-bottom: 0.4rem;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 0 2px #cc0000;
-            position: relative;
-            z-index: 2;
-        }
-        .timeline-item .year {
-            display: block;
-            font-weight: 800;
-            color: #1a2a1d;
-            font-size: 0.8rem;
-        }
-        .timeline-item .event {
-            display: block;
-            color: #5a6a6a;
-            font-size: 0.65rem;
-            line-height: 1.3;
-            margin-top: 0.1rem;
-        }
-
-        .why-choose-us h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #1a2a1d;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .why-choose-us h4 i {
-            color: #cc0000;
-        }
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.3rem 1.5rem;
-        }
-        .why-grid .why-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .historical-item.air-itam .historical-body .text-content p {
             color: #2a3a3a;
-            font-size: 0.85rem;
-            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
         }
-        .why-grid .why-item i {
+        .historical-item.air-itam .historical-body .text-content .highlight-text {
             color: #cc0000;
-            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .historical-item.air-itam .historical-body .image-grid {
+            display: block;
+            width: 100%;
+        }
+
+        .historical-item.air-itam .historical-body .image-grid .image-item {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e8eaed;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 100%;
+        }
+        .historical-item.air-itam .historical-body .image-grid .image-item:hover {
+            transform: scale(1.01);
+            border-color: #cc0000;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.15);
+        }
+
+        .historical-item.air-itam .historical-body .image-grid .image-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .historical-item.air-itam .historical-body .image-grid .image-item .caption {
+            padding: 0.5rem 1rem;
+            background: #f8f9fa;
+            font-size: 0.75rem;
+            color: #5a6a6a;
+            text-align: center;
+            border-top: 1px solid #e8eaed;
+            font-style: italic;
+        }
+
+        .historical-item:not(.air-itam) .historical-body {
+            display: block;
+            width: 100%;
+        }
+
+        .historical-item:not(.air-itam) .text-content {
+            display: none;
+        }
+
+        .historical-item:not(.air-itam) .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .historical-item:not(.air-itam) .image-grid .image-item {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e8eaed;
+            transition: all 0.3s ease;
+        }
+        .historical-item:not(.air-itam) .image-grid .image-item:hover {
+            transform: scale(1.02);
+            border-color: #cc0000;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.15);
+        }
+
+        .historical-item:not(.air-itam) .image-grid .image-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .historical-item:not(.air-itam) .image-grid .image-item .caption {
+            padding: 0.5rem 1rem;
+            background: #f8f9fa;
+            font-size: 0.75rem;
+            color: #5a6a6a;
+            text-align: center;
+            border-top: 1px solid #e8eaed;
+            font-style: italic;
         }
 
         /* ===== ESG / SUSTAINABILITY WITH BACKGROUND IMAGES ===== */
@@ -642,7 +814,6 @@
             gap: 2rem;
         }
 
-        /* ESG Cards with Background Images */
         .esg-card {
             text-align: center;
             padding: 2rem;
@@ -653,23 +824,18 @@
             overflow: hidden;
         }
 
-        /* Environmental Card */
         .esg-card:nth-child(1) {
             background-image: url('environmental.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-
-        /* Safety Card */
         .esg-card:nth-child(2) {
             background-image: url('safety.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-
-        /* Community Card */
         .esg-card:nth-child(3) {
             background-image: url('safety_environment_photo.png');
             background-size: cover;
@@ -677,7 +843,6 @@
             background-repeat: no-repeat;
         }
 
-        /* Overlay for better text readability */
         .esg-card::before {
             content: '';
             position: absolute;
@@ -690,7 +855,6 @@
             z-index: 1;
         }
 
-        /* Content above overlay */
         .esg-card .esg-icon,
         .esg-card .sdg-badge,
         .esg-card h3,
@@ -946,7 +1110,7 @@
             align-items: center;
             flex-wrap: wrap;
             font-size: 0.8rem;
-            color: #ffffff;
+            color: #6a7a6a;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -954,14 +1118,23 @@
             .sub-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .timeline {
-                grid-template-columns: repeat(5, 1fr);
-            }
             .hero-content {
                 max-width: 80%;
             }
             .hero-content h1 {
                 font-size: 2.4rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .historical-item:not(.air-itam) .image-grid .image-item img {
+                height: 280px;
+            }
+            .historical-item.air-itam .historical-body .image-grid .image-item img {
+                height: 280px;
+            }
+            .historical-item.air-itam .historical-body .air-itam-row {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1032,6 +1205,9 @@
             .esg-grid {
                 grid-template-columns: 1fr;
             }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
             .hero {
                 min-height: 40vh;
             }
@@ -1051,7 +1227,10 @@
             .about-wrapper {
                 padding: 1.5rem;
             }
-            .mission-timeline-wrapper {
+            .projects-wrapper {
+                padding: 1.5rem;
+            }
+            .historical-wrapper {
                 padding: 1.5rem;
             }
             .esg-wrapper {
@@ -1059,27 +1238,6 @@
             }
             .map-btn-wrapper {
                 text-align: center;
-            }
-            .mission-vision-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline-why-grid {
-                grid-template-columns: 1fr;
-            }
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline {
-                grid-template-columns: repeat(5, 1fr);
-                overflow-x: auto;
-                gap: 0.8rem;
-                padding-bottom: 0.3rem;
-            }
-            .timeline::before {
-                display: none;
-            }
-            .timeline-item {
-                min-width: 70px;
             }
             .section-title h2 {
                 font-size: 2rem;
@@ -1097,6 +1255,18 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.1rem;
+            }
+            .historical-item:not(.air-itam) .image-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .historical-item:not(.air-itam) .image-grid .image-item img {
+                height: 250px;
+            }
+            .historical-item.air-itam .historical-body .air-itam-row {
+                grid-template-columns: 1fr;
+            }
+            .historical-item.air-itam .historical-body .image-grid .image-item img {
+                height: 250px;
             }
         }
 
@@ -1147,7 +1317,10 @@
             .about-content {
                 padding: 4rem 0;
             }
-            .mission-timeline-section {
+            .projects-section {
+                padding: 4rem 0;
+            }
+            .historical-section {
                 padding: 4rem 0;
             }
             .esg-section {
@@ -1155,6 +1328,23 @@
             }
             .subsidiaries-section {
                 padding: 4rem 0;
+            }
+            .quarry-timeline table th,
+            .quarry-timeline table td {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            .historical-item:not(.air-itam) .image-grid {
+                grid-template-columns: 1fr;
+            }
+            .historical-item:not(.air-itam) .image-grid .image-item img {
+                height: 220px;
+            }
+            .historical-item.air-itam .historical-body .air-itam-row {
+                grid-template-columns: 1fr;
+            }
+            .historical-item.air-itam .historical-body .image-grid .image-item img {
+                height: 220px;
             }
         }
 
@@ -1181,8 +1371,11 @@
             .about-wrapper {
                 padding: 1.5rem;
             }
-            .mission-timeline-wrapper {
-                padding: 1rem;
+            .projects-wrapper {
+                padding: 1.5rem;
+            }
+            .historical-wrapper {
+                padding: 1.5rem;
             }
             .esg-wrapper {
                 padding: 1.5rem;
@@ -1200,31 +1393,6 @@
             .nav-menu a {
                 font-size: 0.8rem;
                 padding: 0.7rem 1rem;
-            }
-            .mission-vision-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline-why-grid {
-                grid-template-columns: 1fr;
-            }
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline-item {
-                min-width: 60px;
-            }
-            .timeline-item .year {
-                font-size: 0.65rem;
-            }
-            .timeline-item .event {
-                font-size: 0.55rem;
-            }
-            .timeline::before {
-                top: 22px;
-            }
-            .timeline-item .dot {
-                width: 10px;
-                height: 10px;
             }
             .section-title h2 {
                 font-size: 1.5rem;
@@ -1260,7 +1428,10 @@
             .about-content {
                 padding: 3rem 0;
             }
-            .mission-timeline-section {
+            .projects-section {
+                padding: 3rem 0;
+            }
+            .historical-section {
                 padding: 3rem 0;
             }
             .esg-section {
@@ -1268,6 +1439,26 @@
             }
             .subsidiaries-section {
                 padding: 3rem 0;
+            }
+            .quarry-timeline table th,
+            .quarry-timeline table td {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.7rem;
+            }
+            .historical-item:not(.air-itam) .image-grid .image-item img {
+                height: 200px;
+            }
+            .historical-item .historical-header .header-title h3 {
+                font-size: 1.1rem;
+            }
+            .historical-item {
+                padding: 1.2rem;
+            }
+            .historical-item.air-itam .historical-body .air-itam-row {
+                grid-template-columns: 1fr;
+            }
+            .historical-item.air-itam .historical-body .image-grid .image-item img {
+                height: 200px;
             }
         }
     </style>
@@ -1296,19 +1487,14 @@
         </div>
     </header>
 
-    <!-- ===== HERO BANNER WITH UPDATED CAROUSEL IMAGES ===== -->
+    <!-- ===== HERO BANNER ===== -->
     <section class="hero">
         <div class="hero-slides">
-            <!-- Slide 1: homepage_photo.png -->
             <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
-            <!-- Slide 2: drill_and_Blast_photo -->
             <div class="hero-slide" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
-            <!-- Slide 3: Crushing_plant_photo -->
             <div class="hero-slide" style="background-image: url('Crushing_plant_photo.png');"></div>
-            <!-- Slide 4: safety_environment_photo -->
-            <div class="hero-slide" style="background-image: url('safety_environment_photo.png');"></div>
-            <!-- Slide 5: earth_materials_photo -->
-            <div class="hero-slide" style="background-image: url('earth_materials_photo.png');"></div>
+            <div class="hero-slide" style="background-image: url('transport_fleet.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('crushing_plant.jpeg');"></div>
         </div>
 
         <div class="hero-indicators">
@@ -1347,85 +1533,233 @@
                             <h2 style="font-size: 2.5rem;">Company History</h2>
                             <div class="line" style="margin: 0.5rem auto;"></div>
                         </div>
-                        <p><span class="highlight">Established in 1960</span>, <strong>Teik Granite Quarry Sdn Bhd</strong> is one of Penang's established quarry operators.</p>
-                        <p>We operate in the <strong>quarry and mining industry</strong>, specializing in:</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Granite extraction and supply</li>
-                            <li><i class="fas fa-check-circle"></i> Earth materials supply</li>
-                            <li><i class="fas fa-check-circle"></i> Sand and aggregates supply</li>
-                        </ul>
-                        <p>For more than 60 years, we have supplied <strong>quality granite products</strong> for highways, bridges, commercial developments, residential projects, factories, ports and infrastructure works.</p>
-                        <p>Today, we continue to <strong>combine decades of quarrying experience</strong> with modern production methods to provide <strong>reliable building materials</strong> for Malaysia's construction industry.</p>
+
+                        <p><span class="highlight">Teik Granite Quarry (TGQ)</span> is a pioneer in the quarry industry in the state of Penang. TGQ was founded in the early 1950's by the family's patriarch, <strong>Mr. Loh Poh Heng</strong> when he first operated a quarry at <strong>Air Itam</strong> at the foothill of Penang Hill.</p>
+
+                        <p>During the 1960's, the quarry business was expanded to <strong>Tanjung Bungah</strong>, then <strong>Bayan Lepas</strong> in the Island and <strong>Penanti, Bukit Mertajam</strong> in the mainland. During the peak, there were four quarries operating in Penang. However, the Bayan Lepas quarry which was operated as a project quarry lasted for a few years only. The Air Itam quarry too ceased operation around <strong>1992</strong>, a decision taken on a voluntary basis.</p>
+
+                        <p>To date the <strong>Tanjong Bungah</strong> and <strong>Penanti</strong> quarries are still active and remain operating as commercial quarries both in the Island and mainland.</p>
+
+                        <div class="quarry-timeline">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Time Line</th>
+                                        <th>Location of Quarry</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1952 - 1992</td>
+                                        <td>Air Itam, Penang</td>
+                                        <td><span class="status-badge ceased">Ceased</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1960's</td>
+                                        <td>Bayan Lepas, Penang</td>
+                                        <td><span class="status-badge ceased">Ceased</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1960's - To Date</td>
+                                        <td>Tanjung Bungah, Penang</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1960's - To Date</td>
+                                        <td>Penanti, Bukit Mertajam</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== MISSION, VISION, TIMELINE & WHY CHOOSE US ===== -->
-    <section class="mission-timeline-section">
+    <!-- ===== MAJOR PROJECTS ===== -->
+    <section class="projects-section" id="projects-section">
         <div class="container">
-            <div class="mission-timeline-wrapper">
+            <div class="projects-wrapper">
                 <div class="section-title">
-                    <h2>Our Mission &amp; Vision</h2>
+                    <h2>Participation in Major Projects in Penang</h2>
                     <div class="line"></div>
-                    <p>Driving excellence through purpose and commitment</p>
+                    <p>Throughout the year of operation, TGQ has participated in many major infrastructures and building projects, both as a material supplier and also as a contractor</p>
                 </div>
 
-                <div class="mission-vision-grid">
-                    <div class="mission-box">
-                        <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
-                        <p>To provide permanent quality granite and construction materials that build Malaysia's future with reliability and sustainability. We are dedicated to delivering excellence in every project, ensuring that our materials meet the highest standards of quality and durability.</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-plane-departure"></i></div>
+                        <span class="project-year">1970's</span>
+                        <h4>Penang International Airport</h4>
+                        <p>Worked with Maeda Construction Co. as a subcontractor and also as the supplier of all rock materials.</p>
+                        <span class="project-company">Maeda Construction Co.</span>
                     </div>
-                    <div class="vision-box">
-                        <h4><i class="fas fa-eye"></i> Our Vision</h4>
-                        <p>To be Malaysia's leading quarrying company, committed to the environment, quality, and community sustainability. We strive to set the benchmark for responsible quarrying practices while contributing to the nation's infrastructure development.</p>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-road"></i></div>
+                        <span class="project-year">1980's</span>
+                        <h4>Penang Bridge 1st &amp; Lim Chong Eu Expressway</h4>
+                        <p>Worked with Hyundai Engineering and Construction Company as a supplier of rock materials and as a road constructor for a portion of the Lim Chong Eu Expressway.</p>
+                        <span class="project-company">Hyundai Engineering &amp; Construction</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-archway"></i></div>
+                        <span class="project-year">1980's</span>
+                        <h4>Komtar Tower</h4>
+                        <p>Worked with Lim Kah Ngam Malaysia as their main supplier of aggregates for their concrete requirement for all building works.</p>
+                        <span class="project-company">Lim Kah Ngam Malaysia</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-building"></i></div>
+                        <span class="project-year">Various</span>
+                        <h4>Major Skyscrapers in Penang Island</h4>
+                        <p>Major supplier of aggregates to contractors and readymixed concrete producers for numerous high rise projects throughout Penang Island.</p>
+                        <span class="project-company">Various Contractors</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-road"></i></div>
+                        <span class="project-year">1990's</span>
+                        <h4>North-South Expressway</h4>
+                        <p>Supplier of road-based rock materials and aggregates for concrete plants to United Engineers contractors for the northern region.</p>
+                        <span class="project-company">United Engineers</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-ship"></i></div>
+                        <span class="project-year">1990's</span>
+                        <h4>North Butterworth Container Terminal</h4>
+                        <p>Supplier of armour rocks &amp; stones to IJM Construction for the port's seashore protection.</p>
+                        <span class="project-company">IJM Construction</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-road"></i></div>
+                        <span class="project-year">2010's</span>
+                        <h4>Penang 2nd Bridge</h4>
+                        <p>Worked with China Harbour Engineering Co. as a supplier of quality aggregates for their high grade concrete production.</p>
+                        <span class="project-company">China Harbour Engineering Co.</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-train"></i></div>
+                        <span class="project-year">2010's</span>
+                        <h4>Electrified Double Track Project</h4>
+                        <p>Supplier of ballast stones for railway tracks and stone materials for road base and concrete requirements.</p>
+                        <span class="project-company">Various Contractors</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="section-divider"></div>
+    <!-- ===== HISTORICAL QUARRY SITES ===== -->
+    <section class="historical-section">
+        <div class="container">
+            <div class="historical-wrapper">
+                <div class="section-title">
+                    <h2>Historical Quarry Sites</h2>
+                    <div class="line"></div>
+                    <p>Preserving the rich heritage of Penang's quarrying industry</p>
+                </div>
 
-                <div class="timeline-why-grid">
-                    <div class="timeline-section">
-                        <h4><i class="fas fa-history"></i> Our Journey</h4>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <span class="dot"></span>
-                                <span class="year">1960</span>
-                                <span class="event">Founded in Penang</span>
+                <div class="historical-grid">
+                    <!-- Air Itam Quarry -->
+                    <div class="historical-item air-itam">
+                        <div class="historical-header">
+                            <div class="header-icon">
+                                <i class="fas fa-mountain"></i>
                             </div>
-                            <div class="timeline-item">
-                                <span class="dot"></span>
-                                <span class="year">1985</span>
-                                <span class="event">Expanded operations</span>
+                            <div class="header-title">
+                                <h3>Air Itam Quarry</h3>
+                                <span class="sub-location">Where it all began...</span>
                             </div>
-                            <div class="timeline-item">
-                                <span class="dot"></span>
-                                <span class="year">2000</span>
-                                <span class="event">Modernized facilities</span>
+                            <span class="location-tag ceased">Ceased</span>
+                        </div>
+
+                        <div class="historical-body">
+                            <div class="air-itam-row">
+                                <div class="text-content">
+                                    <p><span class="highlight-text">1957 painting</span> by well known artist <strong>Yong Mun Sen</strong> of Air Itam Quarry operations in the early days (1950's) where use of jack hammers and rock breaking by manual labour using hammers were the norm.</p>
+                                </div>
+                                <div class="image-grid">
+                                    <div class="image-item">
+                                        <img src="painting_YongMunSen.jpeg" alt="Air Itam Quarry 1957 Painting by Yong Mun Sen" />
+                                        <div class="caption">1957 painting by Yong Mun Sen - Air Itam Quarry operations</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="timeline-item">
-                                <span class="dot"></span>
-                                <span class="year">2015</span>
-                                <span class="event">New quarry sites</span>
-                            </div>
-                            <div class="timeline-item">
-                                <span class="dot"></span>
-                                <span class="year">2026</span>
-                                <span class="event">Trusted over 60+ Years</span>
+
+                            <div class="air-itam-row" style="margin-top: 1.5rem;">
+                                <div class="text-content">
+                                    <p>Air Itam Quarry's old <span class="highlight-text">concrete stone bunkers</span>. Stones/rocks broken down to suitable sizes were then transported to the bunkers by <span class="highlight-text">wheel buckets on rail tracks</span> for storage and subsequent sales.</p>
+                                </div>
+                                <div class="image-grid">
+                                    <div class="image-item">
+                                        <img src="OldConcreteStoneBunker.jpeg" alt="Air Itam Quarry Concrete Stone Bunkers" />
+                                        <div class="caption">Old concrete stone bunkers with rail tracks for transportation</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="why-choose-us">
-                        <h4><i class="fas fa-star"></i> Why Choose Teik Granite?</h4>
-                        <div class="why-grid">
-                            <div class="why-item"><i class="fas fa-check-circle"></i> 60+ Years of Experience</div>
-                            <div class="why-item"><i class="fas fa-check-circle"></i> Competitive Pricing</div>
-                            <div class="why-item"><i class="fas fa-check-circle"></i> Reliable Supply Chain</div>
-                            <div class="why-item"><i class="fas fa-check-circle"></i> Modern Quarrying Technology</div>
-                            <div class="why-item"><i class="fas fa-check-circle"></i> SIRIM Certified Products</div>
-                            <div class="why-item"><i class="fas fa-check-circle"></i> Sustainable Practices</div>
+                    <!-- Tanjung Bungah Quarry -->
+                    <div class="historical-item">
+                        <div class="historical-header">
+                            <div class="header-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div class="header-title">
+                                <h3>Tanjong Bungah Quarry</h3>
+                                <span class="sub-location">Active commercial quarry</span>
+                            </div>
+                            <span class="location-tag active">Active</span>
+                        </div>
+
+                        <div class="historical-body">
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="JKM_TGBUNGAH_ QUARRY.jpg" alt="Tanjong Bungah Quarry Aerial View" />
+                                    <div class="caption">Aerial photograph of Tanjong Bungah Quarry area</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="Tanjung_Bungah_Quarry.jpeg" alt="Tanjong Bungah Quarry Aerial View 2" />
+                                    <div class="caption">Aerial view of the quarry operations</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Penanti Quarry -->
+                    <div class="historical-item">
+                        <div class="historical-header">
+                            <div class="header-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div class="header-title">
+                                <h3>Penanti Quarry</h3>
+                                <span class="sub-location">Active commercial quarry</span>
+                            </div>
+                            <span class="location-tag active">Active</span>
+                        </div>
+
+                        <div class="historical-body">
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="JKM_TGQ _PENANTI _QUARRY.jpg" alt="Penanti Quarry Aerial View" />
+                                    <div class="caption">Aerial photograph of Penanti Quarry area</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="Penanti_Quarry.jpeg" alt="Penanti Quarry Aerial View 2" />
+                                    <div class="caption">Aerial view of the quarry operations</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1433,7 +1767,7 @@
         </div>
     </section>
 
-    <!-- ===== ESG / SUSTAINABILITY WITH BACKGROUND IMAGES ===== -->
+    <!-- ===== ESG / SUSTAINABILITY ===== -->
     <section class="esg-section">
         <div class="container">
             <div class="esg-wrapper">
@@ -1443,7 +1777,6 @@
                     <p>Building a greener future through responsible quarrying</p>
                 </div>
                 <div class="esg-grid">
-                    <!-- Environmental Card -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-leaf"></i></div>
                         <span class="sdg-badge">SDG 13, 15</span>
@@ -1455,7 +1788,6 @@
                         </div>
                     </div>
 
-                    <!-- Safety Card -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-shield-alt"></i></div>
                         <span class="sdg-badge">SDG 3, 8</span>
@@ -1467,7 +1799,6 @@
                         </div>
                     </div>
 
-                    <!-- Community Card -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-handshake"></i></div>
                         <span class="sdg-badge">SDG 1, 8, 11</span>
@@ -1501,8 +1832,8 @@
                     <div class="reg">196001000153 (3821-P)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
-                        <p><span class="label">Email:</span> tqg@teikgranite.com</p>
+                        <p><span class="label">Address:</span> 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Email:</span> tgq@teikgranite.com</p>
                         <p><span class="label">Phone:</span> 04-261 4477</p>
                         <p><span class="label">Fax:</span> 04-262 2818</p>
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
@@ -1516,7 +1847,7 @@
                     <div class="reg">198401016157 (128713-X)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Address:</span> 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
                         <p><span class="label">Email:</span> tgc@teikgranite.com</p>
                         <p><span class="label">Phone:</span> 04-261 4477</p>
                         <p><span class="label">Fax:</span> 04-262 2818</p>
@@ -1531,11 +1862,11 @@
                     <div class="reg">198101008428 (74545-V)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Address:</span> Lot 89, Jalan Lembah Permai, 11200 Tanjong Bungah, Penang</p>
                         <p><span class="label">Email:</span> tgc@teikgranite.com</p>
                         <p><span class="label">Phone:</span> 04-261 4477/8</p>
                         <p><span class="label">Fax:</span> 04-262 2818</p>
-                        <p><span class="label">Site:</span> Tanjung Bungah 604-8991189, 8905537 | Penanti 604-5212151, 5212310</p>
+                        <p><span class="label">Site:</span> Tanjung Bungah 604-8991189, 8905537</p>
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
@@ -1547,11 +1878,11 @@
                     <div class="reg">198101005503 (71617-P)</div>
                     <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
                     <div class="dropdown-details">
-                        <p><span class="label">Address:</span> Unit No.: 368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 Penang</p>
+                        <p><span class="label">Address:</span> Lot 401(1), Mukim 20, Penanti, 14400 Bukit Mertajam, Penang</p>
                         <p><span class="label">Email:</span> tgc@teikgranite.com</p>
                         <p><span class="label">Phone:</span> 04-261 4477/8</p>
                         <p><span class="label">Fax:</span> 04-262 2818</p>
-                        <p><span class="label">Site:</span> Tanjung Bungah 604-8991189, 8905537 | Penanti 604-5212151, 5212310</p>
+                        <p><span class="label">Site:</span> Penanti 604-5212151, 5212310</p>
                         <p><span class="label">Website:</span> www.teikgranite.com</p>
                     </div>
                 </div>
@@ -1584,10 +1915,10 @@
                 </div>
                 <div>
                     <h4>Group Companies</h4>
-                    <a href="#">Teik Granite Quarry Sdn Bhd</a>
-                    <a href="#">Teik Granite Corporation Sdn Bhd</a>
-                    <a href="#">TGQ (Tanjung Bungah) Sdn Bhd</a>
-                    <a href="#">TGQ (Air Itam) Sdn Bhd</a>
+                    <a href="contact.html#map-pulau-tikus">Teik Granite Quarry Sdn Bhd</a>
+                    <a href="contact.html#map-pulau-tikus">Teik Granite Corporation Sdn Bhd</a>
+                    <a href="contact.html#map-tanjung-bungah">TGQ (Tanjung Bungah) Sdn Bhd</a>
+                    <a href="contact.html#map-penanti">TGQ (Air Itam) Sdn Bhd</a>
                 </div>
                 <div>
                     <h4>Connect With Us</h4>
@@ -1604,7 +1935,6 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ===== Scroll Header =====
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
@@ -1614,7 +1944,6 @@
             }
         });
 
-        // ===== Back to Top =====
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
@@ -1627,7 +1956,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== Hamburger =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
@@ -1651,7 +1979,6 @@
                 }
             });
 
-            // ===== Hero Carousel =====
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.dot');
             let currentSlide = 0;
@@ -1691,7 +2018,6 @@
             startCarousel();
         });
 
-        // ===== Dropdown Toggle =====
         function toggleDropdown(element) {
             const details = element.querySelector('.dropdown-details');
             const arrow = element.querySelector('.dropdown-arrow i');
