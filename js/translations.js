@@ -119,15 +119,11 @@ const TRANSLATIONS = {
         step1Desc: "Controlled blasting to extract quality granite",
         step2: "Excavate",
         step2Desc: "Hydraulic excavators remove blasted rock safely and efficiently",
-        step3: "Load & Haul",
-        step3Desc: "Heavy-duty dump trucks transport granite to the crushing plant",
-        step4: "Crushing Plant",
-        step4Desc: "Primary and secondary crushing produce different aggregate sizes",
-        step5: "Screening",
-        step5Desc: "Materials are separated according to required specifications",
-        step6: "Stockpile & Delivery",
-        step6Desc: "Products are stored and supplied promptly to customers"
-      },
+        step3: "Crushing Plant",
+        step3Desc: "Primary and secondary crushing produce different aggregate sizes",
+        step4: "Load & Haul",
+        step4Desc: "Heavy-duty dump trucks transport granite to the stockpile"
+        },
       video: {
         title: "Our Quarry Operations",
         subtitle: "Watch our granite extraction and blasting process in action"
@@ -518,15 +514,11 @@ const TRANSLATIONS = {
         step1Desc: "Letupan terkawal untuk mengekstrak granit berkualiti",
         step2: "Penggalian",
         step2Desc: "Jentera penggali hidraulik mengeluarkan batu letupan dengan selamat dan cekap",
-        step3: "Muat & Angkut",
-        step3Desc: "Lori dump berat mengangkut granit ke loji penghancuran",
-        step4: "Loji Penghancuran",
-        step4Desc: "Penghancuran primer dan sekunder menghasilkan pelbagai saiz agregat",
-        step5: "Penapisan",
-        step5Desc: "Bahan dipisahkan mengikut spesifikasi yang diperlukan",
-        step6: "Stok & Penghantaran",
-        step6Desc: "Produk disimpan dan dibekalkan dengan segera kepada pelanggan"
-      },
+        step3: "Loji Penghancuran",
+        step3Desc: "Penghancuran primer dan sekunder menghasilkan pelbagai saiz agregat",
+        step4: "Muat & Angkut",
+        step4Desc: "Lori dump berat mengangkut granit ke timbunan stok"
+        },
       video: {
         title: "Operasi Kuari Kami",
         subtitle: "Saksikan proses pengekstrakan dan letupan granit kami"
@@ -917,15 +909,11 @@ const TRANSLATIONS = {
         step1Desc: "控制爆破以提取优质花岗岩",
         step2: "挖掘",
         step2Desc: "液压挖掘机安全高效地清除爆破岩石",
-        step3: "装载与运输",
-        step3Desc: "重型自卸卡车将花岗岩运输到破碎厂",
-        step4: "破碎厂",
-        step4Desc: "初级和二级破碎生产不同规格的骨料",
-        step5: "筛分",
-        step5Desc: "根据要求规格分离材料",
-        step6: "堆料与交付",
-        step6Desc: "产品储存并迅速供应给客户"
-      },
+        step3: "破碎厂",
+        step3Desc: "初级和二级破碎生产不同规格的骨料",
+        step4: "装载与运输",
+        step4Desc: "重型自卸卡车将花岗岩运输到堆料场"
+        },
       video: {
         title: "我们的采石作业",
         subtitle: "观看我们的花岗岩开采和爆破过程"

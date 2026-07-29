@@ -150,7 +150,7 @@
     if (langToggle) {
       const toggleLabels = {
         en: 'EN',
-        ms: 'MS',
+        ms: 'BM',
         zh: '中文'
       };
       langToggle.innerHTML = (toggleLabels[lang] || 'EN') + ' <span class="arrow">▼</span>';

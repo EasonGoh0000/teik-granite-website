@@ -257,6 +257,7 @@
             border: none;
             background: transparent;
             font-family: inherit;
+            white-space: nowrap;
         }
 
         .lang-selector:hover {
@@ -315,7 +316,7 @@
             color: #1a2a1d;
             transition: all 0.2s ease;
             font-family: inherit;
-            white-space: nowrap; 
+            white-space: nowrap;
         }
 
         .lang-option-nav:hover {
@@ -1102,6 +1103,7 @@
             overflow: hidden;
             border: 2px solid #e8eaed;
             transition: all 0.3s ease;
+            position: relative;
         }
         .process-step:hover .step-image {
             border-color: #cc0000;
@@ -1112,6 +1114,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: filter 0.3s ease;
         }
         .step-arrow {
             text-align: center;
@@ -1122,6 +1125,138 @@
         }
         .step-arrow i {
             animation: bounceDown 2s infinite;
+        }
+
+        /* ===== VIDEO OVERLAY ON PROCESS STEPS ===== */
+        .video-overlay-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .process-step .step-image:hover .video-overlay-icon {
+            opacity: 1;
+        }
+
+        .process-step .step-image:hover img {
+            filter: brightness(0.7);
+        }
+
+        .video-overlay-icon i {
+            background: rgba(204, 0, 0, 0.85);
+            border-radius: 50%;
+            padding: 0.3rem;
+            font-size: 3.5rem;
+            box-shadow: 0 4px 30px rgba(204, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .video-overlay-icon i:hover {
+            transform: scale(1.1);
+            background: #cc0000;
+        }
+
+        /* ===== WATCH VIDEO BUTTON ===== */
+        .btn-play-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #cc0000;
+            color: white;
+            border: none;
+            padding: 0.4rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            margin-top: 0.5rem;
+        }
+
+        .btn-play-video:hover {
+            background: #990000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+        }
+
+        .btn-play-video i {
+            font-size: 1.1rem;
+        }
+
+        /* ===== VIDEO MODAL / LIGHTBOX ===== */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-modal.open {
+            display: flex;
+        }
+
+        .video-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-modal-content video {
+            width: 100%;
+            display: block;
+            max-height: 80vh;
+        }
+
+        .video-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0 0.8rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            z-index: 10;
+            line-height: 1.4;
+        }
+
+        .video-modal-close:hover {
+            background: #cc0000;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* ===== VIDEO SECTION ===== */
@@ -1370,6 +1505,21 @@
                 border-bottom: none;
             }
 
+            /* Video overlay responsive */
+            .video-overlay-icon {
+                font-size: 2.5rem;
+            }
+            .video-overlay-icon i {
+                font-size: 2.8rem;
+            }
+            .btn-play-video {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .video-modal-content {
+                width: 95%;
+            }
+
             .overview-grid {
                 grid-template-columns: 1fr;
             }
@@ -1535,6 +1685,16 @@
                 height: 40px;
                 font-size: 1rem;
             }
+            .video-overlay-icon {
+                font-size: 2rem;
+            }
+            .video-overlay-icon i {
+                font-size: 2.2rem;
+            }
+            .btn-play-video {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.6rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1664,6 +1824,9 @@
                 font-size: 0.75rem;
                 padding: 0.5rem 1rem;
             }
+            .video-modal-content video {
+                max-height: 60vh;
+            }
         }
     </style>
 </head>
@@ -1695,13 +1858,13 @@
                     </button>
                     <div class="lang-dropdown-nav" id="langDropdown">
                         <button class="lang-option-nav active" data-lang="en">
-                            🇬🇧 English <span class="check">✓</span>
+                            EN <span class="check">✓</span>
                         </button>
                         <button class="lang-option-nav" data-lang="ms">
-                            🇲🇾 Bahasa Malaysia
+                            BM
                         </button>
                         <button class="lang-option-nav" data-lang="zh">
-                            🇨🇳 中文
+                            CN
                         </button>
                     </div>
                 </div>
@@ -1883,7 +2046,7 @@
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="crushed_stone.jpg" alt="Crushed Stone" class="product-image" />
+                    <img src="3_4_Aggregate.jpeg" alt="Crushed Stone" class="product-image" />
                     <div class="product-body">
                         <h3 data-i18n="index.products.crushedStone">Crushed Stone</h3>
                         <div class="spec" data-i18n="index.products.crushedStoneSpec">3/4" &amp; 1 1/2" &amp; 3/8"</div>
@@ -1892,7 +2055,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="gravel_stone.jpg" alt="Gravel Natural" class="product-image" />
+                    <img src="1_1_2_Aggregate.jpg" alt="Gravel Natural" class="product-image" />
                     <div class="product-body">
                         <h3 data-i18n="index.products.gravel">Gravel (Natural)</h3>
                         <div class="spec" data-i18n="index.products.gravelSpec">Washed &amp; Screened</div>
@@ -1901,7 +2064,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="M_Sand_Quarry_Dust.png" alt="Manufactured Sand" class="product-image" />
+                    <img src="M_Sand.jpeg" alt="Manufactured Sand" class="product-image" />
                     <div class="product-body">
                         <h3 data-i18n="index.products.sand">Sand (Manufactured / M-Sand)</h3>
                         <div class="spec" data-i18n="index.products.sandSpec">M.Sand / Quarry Dust</div>
@@ -1910,7 +2073,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="recycle_aggregate.jpg" alt="Recycled Aggregate" class="product-image" />
+                    <img src="crusher_run.jpg" alt="Recycled Aggregate" class="product-image" />
                     <div class="product-body">
                         <h3 data-i18n="index.products.recycled">Recycled Aggregate</h3>
                         <div class="spec" data-i18n="index.products.recycledSpec">Eco-Friendly</div>
@@ -1950,7 +2113,7 @@
         </div>
     </section>
 
-    <!-- ===== PROCESS SECTION ===== -->
+    <!-- ===== PROCESS SECTION (ALL 4 STEPS WITH VIDEOS) ===== -->
     <section class="process-section">
         <div class="container">
             <div class="process-wrapper">
@@ -1960,85 +2123,98 @@
                     <p data-i18n="index.process.subtitle">Our quarry process ensures quality at every step</p>
                 </div>
                 <div class="process-steps">
+                    <!-- Step 1: Drill & Blast (WITH VIDEO) -->
                     <div class="process-step">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h4><i class="fas fa-bolt"></i> <span data-i18n="index.process.step1">Drill &amp; Blast</span></h4>
                             <p data-i18n="index.process.step1Desc">Controlled blasting to extract quality granite</p>
+                            <button class="btn-play-video" data-video="drill_and_blast_Video.mp4">
+                                <i class="fas fa-play-circle"></i> <span data-i18n="common.watchVideo">Watch Video</span>
+                            </button>
                         </div>
                         <div class="step-image">
-                            <img src="drill_and_Blast_photo.jpg" alt="Drill & Blast" />
+                            <img src="drill_and_blast.png" alt="Drill & Blast" />
+                            <div class="video-overlay-icon" data-video="drill_and_blast_Video.mp4">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
                     </div>
 
                     <div class="step-arrow"><i class="fas fa-chevron-down"></i></div>
 
+                    <!-- Step 2: Excavate (WITH VIDEO) -->
                     <div class="process-step">
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h4><i class="fas fa-tractor"></i> <span data-i18n="index.process.step2">Excavate</span></h4>
                             <p data-i18n="index.process.step2Desc">Hydraulic excavators remove blasted rock safely and efficiently</p>
+                            <button class="btn-play-video" data-video="excavate_video.mp4">
+                                <i class="fas fa-play-circle"></i> <span data-i18n="common.watchVideo">Watch Video</span>
+                            </button>
                         </div>
                         <div class="step-image">
-                            <img src="excavate.jpg" alt="Excavate" />
+                            <img src="excavate.jpeg" alt="Excavate" />
+                            <div class="video-overlay-icon" data-video="excavate_video.mp4">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
                     </div>
 
                     <div class="step-arrow"><i class="fas fa-chevron-down"></i></div>
 
+                    <!-- Step 3: Crushing Plant (WITH VIDEO) -->
                     <div class="process-step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h4><i class="fas fa-truck"></i> <span data-i18n="index.process.step3">Load &amp; Haul</span></h4>
-                            <p data-i18n="index.process.step3Desc">Heavy-duty dump trucks transport granite to the crushing plant</p>
-                        </div>
-                        <div class="step-image">
-                            <img src="transport_fleet_photo.png" alt="Load & Haul" />
-                        </div>
-                    </div>
-
-                    <div class="step-arrow"><i class="fas fa-chevron-down"></i></div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4><i class="fas fa-industry"></i> <span data-i18n="index.process.step4">Crushing Plant</span></h4>
-                            <p data-i18n="index.process.step4Desc">Primary and secondary crushing produce different aggregate sizes</p>
+                            <h4><i class="fas fa-industry"></i> <span data-i18n="index.process.step3">Crushing Plant</span></h4>
+                            <p data-i18n="index.process.step3Desc">Primary and secondary crushing produce different aggregate sizes</p>
+                            <button class="btn-play-video" data-video="Crushing_Plant_Video.mp4">
+                                <i class="fas fa-play-circle"></i> <span data-i18n="common.watchVideo">Watch Video</span>
+                            </button>
                         </div>
                         <div class="step-image">
                             <img src="crushing_plant.png" alt="Crushing Plant" />
+                            <div class="video-overlay-icon" data-video="Crushing_Plant_Video.mp4">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
                     </div>
 
                     <div class="step-arrow"><i class="fas fa-chevron-down"></i></div>
 
+                    <!-- Step 4: Load & Haul (WITH VIDEO) -->
                     <div class="process-step">
-                        <div class="step-number">5</div>
+                        <div class="step-number">4</div>
                         <div class="step-content">
-                            <h4><i class="fas fa-filter"></i> <span data-i18n="index.process.step5">Screening</span></h4>
-                            <p data-i18n="index.process.step5Desc">Materials are separated according to required specifications</p>
+                            <h4><i class="fas fa-truck"></i> <span data-i18n="index.process.step4">Load &amp; Haul</span></h4>
+                            <p data-i18n="index.process.step4Desc">Heavy-duty dump trucks transport granite to the stockpile</p>
+                            <button class="btn-play-video" data-video="load_delivery_video.mp4">
+                                <i class="fas fa-play-circle"></i> <span data-i18n="common.watchVideo">Watch Video</span>
+                            </button>
                         </div>
                         <div class="step-image">
-                            <img src="screening.jpg" alt="Screening" />
-                        </div>
-                    </div>
-
-                    <div class="step-arrow"><i class="fas fa-chevron-down"></i></div>
-
-                    <div class="process-step">
-                        <div class="step-number">6</div>
-                        <div class="step-content">
-                            <h4><i class="fas fa-warehouse"></i> <span data-i18n="index.process.step6">Stockpile &amp; Delivery</span></h4>
-                            <p data-i18n="index.process.step6Desc">Products are stored and supplied promptly to customers</p>
-                        </div>
-                        <div class="step-image">
-                            <img src="stockpile_delivery.jpg" alt="Stockpile & Delivery" />
+                            <img src="load_haul.jpg" alt="Load & Haul" />
+                            <div class="video-overlay-icon" data-video="load_delivery_video.mp4">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== VIDEO MODAL / LIGHTBOX ===== -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="videoModalClose">&times;</button>
+            <video id="modalVideo" controls autoplay>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <!-- ===== VIDEO SECTION ===== -->
     <section class="video-section">
@@ -2054,7 +2230,7 @@
                         <i class="fas fa-play"></i>
                     </div>
                     <video id="quarryVideo" controls playsinline autoplay muted loop>
-                        <source src="teik_granite_quarry.mp4" type="video/mp4" />
+                        <source src="Teik_Granite_Quarry_Corporation_VIdeo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -2240,7 +2416,7 @@
             counters.forEach(counter => counterObserver.observe(counter));
             textCounters.forEach(counter => counterObserver.observe(counter));
 
-            // ===== Video Play Button =====
+            // ===== Video Play Button (Main Video) =====
             const playButton = document.getElementById('playButton');
             const videoElement = document.getElementById('quarryVideo');
             if (playButton && videoElement) {
@@ -2257,6 +2433,67 @@
                 videoElement.addEventListener('pause', function() { playButton.style.display = 'flex'; });
                 videoElement.addEventListener('ended', function() { playButton.style.display = 'flex'; });
             }
+
+            // ===== VIDEO MODAL FUNCTIONALITY =====
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const closeBtn = document.getElementById('videoModalClose');
+
+            // Function to open video modal
+            function openVideo(videoSrc) {
+                modalVideo.src = videoSrc;
+                modal.classList.add('open');
+                modalVideo.load();
+                modalVideo.play();
+            }
+
+            // Function to close video modal
+            function closeVideo() {
+                modal.classList.remove('open');
+                modalVideo.pause();
+                modalVideo.src = '';
+            }
+
+            // Click on video overlay icons (on the image)
+            document.querySelectorAll('.video-overlay-icon').forEach(icon => {
+                icon.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const videoSrc = this.getAttribute('data-video');
+                    if (videoSrc) {
+                        openVideo(videoSrc);
+                    }
+                });
+            });
+
+            // Click on "Watch Video" buttons
+            document.querySelectorAll('.btn-play-video').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const videoSrc = this.getAttribute('data-video');
+                    if (videoSrc) {
+                        openVideo(videoSrc);
+                    }
+                });
+            });
+
+            // Close modal when clicking close button
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeVideo);
+            }
+
+            // Close modal when clicking outside the video
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeVideo();
+                }
+            });
+
+            // Close modal with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('open')) {
+                    closeVideo();
+                }
+            });
         });
 
         // ===== Dropdown Toggle =====
