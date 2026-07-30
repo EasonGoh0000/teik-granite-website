@@ -21,6 +21,13 @@ const TRANSLATIONS = {
       reg: "196001000153 (3821-P)"
     },
 
+    // ---- LANGUAGE NAMES ----
+    lang: {
+      en: "🇬🇧 EN",
+      ms: "🇲🇾 BM",
+      zh: "🇨🇳 CN"
+    },
+
     // ---- COMMON ----
     common: {
       learnMore: "Learn More →",
@@ -37,7 +44,18 @@ const TRANSLATIONS = {
       connectWithUs: "Connect With Us",
       phone: "04-261 4477",
       fax: "04-262 2818",
-      location: "Pulau Tikus, Penang, Malaysia"
+      location: "Pulau Tikus, Penang, Malaysia",
+      watchVideo: "Watch Video"
+    },
+
+    // ---- FOOTER GROUP COMPANIES ----
+    footer: {
+      groupCompanies: {
+        teikGraniteQuarry: "Teik Granite Quarry Sdn Bhd",
+        teikGraniteCorporation: "Teik Granite Corporation Sdn Bhd",
+        tgqTanjungBungah: "TGQ (Tanjung Bungah) Sdn Bhd",
+        tgqAirItam: "TGQ (Air Itam) Sdn Bhd"
+      }
     },
 
     // ---- INDEX PAGE ----
@@ -123,7 +141,7 @@ const TRANSLATIONS = {
         step3Desc: "Primary and secondary crushing produce different aggregate sizes",
         step4: "Load & Haul",
         step4Desc: "Heavy-duty dump trucks transport granite to the stockpile"
-        },
+      },
       video: {
         title: "Our Quarry Operations",
         subtitle: "Watch our granite extraction and blasting process in action"
@@ -223,6 +241,14 @@ const TRANSLATIONS = {
           caption1: "Aerial photograph of Penanti Quarry area",
           caption2: "Aerial view of the quarry operations"
         }
+      },
+      certificate: {
+        title: "Certificate Awards",
+        subtitle: "Recognized for excellence in quarry operations and safety standards",
+        year2021: "Certificate of Achievement",
+        year2022: "Certificate of Achievement",
+        year2023: "Certificate of Achievement",
+        year2024: "Certificate of Achievement"
       },
       esg: {
         title: "Our Commitment to Sustainability",
@@ -368,11 +394,13 @@ const TRANSLATIONS = {
       info: {
         headOffice: "Head Office",
         corporateOffice: "Corporate Office",
+        headOfficeCompany: "Teik Granite Quarry Sdn Bhd",
+        corporateOfficeCompany: "Teik Granite Corporation Sdn Bhd",
         contactNumbers: "Contact Numbers",
         companyInfo: "Company Information",
         email: "Email",
-        head: "Head",
-        corporation: "Corporation"
+        main: "Main",
+        corporate: "Corporate"
       },
       map: {
         title: "Find Us",
@@ -416,6 +444,13 @@ const TRANSLATIONS = {
       reg: "196001000153 (3821-P)"
     },
 
+    // ---- LANGUAGE NAMES ----
+    lang: {
+      en: "🇬🇧 EN",
+      ms: "🇲🇾 BM",
+      zh: "🇨🇳 CN"
+    },
+
     // ---- COMMON ----
     common: {
       learnMore: "Ketahui Lebih Lanjut →",
@@ -432,7 +467,18 @@ const TRANSLATIONS = {
       connectWithUs: "Hubungi Kami",
       phone: "04-261 4477",
       fax: "04-262 2818",
-      location: "Pulau Tikus, Pulau Pinang, Malaysia"
+      location: "Pulau Tikus, Pulau Pinang, Malaysia",
+      watchVideo: "Tonton Video"
+    },
+
+    // ---- FOOTER GROUP COMPANIES ----
+    footer: {
+      groupCompanies: {
+        teikGraniteQuarry: "Teik Granite Quarry Sdn Bhd",
+        teikGraniteCorporation: "Teik Granite Corporation Sdn Bhd",
+        tgqTanjungBungah: "TGQ (Tanjung Bungah) Sdn Bhd",
+        tgqAirItam: "TGQ (Air Itam) Sdn Bhd"
+      }
     },
 
     // ---- INDEX PAGE ----
@@ -518,7 +564,7 @@ const TRANSLATIONS = {
         step3Desc: "Penghancuran primer dan sekunder menghasilkan pelbagai saiz agregat",
         step4: "Muat & Angkut",
         step4Desc: "Lori dump berat mengangkut granit ke timbunan stok"
-        },
+      },
       video: {
         title: "Operasi Kuari Kami",
         subtitle: "Saksikan proses pengekstrakan dan letupan granit kami"
@@ -618,6 +664,14 @@ const TRANSLATIONS = {
           caption1: "Fotografi udara kawasan Kuari Penanti",
           caption2: "Pandangan udara operasi kuari"
         }
+      },
+      certificate: {
+        title: "Anugerah Sijil",
+        subtitle: "Diiktiraf atas kecemerlangan dalam operasi kuari dan piawaian keselamatan",
+        year2021: "Sijil Pencapaian",
+        year2022: "Sijil Pencapaian",
+        year2023: "Sijil Pencapaian",
+        year2024: "Sijil Pencapaian"
       },
       esg: {
         title: "Komitmen Kami terhadap Kelestarian",
@@ -763,11 +817,13 @@ const TRANSLATIONS = {
       info: {
         headOffice: "Pejabat Utama",
         corporateOffice: "Pejabat Korporat",
+        headOfficeCompany: "Teik Granite Quarry Sdn Bhd",
+        corporateOfficeCompany: "Teik Granite Corporation Sdn Bhd",
         contactNumbers: "Nombor Telefon",
         companyInfo: "Maklumat Syarikat",
         email: "E-mel",
-        head: "Utama",
-        corporation: "Korporat"
+        main: "Utama",
+        corporate: "Korporat"
       },
       map: {
         title: "Cari Kami",
@@ -807,8 +863,15 @@ const TRANSLATIONS = {
       contact: "联系"
     },
     logo: {
-      company: "TEIK 花岗岩采石场",
+      company: "德石较有限公司",
       reg: "196001000153 (3821-P)"
+    },
+
+    // ---- LANGUAGE NAMES ----
+    lang: {
+      en: "🇬🇧 EN",
+      ms: "🇲🇾 BM",
+      zh: "🇨🇳 CN"
     },
 
     // ---- COMMON ----
@@ -818,7 +881,7 @@ const TRANSLATIONS = {
       viewMap: "在地图上查看位置",
       backToTop: "返回顶部",
       sendMessage: "发送消息",
-      copyright: "© 2026 Teik Granite Quarry Sdn Bhd. 版权所有。",
+      copyright: "© 2026 德石较有限公司. 版权所有。",
       established: "成立日期：1960年6月20日",
       regNo: "注册号：196001000153 (3821-P)",
       tagline: "值得信赖的马来西亚采石场公司，供应优质花岗岩和建筑材料超过60年。",
@@ -827,7 +890,18 @@ const TRANSLATIONS = {
       connectWithUs: "联系我们",
       phone: "04-261 4477",
       fax: "04-262 2818",
-      location: "马来西亚槟城乔治市"
+      location: "马来西亚槟城乔治市",
+      watchVideo: "观看视频"
+    },
+
+    // ---- FOOTER GROUP COMPANIES ----
+    footer: {
+      groupCompanies: {
+        teikGraniteQuarry: "德石较有限公司",
+        teikGraniteCorporation: "德石较机构有限公司",
+        tgqTanjungBungah: "德石较（丹绒武雅）有限公司",
+        tgqAirItam: "德石较（亚依淡）有限公司"
+      }
     },
 
     // ---- INDEX PAGE ----
@@ -835,13 +909,13 @@ const TRANSLATIONS = {
       hero: {
         badge: "自1960年",
         title: '建设马来西亚 <br /><span class="highlight-red">自1960年</span>',
-        subtitle: '<strong>值得信赖的采石场基础设施与建筑解决方案</strong><br />Teik Granite Quarry Sdn. Bhd. 成立于1960年，拥有超过六十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城和马来西亚各地。'
+        subtitle: '<strong>值得信赖的采石场基础设施与建筑解决方案</strong><br />德石较有限公司成立于1960年，拥有超过六十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城和马来西亚各地。'
       },
       overview: {
         badge: "自1960年",
         title: "公司概况",
         subtitle: "以优质花岗岩建设马来西亚基础设施",
-        p1: 'Teik Granite Quarry Sdn. Bhd. 成立于1960年，是槟城成熟的采石场运营商之一。',
+        p1: '德石较有限公司成立于1960年，是槟城成熟的采石场运营商之一。',
         p2: "60多年来，我们为高速公路、桥梁、商业开发、住宅项目、工厂、港口和基础设施工程供应优质花岗岩产品。",
         p3: "如今，我们继续将数十年的采石经验与现代生产方式相结合，为马来西亚建筑行业提供可靠的建筑材料。",
         stats: {
@@ -853,7 +927,7 @@ const TRANSLATIONS = {
       },
       subsidiaries: {
         title: "集团公司",
-        subtitle: "Teik Granite Group 由以下实体组成",
+        subtitle: "德石较集团由以下实体组成",
         headOffice: "总部",
         corporateOffice: "公司办公室",
         quarrySite: "采石场",
@@ -913,7 +987,7 @@ const TRANSLATIONS = {
         step3Desc: "初级和二级破碎生产不同规格的骨料",
         step4: "装载与运输",
         step4Desc: "重型自卸卡车将花岗岩运输到堆料场"
-        },
+      },
       video: {
         title: "我们的采石作业",
         subtitle: "观看我们的花岗岩开采和爆破过程"
@@ -928,7 +1002,7 @@ const TRANSLATIONS = {
       },
       history: {
         title: "公司历史",
-        p1: "Teik Granite Quarry (TGQ) 是槟城州采石行业的先驱。TGQ 成立于1950年代初，由家族族长 Loh Poh Heng 先生在槟城山脚下的 Air Itam 首次经营采石场。",
+        p1: "德石较有限公司是槟城州采石行业的先驱。德石较有限公司成立于1950年代初，由家族族长 Loh Poh Heng 先生在槟城山脚下的 Air Itam 首次经营采石场。",
         p2: "在1960年代，采石业务扩展到 Tanjung Bungah，然后是岛上的 Bayan Lepas 和大陆的 Penanti, Bukit Mertajam。在高峰期，槟城有四个采石场在运营。然而，作为项目采石场运营的 Bayan Lepas 采石场仅持续了几年。Air Itam 采石场也在1992年左右自愿停止运营。",
         p3: "至今，Tanjong Bungah 和 Penanti 采石场仍然活跃，并继续作为岛上和大陆的商业采石场运营。",
         timeline: {
@@ -945,7 +1019,7 @@ const TRANSLATIONS = {
       },
       projects: {
         title: "参与槟城主要项目",
-        subtitle: "在运营期间，TGQ 作为材料供应商和承包商参与了多个主要基础设施和建筑项目",
+        subtitle: "在运营期间，德石较有限公司作为材料供应商和承包商参与了多个主要基础设施和建筑项目",
         airport: {
           title: "槟城国际机场",
           desc: "作为分包商与 Maeda Construction Co. 合作，同时也作为所有岩石材料的供应商。",
@@ -1013,6 +1087,14 @@ const TRANSLATIONS = {
           caption1: "Penanti 采石场区域航拍照片",
           caption2: "采石场作业鸟瞰图"
         }
+      },
+      certificate: {
+        title: "证书奖项",
+        subtitle: "因在采石场运营和安全标准方面的卓越表现而获得认可",
+        year2021: "成就证书",
+        year2022: "成就证书",
+        year2023: "成就证书",
+        year2024: "成就证书"
       },
       esg: {
         title: "我们对可持续发展的承诺",
@@ -1115,7 +1197,7 @@ const TRANSLATIONS = {
     contact: {
       hero: {
         title: "联系我们",
-        subtitle: "联系 Teik Granite Quarry，满足您所有建筑材料需求"
+        subtitle: "联系德石较有限公司，满足您所有建筑材料需求"
       },
       form: {
         title: "发送咨询",
@@ -1158,29 +1240,31 @@ const TRANSLATIONS = {
       info: {
         headOffice: "总部",
         corporateOffice: "公司办公室",
+        headOfficeCompany: "德石较有限公司",
+        corporateOfficeCompany: "德石较机构有限公司",
         contactNumbers: "联系电话",
         companyInfo: "公司信息",
         email: "电子邮件",
-        head: "总部",
-        corporation: "公司"
+        main: "总部",
+        corporate: "公司"
       },
       map: {
         title: "找到我们",
         subtitle: "参观我们在槟城各地的办公室和采石场",
         pulauTikus: {
-          name: "Teik Granite Quarry Sdn Bhd / Teik Granite Corporation Sdn Bhd",
+          name: "德石较有限公司 / 德石较机构有限公司",
           location: "槟城 Pulau Tikus",
           badge: "总部 / 公司办公室",
           address: "368-2-15, Level 2, Bellisa Row, Jalan Burmah, 10350 槟城"
         },
         tanjungBungah: {
-          name: "TGQ (Tanjung Bungah) Sdn Bhd",
+          name: "德石较（丹绒武雅）有限公司",
           location: "槟城 Tanjung Bungah",
           badge: "采石场",
           address: "Tanjung Bungah, 11200 槟城"
         },
         penanti: {
-          name: "TGQ (Air Itam) Sdn Bhd",
+          name: "德石较（亚依淡）有限公司",
           location: "槟城 Penanti",
           badge: "采石场",
           address: "Penanti 采石场, Kubang Semang, 槟城"

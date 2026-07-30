@@ -898,6 +898,69 @@
             font-style: italic;
         }
 
+        /* ===== CERTIFICATE AWARD SECTION ===== */
+        .certificate-section {
+            padding: 5rem 0;
+            background: transparent;
+        }
+        .certificate-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e8eaed;
+        }
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .certificate-item {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e8eaed;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            text-align: center;
+        }
+        .certificate-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(204, 0, 0, 0.08);
+            border-color: #cc0000;
+        }
+        .certificate-item .cert-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .certificate-item:hover .cert-image {
+            transform: scale(1.03);
+        }
+        .certificate-item .cert-body {
+            padding: 1.2rem;
+        }
+        .certificate-item .cert-body .cert-year {
+            display: inline-block;
+            background: #cc0000;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 1.2rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .certificate-item .cert-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a2a1d;
+            margin-top: 0.5rem;
+        }
+
         /* ===== ESG / SUSTAINABILITY WITH BACKGROUND IMAGES ===== */
         .esg-section {
             padding: 5rem 0;
@@ -1238,6 +1301,9 @@
             .historical-item.air-itam .historical-body .air-itam-row {
                 grid-template-columns: 1fr;
             }
+            .certificate-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 820px) {
@@ -1374,6 +1440,9 @@
             .esg-wrapper {
                 padding: 1.5rem;
             }
+            .certificate-wrapper {
+                padding: 1.5rem;
+            }
             .map-btn-wrapper {
                 text-align: center;
             }
@@ -1405,6 +1474,13 @@
             }
             .historical-item.air-itam .historical-body .image-grid .image-item img {
                 height: 250px;
+            }
+            .certificate-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .certificate-item .cert-image {
+                height: 220px;
             }
         }
 
@@ -1467,6 +1543,9 @@
             .subsidiaries-section {
                 padding: 4rem 0;
             }
+            .certificate-section {
+                padding: 4rem 0;
+            }
             .quarry-timeline table th,
             .quarry-timeline table td {
                 padding: 0.6rem 0.8rem;
@@ -1483,6 +1562,13 @@
             }
             .historical-item.air-itam .historical-body .image-grid .image-item img {
                 height: 220px;
+            }
+            .certificate-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .certificate-item .cert-image {
+                height: 180px;
             }
         }
 
@@ -1517,6 +1603,9 @@
             }
             .esg-wrapper {
                 padding: 1.5rem;
+            }
+            .certificate-wrapper {
+                padding: 1rem;
             }
             .esg-card {
                 padding: 1.5rem;
@@ -1578,6 +1667,9 @@
             .subsidiaries-section {
                 padding: 3rem 0;
             }
+            .certificate-section {
+                padding: 3rem 0;
+            }
             .quarry-timeline table th,
             .quarry-timeline table td {
                 padding: 0.4rem 0.6rem;
@@ -1606,6 +1698,13 @@
                 font-size: 0.75rem;
                 padding: 0.5rem 1rem;
             }
+            .certificate-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .certificate-item .cert-image {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -1633,17 +1732,17 @@
                 <!-- ===== LANGUAGE SELECTOR (IN NAV) ===== -->
                 <div style="position:relative; display:inline-block;">
                     <button class="lang-selector" id="langToggle">
-                        EN <span class="arrow">▼</span>
+                        <img src="british_flag.webp" width="20" height="14" alt="EN" style="vertical-align:middle; margin-right:4px;"> EN <span class="arrow">▼</span>
                     </button>
                     <div class="lang-dropdown-nav" id="langDropdown">
                         <button class="lang-option-nav active" data-lang="en">
-                            🇬🇧 English <span class="check">✓</span>
+                            <img src="british_flag.webp" width="20" height="14" alt="EN" style="vertical-align:middle; margin-right:4px;"> English <span class="check">✓</span>
                         </button>
                         <button class="lang-option-nav" data-lang="ms">
-                            🇲🇾 Bahasa Malaysia
+                            <img src="malaysia_flag.webp" width="20" height="14" alt="BM" style="vertical-align:middle; margin-right:4px;"> Bahasa Malaysia
                         </button>
                         <button class="lang-option-nav" data-lang="zh">
-                            🇨🇳 中文
+                            <img src="china_flag.webp" width="20" height="14" alt="CN" style="vertical-align:middle; margin-right:4px;"> 中文
                         </button>
                     </div>
                 </div>
@@ -1654,11 +1753,11 @@
     <!-- ===== HERO BANNER ===== -->
     <section class="hero">
         <div class="hero-slides">
-            <div class="hero-slide active" style="background-image: url('homepage_photo.png');"></div>
-            <div class="hero-slide" style="background-image: url('drill_and_Blast_photo.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('Crushing_plant_photo.png');"></div>
+            <div class="hero-slide active" style="background-image: url('Tanjung_Bungah_Quarry.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('Penanti_Quarry.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('load_and_haul.jpeg');"></div>
             <div class="hero-slide" style="background-image: url('transport_fleet.jpeg');"></div>
-            <div class="hero-slide" style="background-image: url('crushing_plant.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('crushingPlant.jpg');"></div>
         </div>
 
         <div class="hero-indicators">
@@ -1931,6 +2030,56 @@
         </div>
     </section>
 
+    <!-- ===== CERTIFICATE AWARD SECTION ===== -->
+    <section class="certificate-section">
+        <div class="container">
+            <div class="certificate-wrapper">
+                <div class="section-title">
+                    <h2 data-i18n="about.certificate.title">Certificate Awards</h2>
+                    <div class="line"></div>
+                    <p data-i18n="about.certificate.subtitle">Recognized for excellence in quarry operations and safety standards</p>
+                </div>
+                <div class="certificate-grid">
+                    <!-- 2021 Certificate -->
+                    <div class="certificate-item">
+                        <img src="2021.jpg" alt="Certificate 2021" class="cert-image" />
+                        <div class="cert-body">
+                            <span class="cert-year">2021</span>
+                            <h4 data-i18n="about.certificate.year2021">Certificate of Achievement</h4>
+                        </div>
+                    </div>
+
+                    <!-- 2022 Certificate -->
+                    <div class="certificate-item">
+                        <img src="2022.jpg" alt="Certificate 2022" class="cert-image" />
+                        <div class="cert-body">
+                            <span class="cert-year">2022</span>
+                            <h4 data-i18n="about.certificate.year2022">Certificate of Achievement</h4>
+                        </div>
+                    </div>
+
+                    <!-- 2023 Certificate -->
+                    <div class="certificate-item">
+                        <img src="2023.jpg" alt="Certificate 2023" class="cert-image" />
+                        <div class="cert-body">
+                            <span class="cert-year">2023</span>
+                            <h4 data-i18n="about.certificate.year2023">Certificate of Achievement</h4>
+                        </div>
+                    </div>
+
+                    <!-- 2024 Certificate -->
+                    <div class="certificate-item">
+                        <img src="2024.jpg" alt="Certificate 2024" class="cert-image" />
+                        <div class="cert-body">
+                            <span class="cert-year">2024</span>
+                            <h4 data-i18n="about.certificate.year2024">Certificate of Achievement</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== ESG / SUSTAINABILITY ===== -->
     <section class="esg-section">
         <div class="container">
@@ -2079,10 +2228,10 @@
                 </div>
                 <div>
                     <h4 data-i18n="common.groupCompanies">Group Companies</h4>
-                    <a href="contact.html#map-pulau-tikus">Teik Granite Quarry Sdn Bhd</a>
-                    <a href="contact.html#map-pulau-tikus">Teik Granite Corporation Sdn Bhd</a>
-                    <a href="contact.html#map-tanjung-bungah">TGQ (Tanjung Bungah) Sdn Bhd</a>
-                    <a href="contact.html#map-penanti">TGQ (Air Itam) Sdn Bhd</a>
+                    <a href="contact.html#map-pulau-tikus" data-i18n="footer.groupCompanies.teikGraniteQuarry">Teik Granite Quarry Sdn Bhd</a>
+                    <a href="contact.html#map-pulau-tikus" data-i18n="footer.groupCompanies.teikGraniteCorporation">Teik Granite Corporation Sdn Bhd</a>
+                    <a href="contact.html#map-tanjung-bungah" data-i18n="footer.groupCompanies.tgqTanjungBungah">TGQ (Tanjung Bungah) Sdn Bhd</a>
+                    <a href="contact.html#map-penanti" data-i18n="footer.groupCompanies.tgqAirItam">TGQ (Air Itam) Sdn Bhd</a>
                 </div>
                 <div>
                     <h4 data-i18n="common.connectWithUs">Connect With Us</h4>
