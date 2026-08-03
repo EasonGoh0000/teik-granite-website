@@ -2269,6 +2269,7 @@
             const langDropdownMobile = document.getElementById('langDropdownMobile');
 
             if (langToggleMobile && langDropdownMobile) {
+                // Toggle dropdown
                 langToggleMobile.addEventListener('click', function(e) {
                     e.stopPropagation();
                     langDropdownMobile.classList.toggle('open');
@@ -2276,6 +2277,7 @@
                     if (arrow) arrow.classList.toggle('open');
                 });
 
+                // Close dropdown when clicking outside
                 document.addEventListener('click', function(e) {
                     if (!langToggleMobile.contains(e.target) && !langDropdownMobile.contains(e.target)) {
                         langDropdownMobile.classList.remove('open');
@@ -2284,10 +2286,12 @@
                     }
                 });
 
+                // Language option click handler
                 langDropdownMobile.querySelectorAll('.lang-option-mobile').forEach(option => {
                     option.addEventListener('click', function(e) {
                         e.stopPropagation();
                         const lang = this.getAttribute('data-lang');
+
                         if (lang && window.TRANSLATIONS && window.TRANSLATIONS[lang]) {
                             // Update active state
                             langDropdownMobile.querySelectorAll('.lang-option-mobile').forEach(btn => {
@@ -2299,42 +2303,43 @@
                             const check = this.querySelector('.check');
                             if (check) check.textContent = '✓';
 
-                            // Update the toggle button text
+                            // Update the toggle button
                             const flagImg = this.querySelector('img');
-                            const langName = this.textContent.trim().replace('✓', '').trim();
                             const toggleButton = langToggleMobile;
-                            if (toggleButton) {
-                                // Keep the flag and update the language code
-                                const currentFlag = toggleButton.querySelector('img');
-                                if (currentFlag && flagImg) {
-                                    currentFlag.src = flagImg.src;
-                                    currentFlag.alt = flagImg.alt;
-                                }
-                                const textNode = toggleButton.childNodes[2];
-                                if (textNode) {
-                                    toggleButton.innerHTML = '';
-                                    const newFlag = document.createElement('img');
-                                    newFlag.src = flagImg ? flagImg.src : 'british_flag.webp';
-                                    newFlag.width = 18;
-                                    newFlag.height = 12;
-                                    newFlag.alt = flagImg ? flagImg.alt : 'EN';
-                                    newFlag.style.cssText = 'vertical-align:middle; margin-right:3px; border-radius:2px;';
-                                    toggleButton.appendChild(newFlag);
-                                    const span = document.createElement('span');
-                                    span.textContent = ' ' + lang.toUpperCase();
-                                    toggleButton.appendChild(span);
-                                    const arrowSpan = document.createElement('span');
-                                    arrowSpan.className = 'arrow';
-                                    arrowSpan.textContent = ' ▼';
-                                    toggleButton.appendChild(arrowSpan);
-                                }
+                            if (toggleButton && flagImg) {
+                                toggleButton.innerHTML = '';
+                                const newFlag = document.createElement('img');
+                                newFlag.src = flagImg.src;
+                                newFlag.width = 18;
+                                newFlag.height = 12;
+                                newFlag.alt = flagImg.alt;
+                                newFlag.style.cssText = 'vertical-align:middle; margin-right:3px; border-radius:2px;';
+                                toggleButton.appendChild(newFlag);
+
+                                const span = document.createElement('span');
+                                span.textContent = ' ' + lang.toUpperCase();
+                                toggleButton.appendChild(span);
+
+                                const arrowSpan = document.createElement('span');
+                                arrowSpan.className = 'arrow';
+                                arrowSpan.textContent = ' ▼';
+                                toggleButton.appendChild(arrowSpan);
                             }
 
-                            // Translate the page
-                            translatePage(lang);
+                            // Close dropdown
                             langDropdownMobile.classList.remove('open');
                             const arrow = langToggleMobile.querySelector('.arrow');
                             if (arrow) arrow.classList.remove('open');
+
+                            // IMPORTANT: Call the translate function
+                            if (typeof translatePage === 'function') {
+                                translatePage(lang);
+                            } else {
+                                // Fallback: try to use the global language function
+                                console.log('Attempting to translate to:', lang);
+                                // Trigger a page reload with language parameter
+                                window.location.search = '?lang=' + lang;
+                            }
                         }
                     });
                 });
