@@ -2289,6 +2289,48 @@
                         e.stopPropagation();
                         const lang = this.getAttribute('data-lang');
                         if (lang && window.TRANSLATIONS && window.TRANSLATIONS[lang]) {
+                            // Update active state
+                            langDropdownMobile.querySelectorAll('.lang-option-mobile').forEach(btn => {
+                                btn.classList.remove('active');
+                                const check = btn.querySelector('.check');
+                                if (check) check.textContent = '';
+                            });
+                            this.classList.add('active');
+                            const check = this.querySelector('.check');
+                            if (check) check.textContent = '✓';
+
+                            // Update the toggle button text
+                            const flagImg = this.querySelector('img');
+                            const langName = this.textContent.trim().replace('✓', '').trim();
+                            const toggleButton = langToggleMobile;
+                            if (toggleButton) {
+                                // Keep the flag and update the language code
+                                const currentFlag = toggleButton.querySelector('img');
+                                if (currentFlag && flagImg) {
+                                    currentFlag.src = flagImg.src;
+                                    currentFlag.alt = flagImg.alt;
+                                }
+                                const textNode = toggleButton.childNodes[2];
+                                if (textNode) {
+                                    toggleButton.innerHTML = '';
+                                    const newFlag = document.createElement('img');
+                                    newFlag.src = flagImg ? flagImg.src : 'british_flag.webp';
+                                    newFlag.width = 18;
+                                    newFlag.height = 12;
+                                    newFlag.alt = flagImg ? flagImg.alt : 'EN';
+                                    newFlag.style.cssText = 'vertical-align:middle; margin-right:3px; border-radius:2px;';
+                                    toggleButton.appendChild(newFlag);
+                                    const span = document.createElement('span');
+                                    span.textContent = ' ' + lang.toUpperCase();
+                                    toggleButton.appendChild(span);
+                                    const arrowSpan = document.createElement('span');
+                                    arrowSpan.className = 'arrow';
+                                    arrowSpan.textContent = ' ▼';
+                                    toggleButton.appendChild(arrowSpan);
+                                }
+                            }
+
+                            // Translate the page
                             translatePage(lang);
                             langDropdownMobile.classList.remove('open');
                             const arrow = langToggleMobile.querySelector('.arrow');
