@@ -284,74 +284,6 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* ===== HAMBURGER + LANGUAGE WRAPPER (Mobile) ===== */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .header-actions .lang-selector-mobile {
-            display: none;
-            align-items: center;
-            gap: 0.3rem;
-            cursor: pointer;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            border: none;
-            background: transparent;
-            font-family: inherit;
-        }
-
-        .header-actions .lang-selector-mobile:hover {
-            color: #ff9999;
-        }
-
-        .header.scrolled .header-actions .lang-selector-mobile {
-            color: #1a2a1d;
-            text-shadow: none;
-        }
-
-        .header.scrolled .header-actions .lang-selector-mobile:hover {
-            color: #cc0000;
-        }
-
-        .header-actions .lang-selector-mobile .arrow {
-            font-size: 0.5rem;
-            margin-left: 0.1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .header-actions .lang-selector-mobile .arrow.open {
-            transform: rotate(180deg);
-        }
-
-        .lang-dropdown-mobile {
-            display: none;
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            min-width: 180px;
-            padding: 0.4rem;
-            z-index: 1000;
-            border: 1px solid #e8eaed;
-        }
-
-        .lang-dropdown-mobile.open {
-            display: block;
-        }
-
         /* ===== NAVIGATION ===== */
         .nav-menu {
             display: flex;
@@ -1380,27 +1312,9 @@
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-
             .hamburger {
                 display: flex;
             }
-
-            /* Mobile language selector - beside hamburger */
-            .header-actions {
-                display: flex;
-                align-items: center;
-                gap: 0.3rem;
-            }
-
-            .header-actions .lang-selector-mobile {
-                display: flex;
-            }
-
-            /* Hide desktop language selector on mobile */
-            .nav-menu .lang-selector {
-                display: none !important;
-            }
-
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -1447,6 +1361,19 @@
                 color: #1a2a1d !important;
             }
 
+            /* Mobile language selector */
+            .lang-selector {
+                width: 100%;
+                justify-content: center;
+                padding: 0.8rem 1.5rem;
+                color: #1a2a1d !important;
+                text-shadow: none !important;
+                border-bottom: 1px solid #e8eaed;
+                font-size: 0.9rem;
+            }
+            .header:not(.scrolled) .lang-selector {
+                color: #1a2a1d !important;
+            }
             .lang-dropdown-nav {
                 position: relative;
                 top: 0;
@@ -1468,12 +1395,6 @@
             }
             .lang-option-nav:last-child {
                 border-bottom: none;
-            }
-
-            /* Mobile dropdown position */
-            .lang-dropdown-mobile {
-                right: 0;
-                left: auto;
             }
 
             .about-grid {
@@ -1769,6 +1690,10 @@
             .historical-item.air-itam .historical-body .image-grid .image-item img {
                 height: 200px;
             }
+            .lang-selector {
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
             .lang-option-nav {
                 font-size: 0.75rem;
                 padding: 0.5rem 1rem;
@@ -1779,13 +1704,6 @@
             }
             .certificate-item .cert-image {
                 height: 200px;
-            }
-            .header-actions .lang-selector-mobile {
-                font-size: 0.65rem;
-                padding: 0.2rem 0.4rem;
-            }
-            .lang-dropdown-mobile {
-                min-width: 150px;
             }
         }
     </style>
@@ -1801,40 +1719,17 @@
                     <span class="reg" data-i18n="logo.reg">196001000153 (3821-P)</span>
                 </div>
             </a>
-
-            <!-- ===== HEADER ACTIONS (Hamburger + Language on mobile) ===== -->
-            <div class="header-actions">
-                <!-- Mobile Language Selector -->
-                <div style="position:relative; display:inline-block;">
-                    <button class="lang-selector-mobile" id="langToggleMobile">
-                        <img src="british_flag.webp" width="18" height="12" alt="EN" style="vertical-align:middle; margin-right:3px;"> EN <span class="arrow">▼</span>
-                    </button>
-                    <div class="lang-dropdown-mobile" id="langDropdownMobile">
-                        <button class="lang-option-nav active" data-lang="en">
-                            <img src="british_flag.webp" width="20" height="14" alt="EN" style="vertical-align:middle; margin-right:4px;"> English <span class="check">✓</span>
-                        </button>
-                        <button class="lang-option-nav" data-lang="ms">
-                            <img src="malaysia_flag.webp" width="20" height="14" alt="BM" style="vertical-align:middle; margin-right:4px;"> Bahasa Malaysia
-                        </button>
-                        <button class="lang-option-nav" data-lang="zh">
-                            <img src="china_flag.webp" width="20" height="14" alt="CN" style="vertical-align:middle; margin-right:4px;"> 中文
-                        </button>
-                    </div>
-                </div>
-
-                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" data-i18n="nav.company">Company</a>
                 <a href="about.html" class="active" data-i18n="nav.about">About</a>
                 <a href="products.html" data-i18n="nav.products">Products</a>
                 <a href="facilities.html" data-i18n="nav.facilities">Facilities</a>
                 <a href="contact.html" data-i18n="nav.contact">Contact</a>
-
-                <!-- ===== LANGUAGE SELECTOR (Desktop - hidden on mobile) ===== -->
+                
+                <!-- ===== LANGUAGE SELECTOR (IN NAV) ===== -->
                 <div style="position:relative; display:inline-block;">
                     <button class="lang-selector" id="langToggle">
                         <img src="british_flag.webp" width="20" height="14" alt="EN" style="vertical-align:middle; margin-right:4px;"> EN <span class="arrow">▼</span>
