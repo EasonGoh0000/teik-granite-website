@@ -36,16 +36,17 @@ const TRANSLATIONS = {
       backToTop: "Back to top",
       sendMessage: "Send Message",
       copyright: "© 2026 Teik Granite Quarry Sdn Bhd. All Rights Reserved.",
-      established: "Established: 20 June 1960",
+      established: "Established: 1960",
       regNo: "Registration No: 196001000153 (3821-P)",
       tagline: "A trusted Malaysian quarry company supplying premium granite and construction materials for over 60 years.",
       quickLinks: "Quick Links",
       groupCompanies: "Group Companies",
       connectWithUs: "Connect With Us",
-      phone: "04-261 4477",
-      fax: "04-262 2818",
+      phone: "604-261 4477",
+      fax: "604-262 2818",
       location: "Pulau Tikus, Penang, Malaysia",
-      watchVideo: "Watch Video"
+      watchVideo: "Watch Video",
+      viewProjects: "View Our Projects"
     },
 
     // ---- FOOTER GROUP COMPANIES ----
@@ -62,8 +63,8 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "SINCE 1960",
-        title: 'Building Malaysia <br /><span class="highlight-red">Since 1960</span>',
-        subtitle: '<strong>Trusted Quarry Solutions for Infrastructure & Construction</strong><br />Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang and Malaysia.'
+        title: '<span class="highlight-red">Since 1960</span>',
+        subtitle: '<strong>Trusted Aggregate Supply for Infrastructure & Construction</strong><br />Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang and Malaysia.'
       },
       overview: {
         badge: "Since 1960",
@@ -95,18 +96,8 @@ const TRANSLATIONS = {
       products: {
         title: "Our Products",
         subtitle: "Premium quarry materials for construction and infrastructure",
-        crushedStone: "Crushed Stone",
-        gravel: "Gravel (Natural)",
-        sand: "Sand (Manufactured / M-Sand)",
-        recycled: "Recycled Aggregate",
-        crushedStoneSpec: '3/4" & 1 1/2" & 3/8"',
-        gravelSpec: "Washed & Screened",
-        sandSpec: "M.Sand / Quarry Dust",
-        recycledSpec: "Eco-Friendly",
-        crushedStoneDesc: "High-quality crushed granite for concrete production, asphalt paving, and road construction.",
-        gravelDesc: "Natural gravel for drainage systems, landscaping, pathways, and decorative applications.",
-        sandDesc: "Manufactured sand for construction, plastering, backfilling, and building material production.",
-        recycledDesc: "Sustainable recycled aggregate for sub-base, road construction, and environmentally conscious projects.",
+        unifiedTitle: "Crusher Stone & Sand (Manufactured / M-Sand)",
+        unifiedDescription: "High-quality crushed granite for concrete production, asphalt paving, and road construction. Available in various sizes including 3/4\", 1 1/2\", 3/8\", M.Sand, Quarry Dust, and Crusher Run. SIRIM certified, infrastructure grade, and eco-friendly options available.",
         sirim: "SIRIM Certified",
         premium: "Premium Quality",
         infrastructure: "Infrastructure Grade",
@@ -128,19 +119,8 @@ const TRANSLATIONS = {
           asphalt: "Asphalt Plants",
           civil: "Civil Engineering Projects"
         },
-        showMore: "Show Product Details"
-      },
-      process: {
-        title: "From Rock to Reliable Construction Materials",
-        subtitle: "Our quarry process ensures quality at every step",
-        step1: "Drill & Blast",
-        step1Desc: "Controlled blasting to extract quality granite",
-        step2: "Excavate",
-        step2Desc: "Hydraulic excavators remove blasted rock safely and efficiently",
-        step3: "Crushing Plant",
-        step3Desc: "Primary and secondary crushing produce different aggregate sizes",
-        step4: "Load & Haul",
-        step4Desc: "Heavy-duty dump trucks transport granite to the stockpile"
+        showMore: "View Product Details →",
+        viewProjects: "View Our Projects →"
       },
       video: {
         title: "Our Quarry Operations",
@@ -399,8 +379,8 @@ const TRANSLATIONS = {
         contactNumbers: "Contact Numbers",
         companyInfo: "Company Information",
         email: "Email",
-        main: "Main",
-        corporate: "Corporate"
+        main: "Main:",
+        corporate: "Corporate:"
       },
       map: {
         title: "Find Us",
@@ -459,16 +439,17 @@ const TRANSLATIONS = {
       backToTop: "Kembali ke atas",
       sendMessage: "Hantar Mesej",
       copyright: "© 2026 Teik Granite Quarry Sdn Bhd. Hak Cipta Terpelihara.",
-      established: "Ditubuhkan: 20 Jun 1960",
+      established: "Ditubuhkan: 1960",
       regNo: "No. Pendaftaran: 196001000153 (3821-P)",
       tagline: "Syarikat kuari Malaysia yang dipercayai membekalkan granit premium dan bahan binaan selama lebih 60 tahun.",
       quickLinks: "Pautan Pantas",
       groupCompanies: "Kumpulan Syarikat",
       connectWithUs: "Hubungi Kami",
-      phone: "04-261 4477",
-      fax: "04-262 2818",
+      phone: "604-261 4477",
+      fax: "604-262 2818",
       location: "Pulau Tikus, Pulau Pinang, Malaysia",
-      watchVideo: "Tonton Video"
+      watchVideo: "Tonton Video",
+      viewProjects: "Lihat Projek Kami"
     },
 
     // ---- FOOTER GROUP COMPANIES ----
@@ -485,8 +466,8 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "SEJAK 1960",
-        title: 'Membina Malaysia <br /><span class="highlight-red">Sejak 1960</span>',
-        subtitle: '<strong>Penyelesaian Kuari Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1960, Teik Granite Quarry Sdn. Bhd. mempunyai pengalaman lebih enam dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang dan Malaysia.'
+        title: '<span class="highlight-red">Sejak 1960</span>',
+        subtitle: '<strong>Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1960, Teik Granite Quarry Sdn. Bhd. mempunyai pengalaman lebih enam dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang dan Malaysia.'
       },
       overview: {
         badge: "Sejak 1960",
@@ -518,18 +499,8 @@ const TRANSLATIONS = {
       products: {
         title: "Produk Kami",
         subtitle: "Bahan kuari premium untuk pembinaan dan infrastruktur",
-        crushedStone: "Batu Hancur",
-        gravel: "Batu Kelikir (Semula Jadi)",
-        sand: "Pasir (Buatan / M-Pasir)",
-        recycled: "Agregat Kitar Semula",
-        crushedStoneSpec: '3/4" & 1 1/2" & 3/8"',
-        gravelSpec: "Dibasuh & Ditapis",
-        sandSpec: "M.Pasir / Debu Kuari",
-        recycledSpec: "Mesra Alam",
-        crushedStoneDesc: "Granit hancur berkualiti tinggi untuk pengeluaran konkrit, turapan asfalt, dan pembinaan jalan raya.",
-        gravelDesc: "Kelikir semula jadi untuk sistem saliran, landskap, laluan pejalan kaki, dan aplikasi hiasan.",
-        sandDesc: "Pasir buatan untuk pembinaan, plasteran, penimbusan, dan pengeluaran bahan binaan.",
-        recycledDesc: "Agregat kitar semula yang mampan untuk sub-asas, pembinaan jalan raya, dan projek yang mementingkan alam sekitar.",
+        unifiedTitle: "Batu Crusher & Pasir (M-Pasir / Debu Kuari)",
+        unifiedDescription: "Granit hancur berkualiti tinggi untuk pengeluaran konkrit, turapan asfalt, dan pembinaan jalan raya. Tersedia dalam pelbagai saiz termasuk 3/4\", 1 1/2\", 3/8\", M.Pasir, Debu Kuari, dan Crusher Run. Diperakui SIRIM, gred infrastruktur, dan pilihan mesra alam.",
         sirim: "Diperakui SIRIM",
         premium: "Kualiti Premium",
         infrastructure: "Gred Infrastruktur",
@@ -551,19 +522,8 @@ const TRANSLATIONS = {
           asphalt: "Loji Asfalt",
           civil: "Projek Kejuruteraan Awam"
         },
-        showMore: "Lihat Butiran Produk"
-      },
-      process: {
-        title: "Dari Batu ke Bahan Binaan yang Boleh Dipercayai",
-        subtitle: "Proses kuari kami memastikan kualiti pada setiap langkah",
-        step1: "Gerudi & Letupan",
-        step1Desc: "Letupan terkawal untuk mengekstrak granit berkualiti",
-        step2: "Penggalian",
-        step2Desc: "Jentera penggali hidraulik mengeluarkan batu letupan dengan selamat dan cekap",
-        step3: "Loji Penghancuran",
-        step3Desc: "Penghancuran primer dan sekunder menghasilkan pelbagai saiz agregat",
-        step4: "Muat & Angkut",
-        step4Desc: "Lori dump berat mengangkut granit ke timbunan stok"
+        showMore: "Lihat Butiran Produk →",
+        viewProjects: "Lihat Projek Kami →"
       },
       video: {
         title: "Operasi Kuari Kami",
@@ -822,8 +782,8 @@ const TRANSLATIONS = {
         contactNumbers: "Nombor Telefon",
         companyInfo: "Maklumat Syarikat",
         email: "E-mel",
-        main: "Utama",
-        corporate: "Korporat"
+        main: "Utama:",
+        corporate: "Korporat:"
       },
       map: {
         title: "Cari Kami",
@@ -882,16 +842,17 @@ const TRANSLATIONS = {
       backToTop: "返回顶部",
       sendMessage: "发送消息",
       copyright: "© 2026 德石较有限公司. 版权所有。",
-      established: "成立日期：1960年6月20日",
+      established: "成立年份：1960年",
       regNo: "注册号：196001000153 (3821-P)",
       tagline: "值得信赖的马来西亚采石场公司，供应优质花岗岩和建筑材料超过60年。",
       quickLinks: "快速链接",
       groupCompanies: "集团公司",
       connectWithUs: "联系我们",
-      phone: "04-261 4477",
-      fax: "04-262 2818",
+      phone: "604-261 4477",
+      fax: "604-262 2818",
       location: "马来西亚槟城乔治市",
-      watchVideo: "观看视频"
+      watchVideo: "观看视频",
+      viewProjects: "查看我们的项目"
     },
 
     // ---- FOOTER GROUP COMPANIES ----
@@ -908,8 +869,8 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "自1960年",
-        title: '建设马来西亚 <br /><span class="highlight-red">自1960年</span>',
-        subtitle: '<strong>值得信赖的采石场基础设施与建筑解决方案</strong><br />德石较有限公司成立于1960年，拥有超过六十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城和马来西亚各地。'
+        title: '<span class="highlight-red">自1960年</span>',
+        subtitle: '<strong>值得信赖的骨料供应，用于基础设施和建筑</strong><br />德石较有限公司成立于1960年，拥有超过六十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城和马来西亚各地。'
       },
       overview: {
         badge: "自1960年",
@@ -941,18 +902,8 @@ const TRANSLATIONS = {
       products: {
         title: "我们的产品",
         subtitle: "用于建筑和基础设施的优质采石材料",
-        crushedStone: "碎石",
-        gravel: "砾石（天然）",
-        sand: "机制砂",
-        recycled: "再生骨料",
-        crushedStoneSpec: '3/4" & 1 1/2" & 3/8"',
-        gravelSpec: "水洗与筛选",
-        sandSpec: "机制砂 / 采石场粉尘",
-        recycledSpec: "环保",
-        crushedStoneDesc: "高品质碎石，用于混凝土生产、沥青铺设和道路建设。",
-        gravelDesc: "天然砾石，用于排水系统、景观美化、人行道和装饰应用。",
-        sandDesc: "机制砂，用于建筑、抹灰、回填和建筑材料生产。",
-        recycledDesc: "可持续再生骨料，用于基层、道路建设和环保项目。",
+        unifiedTitle: "破碎石与砂（机制砂 / 采石场粉尘）",
+        unifiedDescription: "高品质碎石，用于混凝土生产、沥青铺设和道路建设。提供多种规格，包括3/4\"、1 1/2\"、3/8\"、机制砂、采石场粉尘和破碎跑料。SIRIM认证、基础设施级和环保选项。",
         sirim: "SIRIM认证",
         premium: "优质",
         infrastructure: "基础设施级",
@@ -974,19 +925,8 @@ const TRANSLATIONS = {
           asphalt: "沥青厂",
           civil: "土木工程项目"
         },
-        showMore: "显示产品详情"
-      },
-      process: {
-        title: "从岩石到可靠的建筑材料",
-        subtitle: "我们的采石过程确保每一步的质量",
-        step1: "钻孔与爆破",
-        step1Desc: "控制爆破以提取优质花岗岩",
-        step2: "挖掘",
-        step2Desc: "液压挖掘机安全高效地清除爆破岩石",
-        step3: "破碎厂",
-        step3Desc: "初级和二级破碎生产不同规格的骨料",
-        step4: "装载与运输",
-        step4Desc: "重型自卸卡车将花岗岩运输到堆料场"
+        showMore: "显示产品详情 →",
+        viewProjects: "查看我们的项目 →"
       },
       video: {
         title: "我们的采石作业",
@@ -1245,8 +1185,8 @@ const TRANSLATIONS = {
         contactNumbers: "联系电话",
         companyInfo: "公司信息",
         email: "电子邮件",
-        main: "总部",
-        corporate: "公司"
+        main: "总部:",
+        corporate: "公司:"
       },
       map: {
         title: "找到我们",
