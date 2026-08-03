@@ -2142,7 +2142,7 @@
 
                 <!-- ===== "View Our Projects" button inside industries ===== -->
                 <div class="view-projects-wrapper">
-                    <a href="about.html#projects-section" class="btn-view-projects">
+                    <a href="about.html#projects-section" class="btn-view-projects" data-i18n="index.products.viewProjects">
                         View Our Projects <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -2288,7 +2288,7 @@
                     option.addEventListener('click', function(e) {
                         e.stopPropagation();
                         const lang = this.getAttribute('data-lang');
-                        if (lang && translations[lang]) {
+                        if (lang && window.TRANSLATIONS && window.TRANSLATIONS[lang]) {
                             translatePage(lang);
                             langDropdownMobile.classList.remove('open');
                             const arrow = langToggleMobile.querySelector('.arrow');
