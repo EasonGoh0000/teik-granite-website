@@ -58,7 +58,6 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
-        /* ===== MOBILE BACKGROUND FIX ===== */
         @media (max-width: 768px) {
             body::before {
                 background-attachment: scroll;
@@ -196,6 +195,7 @@
             align-items: center;
             margin-left: auto;
             margin-right: 0.5rem;
+            position: relative;
         }
 
         .lang-mobile-wrapper .lang-selector-mobile {
@@ -1104,7 +1104,6 @@
             font-size: 0.7rem;
         }
 
-        /* --- Button wrapper: only "View Product Details" here --- */
         .button-wrapper {
             display: flex;
             justify-content: center;
@@ -1112,7 +1111,6 @@
             padding: 0 0 2rem 0;
         }
 
-        /* --- Base button style (shared) --- */
         .btn-show-more,
         .btn-view-projects {
             display: inline-flex;
@@ -1224,7 +1222,6 @@
             font-size: 0.82rem;
         }
 
-        /* --- View Projects button wrapper inside industries --- */
         .view-projects-wrapper {
             text-align: center;
             margin-top: 0.5rem;
@@ -1406,13 +1403,11 @@
                 order: 3;
             }
 
-            /* Show mobile language selector beside hamburger */
             .lang-mobile-wrapper {
                 display: flex;
                 order: 2;
             }
 
-            /* Hide desktop language selector on mobile */
             .lang-selector,
             .lang-dropdown-nav {
                 display: none !important;
@@ -1465,7 +1460,6 @@
                 color: #1a2a1d !important;
             }
 
-            /* Mobile language selector - hide desktop version */
             .lang-selector {
                 display: none !important;
             }
@@ -1952,7 +1946,7 @@
                     <div class="overview-text">
                         <span class="badge-year" data-i18n="index.overview.badge"><i class="fas fa-calendar-alt"></i> Since 1960</span>
                         <h2 data-i18n="index.overview.title">Company Overview</h2>
-                        <p class="sub-headline" data-i18n="index.overview.subtitle">From the Mine to the Market Powering Penang's Development with Quality Cosntruction Materials</p>
+                        <p class="sub-headline" data-i18n="index.overview.subtitle">From the Mine to the Market Powering Penang's Development with Quality Construction Materials</p>
                         <p data-i18n-html="index.overview.p1">Established in 1960, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> is one of Penang's established quarry operators.</p>
                         <p data-i18n="index.overview.p2">For more than 60 years, we have supplied quality granite products for highways, bridges, commercial developments, residential projects, factories, ports and infrastructure works.</p>
                         <p data-i18n="index.overview.p3">Today, we continue to combine decades of quarrying experience with modern production methods to provide reliable building materials for Malaysia's construction industry.</p>
@@ -2098,7 +2092,7 @@
                 <div class="product-description">
                     <p data-i18n="index.products.unifiedDescription">
                         High-quality crushed granite for <span class="highlight-text">concrete production</span>, asphalt paving, and road construction.
-                        Available in various sizes including <strong>10</strong>, <strong>20</strong>& <strong>40 mm</strong>, <strong>M.Sand</strong>, <strong>Quarry Dust</strong>, and <strong>Crusher Run</strong>.
+                        Available in various sizes including <strong>10</strong>, <strong>20</strong>&amp; <strong>40 mm</strong>, <strong>M.Sand</strong>, <strong>Quarry Dust</strong>, and <strong>Crusher Run</strong>.
                          infrastructure grade, and eco-friendly options available.
                     </p>
                     <div class="product-tags">
@@ -2108,7 +2102,6 @@
                     </div>
                 </div>
 
-                <!-- ===== BUTTON WRAPPER: only "View Product Details" ===== -->
                 <div class="button-wrapper">
                     <a href="products.html" class="btn-show-more" data-i18n="index.products.showMore">
                         View Product Details <i class="fas fa-arrow-right"></i>
@@ -2116,7 +2109,6 @@
                 </div>
             </div>
 
-            <!-- ===== SUITABLE INDUSTRIES ===== -->
             <div class="industries-section">
                 <div class="industries-header">
                     <h3><i class="fas fa-industry"></i> <span data-i18n="index.products.industries.title">Suitable Industries</span></h3>
@@ -2139,7 +2131,6 @@
                     <span class="industry-tag-display"><i class="fas fa-hard-hat"></i><span data-i18n="index.products.industries.civil">Civil Engineering Projects</span></span>
                 </div>
 
-                <!-- ===== "View Our Projects" button inside industries ===== -->
                 <div class="view-projects-wrapper">
                     <a href="about.html#projects-section" class="btn-view-projects" data-i18n="index.products.viewProjects">
                         View Our Projects <i class="fas fa-arrow-right"></i>
@@ -2267,7 +2258,57 @@
             const langToggleMobile = document.getElementById('langToggleMobile');
             const langDropdownMobile = document.getElementById('langDropdownMobile');
 
+            // Helper: Get translation function safely
+            function getTranslateFunction() {
+                if (typeof window.translatePage === 'function') {
+                    return window.translatePage;
+                }
+                if (typeof translatePage === 'function') {
+                    return translatePage;
+                }
+                if (typeof window.__translate === 'function') {
+                    return window.__translate;
+                }
+                return null;
+            }
+
+            // Helper: Update mobile dropdown UI
+            function updateMobileUI(lang) {
+                // Update toggle button
+                const toggleLabels = {
+                    en: 'EN',
+                    ms: 'BM',
+                    zh: '中文'
+                };
+                const flagImages = {
+                    en: 'british_flag.webp',
+                    ms: 'malaysia_flag.webp',
+                    zh: 'china_flag.webp'
+                };
+                const label = toggleLabels[lang] || 'EN';
+                const flag = flagImages[lang] || 'british_flag.webp';
+                if (langToggleMobile) {
+                    langToggleMobile.innerHTML = `<img src="${flag}" width="18" height="12" alt="${label}" style="vertical-align:middle; margin-right:3px; border-radius:2px;"> ${label} <span class="arrow">▼</span>`;
+                }
+
+                // Update dropdown options
+                const options = langDropdownMobile.querySelectorAll('.lang-option-mobile');
+                options.forEach(option => {
+                    option.classList.remove('active');
+                    const check = option.querySelector('.check');
+                    if (check) check.remove();
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                        const checkSpan = document.createElement('span');
+                        checkSpan.className = 'check';
+                        checkSpan.textContent = '✓';
+                        option.appendChild(checkSpan);
+                    }
+                });
+            }
+
             if (langToggleMobile && langDropdownMobile) {
+                // Toggle dropdown
                 langToggleMobile.addEventListener('click', function(e) {
                     e.stopPropagation();
                     langDropdownMobile.classList.toggle('open');
@@ -2275,6 +2316,7 @@
                     if (arrow) arrow.classList.toggle('open');
                 });
 
+                // Close dropdown when clicking outside
                 document.addEventListener('click', function(e) {
                     if (!langToggleMobile.contains(e.target) && !langDropdownMobile.contains(e.target)) {
                         langDropdownMobile.classList.remove('open');
@@ -2283,18 +2325,36 @@
                     }
                 });
 
+                // Language option click
                 langDropdownMobile.querySelectorAll('.lang-option-mobile').forEach(option => {
                     option.addEventListener('click', function(e) {
                         e.stopPropagation();
                         const lang = this.getAttribute('data-lang');
-                        if (lang && window.TRANSLATIONS && window.TRANSLATIONS[lang]) {
-                            translatePage(lang);
-                            langDropdownMobile.classList.remove('open');
-                            const arrow = langToggleMobile.querySelector('.arrow');
-                            if (arrow) arrow.classList.remove('open');
+                        
+                        if (lang) {
+                            const translateFn = getTranslateFunction();
+                            if (translateFn) {
+                                translateFn(lang);
+                                updateMobileUI(lang);
+                            } else {
+                                console.error('❌ translatePage function not found');
+                                // Fallback: reload page with language param
+                                window.location.href = window.location.pathname + '?lang=' + lang;
+                            }
                         }
+
+                        // Close dropdown
+                        langDropdownMobile.classList.remove('open');
+                        const arrow = langToggleMobile.querySelector('.arrow');
+                        if (arrow) arrow.classList.remove('open');
                     });
                 });
+
+                // Set initial state from localStorage
+                const savedLang = localStorage.getItem('teik_language') || 'en';
+                setTimeout(function() {
+                    updateMobileUI(savedLang);
+                }, 500);
             }
 
             // ===== Hero Carousel =====
