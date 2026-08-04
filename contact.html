@@ -252,6 +252,117 @@
             flex-shrink: 0;
         }
 
+        /* ===== LANGUAGE SELECTOR - MOBILE (beside hamburger) ===== */
+        .lang-mobile-wrapper {
+            display: none;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 0.5rem;
+            position: relative;
+        }
+
+        .lang-mobile-wrapper .lang-selector-mobile {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            position: relative;
+        }
+
+        .lang-mobile-wrapper .lang-selector-mobile:hover {
+            color: #ff9999;
+        }
+
+        .header.scrolled .lang-mobile-wrapper .lang-selector-mobile {
+            color: #1a2a1d;
+            text-shadow: none;
+        }
+
+        .header.scrolled .lang-mobile-wrapper .lang-selector-mobile:hover {
+            color: #cc0000;
+        }
+
+        .lang-mobile-wrapper .lang-selector-mobile .arrow {
+            font-size: 0.6rem;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-mobile-wrapper .lang-selector-mobile .arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .lang-mobile-wrapper .lang-dropdown-mobile {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            min-width: 180px;
+            padding: 0.4rem;
+            z-index: 1000;
+            border: 1px solid #e8eaed;
+        }
+
+        .lang-mobile-wrapper .lang-dropdown-mobile.open {
+            display: block;
+        }
+
+        .lang-mobile-wrapper .lang-option-mobile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1a2a1d;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .lang-mobile-wrapper .lang-option-mobile:hover {
+            background: #f5f5f5;
+            color: #cc0000;
+        }
+
+        .lang-mobile-wrapper .lang-option-mobile.active {
+            background: #fce8e8;
+            color: #cc0000;
+        }
+
+        .lang-mobile-wrapper .lang-option-mobile .check {
+            margin-left: auto;
+            color: #cc0000;
+            font-size: 0.7rem;
+        }
+
+        .lang-mobile-wrapper .lang-option-mobile img {
+            width: 18px;
+            height: 12px;
+            object-fit: cover;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+
         /* ===== HAMBURGER ===== */
         .hamburger {
             display: none;
@@ -1008,10 +1119,26 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 gap: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
+
             .hamburger {
                 display: flex;
+                order: 3;
             }
+
+            .lang-mobile-wrapper {
+                display: flex;
+                order: 2;
+            }
+
+            .lang-selector,
+            .lang-dropdown-nav {
+                display: none !important;
+            }
+
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -1022,6 +1149,7 @@
                 border-radius: 8px;
                 margin-top: 0.5rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                order: 4;
             }
             .nav-menu.open {
                 display: flex;
@@ -1058,40 +1186,11 @@
                 color: #1a2a1d !important;
             }
 
-            /* Mobile language selector */
             .lang-selector {
-                width: 100%;
-                justify-content: center;
-                padding: 0.8rem 1.5rem;
-                color: #1a2a1d !important;
-                text-shadow: none !important;
-                border-bottom: 1px solid #e8eaed;
-                font-size: 0.9rem;
-            }
-            .header:not(.scrolled) .lang-selector {
-                color: #1a2a1d !important;
+                display: none !important;
             }
             .lang-dropdown-nav {
-                position: relative;
-                top: 0;
-                box-shadow: none;
-                border: none;
-                border-radius: 0;
-                padding: 0;
-                background: transparent;
-                width: 100%;
-            }
-            .lang-dropdown-nav.open {
-                display: block;
-            }
-            .lang-option-nav {
-                padding: 0.6rem 1.5rem;
-                border-bottom: 1px solid #f0f0f0;
-                border-radius: 0;
-                justify-content: center;
-            }
-            .lang-option-nav:last-child {
-                border-bottom: none;
+                display: none !important;
             }
 
             .contact-grid {
@@ -1198,6 +1297,14 @@
                 display: block;
                 width: 100%;
             }
+            .lang-mobile-wrapper .lang-selector-mobile {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .lang-mobile-wrapper .lang-option-mobile {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1298,6 +1405,18 @@
                 font-size: 0.75rem;
                 padding: 0.5rem 1rem;
             }
+            .lang-mobile-wrapper .lang-selector-mobile {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.4rem;
+            }
+            .lang-mobile-wrapper .lang-option-mobile {
+                font-size: 0.65rem;
+                padding: 0.25rem 0.5rem;
+            }
+            .lang-mobile-wrapper .lang-dropdown-mobile {
+                min-width: 150px;
+                right: -10px;
+            }
         }
     </style>
 </head>
@@ -1312,17 +1431,37 @@
                     <span class="reg" data-i18n="logo.reg">196001000153 (3821-P)</span>
                 </div>
             </a>
+
+            <!-- ===== LANGUAGE SELECTOR - MOBILE (beside hamburger) ===== -->
+            <div class="lang-mobile-wrapper">
+                <button class="lang-selector-mobile" id="langToggleMobile">
+                    <img src="british_flag.webp" width="18" height="12" alt="EN" style="vertical-align:middle; margin-right:3px; border-radius:2px;"> EN <span class="arrow">▼</span>
+                </button>
+                <div class="lang-dropdown-mobile" id="langDropdownMobile">
+                    <button class="lang-option-mobile active" data-lang="en">
+                        <img src="british_flag.webp" width="18" height="12" alt="EN" style="vertical-align:middle; margin-right:4px; border-radius:2px;"> English <span class="check">✓</span>
+                    </button>
+                    <button class="lang-option-mobile" data-lang="ms">
+                        <img src="malaysia_flag.webp" width="18" height="12" alt="BM" style="vertical-align:middle; margin-right:4px; border-radius:2px;"> Bahasa Malaysia
+                    </button>
+                    <button class="lang-option-mobile" data-lang="zh">
+                        <img src="china_flag.webp" width="18" height="12" alt="CN" style="vertical-align:middle; margin-right:4px; border-radius:2px;"> 中文
+                    </button>
+                </div>
+            </div>
+
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
+
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" data-i18n="nav.company">Company</a>
                 <a href="about.html" data-i18n="nav.about">About</a>
                 <a href="products.html" data-i18n="nav.products">Products</a>
                 <a href="facilities.html" data-i18n="nav.facilities">Facilities</a>
                 <a href="contact.html" class="active" data-i18n="nav.contact">Contact</a>
-                
-                <!-- ===== LANGUAGE SELECTOR (IN NAV) ===== -->
+
+                <!-- ===== LANGUAGE SELECTOR (DESKTOP) ===== -->
                 <div style="position:relative; display:inline-block;">
                     <button class="lang-selector" id="langToggle">
                         <img src="british_flag.webp" width="20" height="14" alt="EN" style="vertical-align:middle; margin-right:4px;"> EN <span class="arrow">▼</span>
@@ -1703,11 +1842,12 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== Hamburger =====
+        // ===== Hamburger & Language Switcher =====
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
 
+            // Hamburger toggle
             hamburger.addEventListener('click', function() {
                 this.classList.toggle('active');
                 navMenu.classList.toggle('open');
@@ -1726,6 +1866,109 @@
                     navMenu.classList.remove('open');
                 }
             });
+
+            // ===== Mobile Language Switcher =====
+            const langToggleMobile = document.getElementById('langToggleMobile');
+            const langDropdownMobile = document.getElementById('langDropdownMobile');
+
+            // Helper: Get translation function safely
+            function getTranslateFunction() {
+                if (typeof window.translatePage === 'function') {
+                    return window.translatePage;
+                }
+                if (typeof translatePage === 'function') {
+                    return translatePage;
+                }
+                if (typeof window.__translate === 'function') {
+                    return window.__translate;
+                }
+                return null;
+            }
+
+            // Helper: Update mobile dropdown UI
+            function updateMobileUI(lang) {
+                // Update toggle button
+                const toggleLabels = {
+                    en: 'EN',
+                    ms: 'BM',
+                    zh: '中文'
+                };
+                const flagImages = {
+                    en: 'british_flag.webp',
+                    ms: 'malaysia_flag.webp',
+                    zh: 'china_flag.webp'
+                };
+                const label = toggleLabels[lang] || 'EN';
+                const flag = flagImages[lang] || 'british_flag.webp';
+                if (langToggleMobile) {
+                    langToggleMobile.innerHTML = `<img src="${flag}" width="18" height="12" alt="${label}" style="vertical-align:middle; margin-right:3px; border-radius:2px;"> ${label} <span class="arrow">▼</span>`;
+                }
+
+                // Update dropdown options
+                const options = langDropdownMobile.querySelectorAll('.lang-option-mobile');
+                options.forEach(option => {
+                    option.classList.remove('active');
+                    const check = option.querySelector('.check');
+                    if (check) check.remove();
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                        const checkSpan = document.createElement('span');
+                        checkSpan.className = 'check';
+                        checkSpan.textContent = '✓';
+                        option.appendChild(checkSpan);
+                    }
+                });
+            }
+
+            if (langToggleMobile && langDropdownMobile) {
+                // Toggle dropdown
+                langToggleMobile.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langDropdownMobile.classList.toggle('open');
+                    const arrow = this.querySelector('.arrow');
+                    if (arrow) arrow.classList.toggle('open');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!langToggleMobile.contains(e.target) && !langDropdownMobile.contains(e.target)) {
+                        langDropdownMobile.classList.remove('open');
+                        const arrow = langToggleMobile.querySelector('.arrow');
+                        if (arrow) arrow.classList.remove('open');
+                    }
+                });
+
+                // Language option click
+                langDropdownMobile.querySelectorAll('.lang-option-mobile').forEach(option => {
+                    option.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const lang = this.getAttribute('data-lang');
+                        
+                        if (lang) {
+                            const translateFn = getTranslateFunction();
+                            if (translateFn) {
+                                translateFn(lang);
+                                updateMobileUI(lang);
+                            } else {
+                                console.error('❌ translatePage function not found');
+                                // Fallback: reload page with language param
+                                window.location.href = window.location.pathname + '?lang=' + lang;
+                            }
+                        }
+
+                        // Close dropdown
+                        langDropdownMobile.classList.remove('open');
+                        const arrow = langToggleMobile.querySelector('.arrow');
+                        if (arrow) arrow.classList.remove('open');
+                    });
+                });
+
+                // Set initial state from localStorage
+                const savedLang = localStorage.getItem('teik_language') || 'en';
+                setTimeout(function() {
+                    updateMobileUI(savedLang);
+                }, 500);
+            }
 
             // ===== Hero Carousel =====
             const slides = document.querySelectorAll('.hero-slide');
