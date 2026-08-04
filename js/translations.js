@@ -63,8 +63,8 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "SINCE 1960",
-        title: '<span class="highlight-red">Since 1960</span>',
-        subtitle: '<strong>Trusted Aggregate Supply for Infrastructure & Construction</strong><br />Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang and Malaysia.'
+        title: 'Participating in Penang\'s Development<br><span class="highlight-red">Since 1960</span>',
+        subtitle: '<strong>Trusted Aggregate Supply for Infrastructure & Construction</strong><br />Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang.'
       },
       overview: {
         badge: "Since 1960",
@@ -72,7 +72,8 @@ const TRANSLATIONS = {
         subtitle: "From the Mine to the Market Powering Penang's Development with Quality Construction Materials",
         p1: 'Established in 1960, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> is one of Penang\'s established quarry operators.',
         p2: "For more than 60 years, we have supplied quality granite products for highways, bridges, commercial developments, residential projects, factories, ports and infrastructure works.",
-        p3: "Today, we continue to combine decades of quarrying experience with modern production methods to provide reliable building materials for Malaysia's construction industry.",
+        p3: "Today, we continue to combine decades of quarrying experience with modern production methods to provide reliable building materials for Penang's construction industry.",
+        location: "Penang",
         stats: {
           years: "Years of Excellence",
           companies: "Group Companies",
@@ -96,7 +97,7 @@ const TRANSLATIONS = {
       products: {
         title: "Our Products",
         subtitle: "Premium quarry materials for construction and infrastructure",
-        unifiedTitle: "Crusher Stone & Sand (Manufactured / M-Sand)",
+        unifiedTitle: "Crushed Stone & Sand (Manufactured / M-Sand)",
         unifiedDescription: "High-quality crushed granite for concrete production, asphalt paving, and road construction. Available in various sizes including 10, 20 & 40 mm, M.Sand, Quarry Dust, and Crusher Run. Infrastructure grade, and eco-friendly options available.",
         sirim: "SIRIM Certified",
         premium: "Premium Quality",
@@ -132,7 +133,7 @@ const TRANSLATIONS = {
     about: {
       hero: {
         title: "About Us",
-        subtitle: "Building Malaysia's infrastructure with quality granite since 1960"
+        subtitle: "Trusted Aggregate Supply for Infrastructure & Construction"
       },
       history: {
         title: "Company History",
@@ -160,7 +161,7 @@ const TRANSLATIONS = {
           company: "Maeda Construction Co."
         },
         bridge: {
-          title: "Penang Bridge 1st & Lim Chong Eu Expressway",
+          title: "1st Penang Bridge & Tun Dr Lim Chong Eu Expressway",
           desc: "Worked with Hyundai Engineering and Construction Company as a supplier of rock materials and as a road constructor for a portion of the Lim Chong Eu Expressway.",
           company: "Hyundai Engineering & Construction"
         },
@@ -255,7 +256,7 @@ const TRANSLATIONS = {
     products: {
       hero: {
         title: "Our Products",
-        subtitle: "Premium granite and quarry materials for construction and infrastructure"
+        subtitle: "High-quality crushed granite for concrete production, asphalt paving, and road construction."
       },
       list: {
         aggregate34: {
@@ -343,7 +344,7 @@ const TRANSLATIONS = {
         emailPlaceholder: "you@example.com",
         emailError: "Please enter a valid email address",
         phone: "Phone Number",
-        phonePlaceholder: "012-345 6789",
+        phonePlaceholder: "0123456789",
         phoneError: "Please enter your phone number",
         subject: "Subject",
         subjectPlaceholder: "Select a subject...",
@@ -466,8 +467,8 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "SEJAK 1960",
-        title: '<span class="highlight-red">Sejak 1960</span>',
-        subtitle: '<strong>Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1960, Teik Granite Quarry Sdn. Bhd. mempunyai pengalaman lebih enam dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang dan Malaysia.'
+        title: 'Menyertai pembangunan <br> Pulau Pinang <br> <span class="highlight-red">Sejak 1960</span>',
+        subtitle: '<strong>Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1960, Teik Granite Quarry Sdn. Bhd. mempunyai pengalaman lebih enam dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang.'
       },
       overview: {
         badge: "Sejak 1960",
@@ -475,7 +476,8 @@ const TRANSLATIONS = {
         subtitle: "Dari Lombong ke Pasaran - Menjana Pembangunan Pulau Pinang dengan Bahan Binaan Berkualiti",
         p1: 'Ditubuhkan pada tahun 1960, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> adalah salah satu pengendali kuari yang mapan di Pulau Pinang.',
         p2: "Selama lebih 60 tahun, kami telah membekalkan produk granit berkualiti untuk lebuh raya, jambatan, pembangunan komersial, projek perumahan, kilang, pelabuhan dan kerja infrastruktur.",
-        p3: "Hari ini, kami terus menggabungkan pengalaman kuari selama beberapa dekad dengan kaedah pengeluaran moden untuk menyediakan bahan binaan yang boleh dipercayai untuk industri pembinaan Malaysia.",
+        p3: "Hari ini, kami terus menggabungkan pengalaman kuari selama beberapa dekad dengan kaedah pengeluaran moden untuk menyediakan bahan binaan yang boleh dipercayai untuk industri pembinaan Pulau Pinang.",
+        location: "Pulau Pinang",
         stats: {
           years: "Tahun Kecemerlangan",
           companies: "Syarikat Kumpulan",
@@ -499,7 +501,7 @@ const TRANSLATIONS = {
       products: {
         title: "Produk Kami",
         subtitle: "Bahan kuari premium untuk pembinaan dan infrastruktur",
-        unifiedTitle: "Batu Crusher & Pasir (M-Pasir / Debu Kuari)",
+        unifiedTitle: "Batu Hancur & Pasir (M-Pasir / Debu Kuari)",
         unifiedDescription: "Granit hancur berkualiti tinggi untuk pengeluaran konkrit, turapan asfalt, dan pembinaan jalan raya. Tersedia dalam pelbagai saiz termasuk 10, 20 & 40 mm, M.Pasir, Debu Kuari, dan Crusher Run. Gred infrastruktur, dan pilihan mesra alam.",
         sirim: "Diperakui SIRIM",
         premium: "Kualiti Premium",
@@ -535,7 +537,7 @@ const TRANSLATIONS = {
     about: {
       hero: {
         title: "Tentang Kami",
-        subtitle: "Membina infrastruktur Malaysia dengan granit berkualiti sejak 1960"
+        subtitle: "Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan"
       },
       history: {
         title: "Sejarah Syarikat",
@@ -563,7 +565,7 @@ const TRANSLATIONS = {
           company: "Maeda Construction Co."
         },
         bridge: {
-          title: "Jambatan Pulau Pinang Pertama & Lebuhraya Lim Chong Eu",
+          title: "Jambatan Pulau Pinang Pertama & Lebuhraya Tun Dr Lim Chong Eu",
           desc: "Bekerja dengan Hyundai Engineering and Construction Company sebagai pembekal bahan batuan dan sebagai pembina jalan untuk sebahagian Lebuhraya Lim Chong Eu.",
           company: "Hyundai Engineering & Construction"
         },
@@ -658,7 +660,7 @@ const TRANSLATIONS = {
     products: {
       hero: {
         title: "Produk Kami",
-        subtitle: "Granit premium dan bahan kuari untuk pembinaan dan infrastruktur"
+        subtitle: "Granit hancur berkualiti tinggi untuk pengeluaran konkrit, turapan asfalt, dan pembinaan jalan raya"
       },
       list: {
         aggregate34: {
@@ -746,7 +748,7 @@ const TRANSLATIONS = {
         emailPlaceholder: "anda@contoh.com",
         emailError: "Sila masukkan alamat e-mel yang sah",
         phone: "Nombor Telefon",
-        phonePlaceholder: "012-345 6789",
+        phonePlaceholder: "0123456789",
         phoneError: "Sila masukkan nombor telefon anda",
         subject: "Perkara",
         subjectPlaceholder: "Pilih perkara...",
@@ -869,8 +871,8 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "自1960年",
-        title: '<span class="highlight-red">自1960年</span>',
-        subtitle: '<strong>值得信赖的骨料供应，用于基础设施和建筑</strong><br />德石较有限公司成立于1960年，拥有超过六十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城和马来西亚各地。'
+        title: '参与槟城的发展 <br> <span class="highlight-red">自1960年</span>',
+        subtitle: '<strong>值得信赖的骨料供应，用于基础设施和建筑</strong><br />德石较有限公司成立于1960年，拥有超过六十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城各地。'
       },
       overview: {
         badge: "自1960年",
@@ -878,7 +880,8 @@ const TRANSLATIONS = {
         subtitle: "从矿山到市场 - 以优质建材推动槟城发展",
         p1: '德石较有限公司成立于1960年，是槟城成熟的采石场运营商之一。',
         p2: "60多年来，我们为高速公路、桥梁、商业开发、住宅项目、工厂、港口和基础设施工程供应优质花岗岩产品。",
-        p3: "如今，我们继续将数十年的采石经验与现代生产方式相结合，为马来西亚建筑行业提供可靠的建筑材料。",
+        p3: "如今，我们继续将数十年的采石经验与现代生产方式相结合，为槟城建筑行业提供可靠的建筑材料。",
+        location: "槟城",
         stats: {
           years: "卓越年数",
           companies: "集团公司",
@@ -938,7 +941,7 @@ const TRANSLATIONS = {
     about: {
       hero: {
         title: "关于我们",
-        subtitle: "自1960年以来以优质花岗岩建设马来西亚基础设施"
+        subtitle: "值得信赖的骨料供应，用于基础设施和建筑"
       },
       history: {
         title: "公司历史",
@@ -966,7 +969,7 @@ const TRANSLATIONS = {
           company: "Maeda Construction Co."
         },
         bridge: {
-          title: "槟城第一大桥与林苍佑大道",
+          title: "槟城第一大桥与敦林苍佑大道",
           desc: "与 Hyundai Engineering and Construction Company 合作，作为岩石材料供应商，并为林苍佑大道的一部分担任道路建设商。",
           company: "Hyundai Engineering & Construction"
         },
@@ -1061,7 +1064,7 @@ const TRANSLATIONS = {
     products: {
       hero: {
         title: "我们的产品",
-        subtitle: "用于建筑和基础设施的优质花岗岩和采石材料"
+        subtitle: "高品质碎石，用于混凝土生产、沥青铺设和道路建设"
       },
       list: {
         aggregate34: {
@@ -1149,7 +1152,7 @@ const TRANSLATIONS = {
         emailPlaceholder: "you@example.com",
         emailError: "请输入有效的电子邮件地址",
         phone: "电话号码",
-        phonePlaceholder: "012-345 6789",
+        phonePlaceholder: "0123456789",
         phoneError: "请输入您的电话号码",
         subject: "主题",
         subjectPlaceholder: "选择主题...",

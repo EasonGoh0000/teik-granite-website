@@ -619,28 +619,94 @@
             }
         }
 
-        /* ===== FLOATING WHATSAPP ===== */
-        .whatsapp-float {
+        /* ===== WHATSAPP FLOAT WITH DROPDOWN ===== */
+        .whatsapp-float-dropdown {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 999;
-            background: #25D366;
-            color: white;
+        }
+
+        .whatsapp-float-main {
             width: 60px;
             height: 60px;
+            background: #25D366;
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
             transition: 0.3s;
-            text-decoration: none;
+            border: none;
         }
-        .whatsapp-float:hover {
+
+        .whatsapp-float-main:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-dropdown {
+            display: none;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            min-width: 220px;
+            padding: 0.5rem;
+            overflow: hidden;
+        }
+
+        .whatsapp-dropdown.open {
+            display: block;
+        }
+
+        .whatsapp-dropdown::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+        }
+
+        .whatsapp-dropdown a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            color: #1a2a1d;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.2s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .whatsapp-dropdown a:hover {
+            background: #f5f5f5;
+        }
+
+        .whatsapp-dropdown a i {
+            color: #25D366;
+            font-size: 1.3rem;
+            width: 1.8rem;
+            text-align: center;
+        }
+
+        .whatsapp-dropdown .whatsapp-number {
+            font-size: 0.7rem;
+            color: #6a7a7a;
+            font-weight: 400;
+            margin-left: auto;
+            font-family: monospace;
         }
 
         /* ===== BACK TO TOP ===== */
@@ -1104,6 +1170,7 @@
             font-size: 0.7rem;
         }
 
+        /* ===== BUTTONS ===== */
         .button-wrapper {
             display: flex;
             justify-content: center;
@@ -1149,6 +1216,11 @@
         .btn-show-more:hover i,
         .btn-view-projects:hover i {
             transform: translateX(5px);
+        }
+
+        .view-projects-wrapper {
+            text-align: center;
+            margin-top: 0.5rem;
         }
 
         /* ===== INDUSTRIES - DISPLAY ONLY ===== */
@@ -1220,11 +1292,6 @@
 
         .industry-tag-display span {
             font-size: 0.82rem;
-        }
-
-        .view-projects-wrapper {
-            text-align: center;
-            margin-top: 0.5rem;
         }
 
         /* ===== VIDEO SECTION ===== */
@@ -1511,10 +1578,8 @@
             .map-btn-wrapper {
                 text-align: center;
             }
-            .button-wrapper {
-                padding: 0 0 2rem 0;
-            }
-            .btn-show-more {
+            .btn-show-more,
+            .btn-view-projects {
                 padding: 0.8rem 2rem;
                 font-size: 0.9rem;
                 min-width: 170px;
@@ -1565,6 +1630,15 @@
                 padding: 0.8rem 2rem;
                 font-size: 0.9rem;
                 min-width: 170px;
+            }
+            .whatsapp-float-main {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            .whatsapp-dropdown {
+                min-width: 200px;
+                right: -5px;
             }
         }
 
@@ -1620,17 +1694,8 @@
                 width: 24px;
                 height: 2px;
             }
-            .whatsapp-float {
-                bottom: 30px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-                right: 20px;
-            }
-            .button-wrapper {
-                padding: 0 0 2rem 0;
-            }
-            .btn-show-more {
+            .btn-show-more,
+            .btn-view-projects {
                 padding: 0.8rem 1.5rem;
                 font-size: 0.9rem;
                 min-width: unset;
@@ -1689,6 +1754,22 @@
                 font-size: 0.7rem;
                 padding: 0.3rem 0.6rem;
             }
+            .whatsapp-float-main {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            .whatsapp-dropdown {
+                min-width: 180px;
+                right: -10px;
+            }
+            .whatsapp-dropdown a {
+                font-size: 0.8rem;
+                padding: 0.6rem 0.8rem;
+            }
+            .whatsapp-dropdown .whatsapp-number {
+                font-size: 0.6rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1732,23 +1813,14 @@
             .stat-box .number {
                 font-size: 2rem;
             }
-            .whatsapp-float {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-                bottom: 30px;
-                right: 15px;
+            .btn-show-more,
+            .btn-view-projects {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.8rem;
             }
             .nav-menu a {
                 font-size: 0.8rem;
                 padding: 0.7rem 1rem;
-            }
-            .button-wrapper {
-                padding: 0 0 1.5rem 0;
-            }
-            .btn-show-more {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.8rem;
             }
             .video-wrapper {
                 height: 40vh;
@@ -1828,6 +1900,28 @@
             .lang-mobile-wrapper .lang-dropdown-mobile {
                 min-width: 150px;
                 right: -10px;
+            }
+            .whatsapp-float-main {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                bottom: 30px;
+                right: 15px;
+            }
+            .whatsapp-dropdown {
+                min-width: 160px;
+                right: -15px;
+            }
+            .whatsapp-dropdown a {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.7rem;
+            }
+            .whatsapp-dropdown a i {
+                font-size: 1.1rem;
+                width: 1.5rem;
+            }
+            .whatsapp-dropdown .whatsapp-number {
+                font-size: 0.55rem;
             }
         }
     </style>
@@ -1915,9 +2009,9 @@
         <div class="container">
             <div class="hero-content">
                 <span class="hero-badge" data-i18n="index.hero.badge">SINCE 1960</span>
-                <h1 data-i18n-html="index.hero.title"><span class="highlight-red">Since 1960</span></h1>
+                <h1 data-i18n-html="index.hero.title">Participating in Penang's development<span class="highlight-red">Since 1960</span></h1>
                 <p data-i18n-html="index.hero.subtitle"><strong>Trusted Aggregate Supply for Infrastructure &amp; Construction</strong><br />
-                    Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang and Malaysia.</p>
+                    Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang.</p>
                 <a href="about.html" class="btn-hero" data-i18n="common.learnMore">Learn More →</a>
             </div>
         </div>
@@ -1928,10 +2022,22 @@
         </div>
     </section>
 
-    <!-- ===== WHATSAPP FLOAT ===== -->
-    <a href="https://wa.me/601116595751?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- ===== WHATSAPP FLOAT WITH DROPDOWN ===== -->
+    <div class="whatsapp-float-dropdown">
+        <button class="whatsapp-float-main" id="whatsappMain" aria-label="Contact us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <div class="whatsapp-dropdown" id="whatsappDropdown">
+            <a href="https://wa.me/60109310478?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" target="_blank">
+                <i class="fab fa-whatsapp"></i> 
+                General Inquiries 1
+            </a>
+            <a href="https://wa.me/60165850478?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" target="_blank">
+                <i class="fab fa-whatsapp"></i> 
+                General Inquiries 2
+            </a>
+        </div>
+    </div>
 
     <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
@@ -1949,7 +2055,7 @@
                         <p class="sub-headline" data-i18n="index.overview.subtitle">From the Mine to the Market Powering Penang's Development with Quality Construction Materials</p>
                         <p data-i18n-html="index.overview.p1">Established in 1960, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> is one of Penang's established quarry operators.</p>
                         <p data-i18n="index.overview.p2">For more than 60 years, we have supplied quality granite products for highways, bridges, commercial developments, residential projects, factories, ports and infrastructure works.</p>
-                        <p data-i18n="index.overview.p3">Today, we continue to combine decades of quarrying experience with modern production methods to provide reliable building materials for Malaysia's construction industry.</p>
+                        <p data-i18n="index.overview.p3">Today, we continue to combine decades of quarrying experience with modern production methods to provide reliable building materials for Penang's construction industry.</p>
                     </div>
                     <div class="overview-stats">
                         <div class="stat-box">
@@ -1969,7 +2075,7 @@
                         </div>
                         <div class="stat-box">
                             <div class="icon"><i class="fas fa-map-pin"></i></div>
-                            <div class="number"><span class="counter-text" data-text="Penang">0</span></div>
+                            <div class="number"><span class="counter-text" data-i18n="index.overview.location" data-text="Penang">0</span></div>
                             <div class="label" data-i18n="index.overview.stats.location">Location</div>
                         </div>
                     </div>
@@ -2071,7 +2177,7 @@
 
             <div class="products-container">
                 <div class="product-header">
-                    <h3 data-i18n="index.products.unifiedTitle">Crusher Stone &amp; Sand <span style="font-weight:400; font-size:0.8rem;">(Manufactured / M-Sand)</span></h3>
+                    <h3 data-i18n="index.products.unifiedTitle">Crushed Stone &amp; Sand <span style="font-weight:400; font-size:0.8rem;">(Manufactured / M-Sand)</span></h3>
                 </div>
 
                 <div class="product-images-row">
@@ -2349,6 +2455,23 @@
                 setTimeout(function() {
                     updateMobileUI(savedLang);
                 }, 500);
+            }
+
+            // ===== WhatsApp Dropdown =====
+            const whatsappMain = document.getElementById('whatsappMain');
+            const whatsappDropdown = document.getElementById('whatsappDropdown');
+
+            if (whatsappMain && whatsappDropdown) {
+                whatsappMain.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    whatsappDropdown.classList.toggle('open');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!whatsappMain.contains(e.target) && !whatsappDropdown.contains(e.target)) {
+                        whatsappDropdown.classList.remove('open');
+                    }
+                });
             }
 
             // ===== Hero Carousel =====
