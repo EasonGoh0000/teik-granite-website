@@ -2155,7 +2155,7 @@
         // ===== Initialize EmailJS =====
         (function() {
             emailjs.init({
-                publicKey: "BFW5ZXlIy4IHbXUvJ",
+                publicKey: "61wQ8Vd2-B6w7hncp",
                 blockHeadless: false,
                 limitRate: {
                     id: 'app',
@@ -2365,13 +2365,13 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
 
-            emailjs.send('service_gpp51vb', 'template_pi9b4rh', {
+            emailjs.send('service_rnit1s5', 'template_vwz40z4', {
                 from_name: name,
                 from_email: email,
                 phone: phone,
                 subject: subject,
                 message: message,
-                _to: 'wx.easongoh@gmail.com'
+                _to: 'tgc@teikgranite.com'
             })
             .then(function(response) {
                 showAlert('Success!', 'Your message has been sent successfully! We will get back to you within 24 hours.', true, 5000);
