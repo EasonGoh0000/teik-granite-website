@@ -62,16 +62,16 @@ const TRANSLATIONS = {
     // ---- INDEX PAGE ----
     index: {
       hero: {
-        badge: "SINCE 1960",
-        title: 'Participating in Penang\'s Development<br><span class="highlight-red">Since 1960</span>',
-        subtitle: '<strong>Trusted Aggregate Supply for Infrastructure & Construction</strong><br />Established in 1960, Teik Granite Quarry Sdn. Bhd. has over six decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang.'
+        badge: "SINCE 1952",
+        title: 'Built on the past. <br> Driven by the future.<br><span class="highlight-red">Since 1952</span>',
+        subtitle: '<strong>Trusted Aggregate Supply for Infrastructure & Construction</strong><br />Established in 1952, Teik Granite Quarry Sdn. Bhd. has over seven decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang.'
       },
       overview: {
-        badge: "Since 1960",
+        badge: "Since 1952",
         title: "Company Overview",
         subtitle: "From the Mine to the Market Powering Penang's Development with Quality Construction Materials",
-        p1: 'Established in 1960, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> is one of Penang\'s established quarry operators.',
-        p2: "For more than 60 years, we have supplied quality granite products for highways, bridges, commercial developments, residential projects, factories, ports and infrastructure works.",
+        p1: 'Established in 1952, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> is one of Penang\'s established quarry operators.',
+        p2: "For over 70 years, we have supplied quality granite products for highways, bridges, commercial developments, residential projects, factories, ports and infrastructure works.",
         p3: "Today, we continue to combine decades of quarrying experience with modern production methods to provide reliable building materials for Penang's construction industry.",
         location: "Penang",
         stats: {
@@ -124,7 +124,7 @@ const TRANSLATIONS = {
         viewProjects: "View Our Projects →"
       },
       video: {
-        title: "Our Quarry Operations",
+        title: "Quarrying Overview",
         subtitle: "Watch our granite extraction and blasting process in action"
       }
     },
@@ -236,18 +236,15 @@ const TRANSLATIONS = {
         subtitle: "Building a greener future through responsible quarrying",
         environmental: {
           title: "Environmental",
-          desc: "We are committed to sustainable quarrying practices, including responsible land rehabilitation, dust suppression, and water conservation to minimize our environmental footprint.",
-          tags: ["Climate Action", "Life on Land"]
+          desc: "We are committed to sustainable quarrying practices, including responsible land rehabilitation, dust suppression, and water conservation to minimize our environmental footprint. As a proud member of the Penang Quarries Association (PQA), we embrace renewable energy, automation, and advanced construction waste recycling."
         },
-        safety: {
-          title: "Safety",
-          desc: "Comprehensive safety protocols and regular training ensure the well-being of our workforce and compliance with the highest industry safety standards.",
-          tags: ["Good Health", "Decent Work"]
+        social: {
+          title: "Social",
+          desc: "Comprehensive safety protocols and regular training ensure the well-being of our workforce and compliance with the highest industry safety standards. We actively engage with local communities, supporting economic development and creating employment opportunities. Through PQA's CSR initiatives, we contribute to community well-being."
         },
-        community: {
-          title: "Community",
-          desc: "We actively engage with local communities, supporting economic development and creating employment opportunities in the regions where we operate.",
-          tags: ["No Poverty", "Decent Work", "Sustainable Cities"]
+        governance: {
+          title: "Governance",
+          desc: "We uphold the highest standards of governance, working closely with the Penang Quarries Association (PQA) and the state government to ensure regulatory compliance, sustainable aggregate supply, and industry best practices. We support the Penang Quarry Rules 2018 and regular inspections to maintain safety and environmental standards."
         }
       }
     },
@@ -332,7 +329,9 @@ const TRANSLATIONS = {
     contact: {
       hero: {
         title: "Contact Us",
-        subtitle: "Get in touch with Teik Granite Quarry for all your construction material needs"
+        subtitle: "Get in touch with Teik Granite Quarry for all your construction material needs",
+        whatsapp1: "General Inquiries 1",
+        whatsapp2: "General Inquiries 2"
       },
       form: {
         title: "Send an Enquiry",
@@ -466,16 +465,16 @@ const TRANSLATIONS = {
     // ---- INDEX PAGE ----
     index: {
       hero: {
-        badge: "SEJAK 1960",
-        title: 'Menyertai pembangunan <br> Pulau Pinang <br> <span class="highlight-red">Sejak 1960</span>',
-        subtitle: '<strong>Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1960, Teik Granite Quarry Sdn. Bhd. mempunyai pengalaman lebih enam dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang.'
+        badge: "SEJAK 1952",
+        title: 'Dibina di atas <br> masa lalu.<br> Didorong oleh <br> masa depan. <br> <span class="highlight-red">Sejak 1952</span>',
+        subtitle: '<strong>Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1952, Teik Granite Quarry Sdn. Bhd. mempunyai pengalaman lebih tujuh dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang.'
       },
       overview: {
-        badge: "Sejak 1960",
+        badge: "Sejak 1952",
         title: "Gambaran Syarikat",
         subtitle: "Dari Lombong ke Pasaran - Menjana Pembangunan Pulau Pinang dengan Bahan Binaan Berkualiti",
-        p1: 'Ditubuhkan pada tahun 1960, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> adalah salah satu pengendali kuari yang mapan di Pulau Pinang.',
-        p2: "Selama lebih 60 tahun, kami telah membekalkan produk granit berkualiti untuk lebuh raya, jambatan, pembangunan komersial, projek perumahan, kilang, pelabuhan dan kerja infrastruktur.",
+        p1: 'Ditubuhkan pada tahun 1952, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> adalah salah satu pengendali kuari yang mapan di Pulau Pinang.',
+        p2: "Selama lebih 70 tahun, kami telah membekalkan produk granit berkualiti untuk lebuh raya, jambatan, pembangunan komersial, projek perumahan, kilang, pelabuhan dan kerja infrastruktur.",
         p3: "Hari ini, kami terus menggabungkan pengalaman kuari selama beberapa dekad dengan kaedah pengeluaran moden untuk menyediakan bahan binaan yang boleh dipercayai untuk industri pembinaan Pulau Pinang.",
         location: "Pulau Pinang",
         stats: {
@@ -528,7 +527,7 @@ const TRANSLATIONS = {
         viewProjects: "Lihat Projek Kami →"
       },
       video: {
-        title: "Operasi Kuari Kami",
+        title: "Gambaran Kuari",
         subtitle: "Saksikan proses pengekstrakan dan letupan granit kami"
       }
     },
@@ -640,18 +639,15 @@ const TRANSLATIONS = {
         subtitle: "Membina masa depan yang lebih hijau melalui perlombongan yang bertanggungjawab",
         environmental: {
           title: "Alam Sekitar",
-          desc: "Kami komited terhadap amalan perlombongan yang mampan, termasuk pemulihan tanah yang bertanggungjawab, kawalan habuk, dan pemuliharaan air untuk meminimumkan jejak alam sekitar kami.",
-          tags: ["Tindakan Iklim", "Kehidupan di Darat"]
+          desc: "Kami komited terhadap amalan perlombongan yang mampan, termasuk pemulihan tanah yang bertanggungjawab, kawalan habuk, dan pemuliharaan air untuk meminimumkan jejak alam sekitar kami. Sebagai ahli Persatuan Kuari Pulau Pinang (PQA) yang bangga, kami mengamalkan tenaga boleh diperbaharui, automasi, dan kitar semula sisa pembinaan termaju."
         },
-        safety: {
-          title: "Keselamatan",
-          desc: "Protokol keselamatan yang komprehensif dan latihan berkala memastikan kesejahteraan tenaga kerja kami dan pematuhan kepada piawaian keselamatan industri tertinggi.",
-          tags: ["Kesihatan Baik", "Pekerjaan Berkualiti"]
+        social: {
+          title: "Sosial",
+          desc: "Protokol keselamatan yang komprehensif dan latihan berkala memastikan kesejahteraan tenaga kerja kami dan pematuhan kepada piawaian keselamatan industri tertinggi. Kami aktif melibatkan diri dengan komuniti tempatan, menyokong pembangunan ekonomi dan mewujudkan peluang pekerjaan. Melalui inisiatif CSR PQA, kami menyumbang kepada kesejahteraan komuniti."
         },
-        community: {
-          title: "Komuniti",
-          desc: "Kami aktif melibatkan diri dengan komuniti tempatan, menyokong pembangunan ekonomi dan mewujudkan peluang pekerjaan di kawasan di mana kami beroperasi.",
-          tags: ["Tiada Kemiskinan", "Pekerjaan Berkualiti", "Bandar Mampan"]
+        governance: {
+          title: "Tadbir Urus",
+          desc: "Kami menjunjung standard tadbir urus tertinggi, bekerjasama rapat dengan Persatuan Kuari Pulau Pinang (PQA) dan kerajaan negeri untuk memastikan pematuhan peraturan, bekalan agregat yang mampan, dan amalan terbaik industri. Kami menyokong Peraturan Kuari Pulau Pinang 2018 dan pemeriksaan berkala untuk mengekalkan standard keselamatan dan alam sekitar."
         }
       }
     },
@@ -736,7 +732,9 @@ const TRANSLATIONS = {
     contact: {
       hero: {
         title: "Hubungi Kami",
-        subtitle: "Hubungi Teik Granite Quarry untuk semua keperluan bahan binaan anda"
+        subtitle: "Hubungi Teik Granite Quarry untuk semua keperluan bahan binaan anda",
+        whatsapp1: "Pertanyaan Am 1",
+        whatsapp2: "Pertanyaan Am 2"
       },
       form: {
         title: "Hantar Pertanyaan",
@@ -870,16 +868,16 @@ const TRANSLATIONS = {
     // ---- INDEX PAGE ----
     index: {
       hero: {
-        badge: "自1960年",
-        title: '参与槟城的发展 <br> <span class="highlight-red">自1960年</span>',
-        subtitle: '<strong>值得信赖的骨料供应，用于基础设施和建筑</strong><br />德石较有限公司成立于1960年，拥有超过六十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城各地。'
+        badge: "自1952年",
+        title: '立足于过去, <br> 驱动于未来。<br> <span class="highlight-red">自1952年</span>',
+        subtitle: '<strong>值得信赖的骨料供应，用于基础设施和建筑</strong><br />德石较有限公司成立于1952年，拥有超过七十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城各地。'
       },
       overview: {
-        badge: "自1960年",
+        badge: "自1952年",
         title: "公司概况",
         subtitle: "从矿山到市场 - 以优质建材推动槟城发展",
-        p1: '德石较有限公司成立于1960年，是槟城成熟的采石场运营商之一。',
-        p2: "60多年来，我们为高速公路、桥梁、商业开发、住宅项目、工厂、港口和基础设施工程供应优质花岗岩产品。",
+        p1: '德石较有限公司成立于1952年，是槟城成熟的采石场运营商之一。',
+        p2: "70多年来，我们为高速公路、桥梁、商业开发、住宅项目、工厂、港口和基础设施工程供应优质花岗岩产品。",
         p3: "如今，我们继续将数十年的采石经验与现代生产方式相结合，为槟城建筑行业提供可靠的建筑材料。",
         location: "槟城",
         stats: {
@@ -932,7 +930,7 @@ const TRANSLATIONS = {
         viewProjects: "查看我们的项目 →"
       },
       video: {
-        title: "我们的采石作业",
+        title: "采石场概览",
         subtitle: "观看我们的花岗岩开采和爆破过程"
       }
     },
@@ -1044,18 +1042,15 @@ const TRANSLATIONS = {
         subtitle: "通过负责任的采石建设更绿色的未来",
         environmental: {
           title: "环境",
-          desc: "我们致力于可持续的采石实践，包括负责任的土地复垦、粉尘控制和水资源保护，以最大限度地减少我们的环境足迹。",
-          tags: ["气候行动", "陆地生态"]
+          desc: "我们致力于可持续的采石实践，包括负责任的土地复垦、粉尘控制和水资源保护，以最大限度地减少我们的环境足迹。作为槟城采石协会（PQA）的骄傲成员，我们拥抱可再生能源、自动化和先进的建筑废料回收。"
         },
-        safety: {
-          title: "安全",
-          desc: "全面的安全协议和定期培训确保我们员工的福祉，并符合最高的行业安全标准。",
-          tags: ["良好健康", "体面工作"]
+        social: {
+          title: "社会",
+          desc: "全面的安全协议和定期培训确保我们员工的福祉，并符合最高的行业安全标准。我们积极参与当地社区，支持经济发展并创造就业机会。通过 PQA 的企业社会责任倡议，我们为社区福祉做出贡献。"
         },
-        community: {
-          title: "社区",
-          desc: "我们积极参与当地社区，支持经济发展，并在我们运营的地区创造就业机会。",
-          tags: ["消除贫穷", "体面工作", "可持续城市"]
+        governance: {
+          title: "治理",
+          desc: "我们坚持最高标准的治理，与槟城采石协会（PQA）和州政府密切合作，确保合规、可持续的骨料供应和行业最佳实践。我们支持2018年槟城采石条例和定期检查，以维护安全和环境标准。"
         }
       }
     },
@@ -1140,7 +1135,9 @@ const TRANSLATIONS = {
     contact: {
       hero: {
         title: "联系我们",
-        subtitle: "联系德石较有限公司，满足您所有建筑材料需求"
+        subtitle: "联系德石较有限公司，满足您所有建筑材料需求",
+        whatsapp1: "一般咨询 1",
+        whatsapp2: "一般咨询 2"
       },
       form: {
         title: "发送咨询",

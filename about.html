@@ -1138,7 +1138,7 @@
             margin-top: 0.5rem;
         }
 
-        /* ===== ESG / SUSTAINABILITY WITH BACKGROUND IMAGES ===== */
+        /* ===== ESG / SUSTAINABILITY (SDG removed) ===== */
         .esg-section {
             padding: 5rem 0;
             background: transparent;
@@ -1198,10 +1198,8 @@
         }
 
         .esg-card .esg-icon,
-        .esg-card .sdg-badge,
         .esg-card h3,
-        .esg-card p,
-        .esg-card .sdg-list {
+        .esg-card p {
             position: relative;
             z-index: 2;
         }
@@ -1221,18 +1219,6 @@
             color: #cc0000;
             margin-bottom: 0.5rem;
         }
-        .esg-card .sdg-badge {
-            display: inline-block;
-            background: #cc0000;
-            color: white;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-        }
         .esg-card h3 {
             font-weight: 700;
             color: #1a2a1d;
@@ -1242,22 +1228,6 @@
             color: #4a5a5a;
             font-size: 0.95rem;
             line-height: 1.7;
-        }
-        .esg-card .sdg-list {
-            margin-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        .esg-card .sdg-list .sdg-tag {
-            background: #fce8e8;
-            color: #cc0000;
-            font-size: 0.65rem;
-            font-weight: 600;
-            padding: 0.15rem 0.7rem;
-            border-radius: 20px;
-            border: 1px solid #fce8e8;
         }
 
         /* ===== SUBSIDIARIES ===== */
@@ -2017,11 +1987,11 @@
         <div class="whatsapp-dropdown" id="whatsappDropdown">
             <a href="https://wa.me/60109310478?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" target="_blank">
                 <i class="fab fa-whatsapp"></i> 
-                General Inquiries 1  
+                <span data-i18n="contact.hero.whatsapp1">General Inquiries 1</span>
             </a>
             <a href="https://wa.me/60165850478?text=Hi%2C%20I%27m%20interested%20in%20your%20granite%20products" target="_blank">
                 <i class="fab fa-whatsapp"></i> 
-                General Inquiries 2
+                <span data-i18n="contact.hero.whatsapp2">General Inquiries 2</span>
             </a>
         </div>
     </div>
@@ -2325,7 +2295,7 @@
         </div>
     </section>
 
-    <!-- ===== ESG / SUSTAINABILITY ===== -->
+    <!-- ===== ESG / SUSTAINABILITY (SDG REMOVED) ===== -->
     <section class="esg-section">
         <div class="container">
             <div class="esg-wrapper">
@@ -2335,38 +2305,25 @@
                     <p data-i18n="about.esg.subtitle">Building a greener future through responsible quarrying</p>
                 </div>
                 <div class="esg-grid">
+                    <!-- ===== ENVIRONMENTAL ===== -->
                     <div class="esg-card">
                         <div class="esg-icon"><i class="fas fa-leaf"></i></div>
-                        <span class="sdg-badge">SDG 13, 15</span>
                         <h3 data-i18n="about.esg.environmental.title">Environmental</h3>
-                        <p data-i18n="about.esg.environmental.desc">We are committed to sustainable quarrying practices, including responsible land rehabilitation, dust suppression, and water conservation to minimize our environmental footprint.</p>
-                        <div class="sdg-list">
-                            <span class="sdg-tag" data-i18n="about.esg.environmental.tags.0">Climate Action</span>
-                            <span class="sdg-tag" data-i18n="about.esg.environmental.tags.1">Life on Land</span>
-                        </div>
+                        <p data-i18n="about.esg.environmental.desc">We are committed to sustainable quarrying practices, including responsible land rehabilitation, dust suppression, and water conservation to minimize our environmental footprint. As a proud member of the Penang Quarries Association (PQA), we embrace renewable energy, automation, and advanced construction waste recycling.</p>
                     </div>
 
+                    <!-- ===== SOCIAL ===== -->
                     <div class="esg-card">
-                        <div class="esg-icon"><i class="fas fa-shield-alt"></i></div>
-                        <span class="sdg-badge">SDG 3, 8</span>
-                        <h3 data-i18n="about.esg.safety.title">Safety</h3>
-                        <p data-i18n="about.esg.safety.desc">Comprehensive safety protocols and regular training ensure the well-being of our workforce and compliance with the highest industry safety standards.</p>
-                        <div class="sdg-list">
-                            <span class="sdg-tag" data-i18n="about.esg.safety.tags.0">Good Health</span>
-                            <span class="sdg-tag" data-i18n="about.esg.safety.tags.1">Decent Work</span>
-                        </div>
+                        <div class="esg-icon"><i class="fas fa-users"></i></div>
+                        <h3 data-i18n="about.esg.social.title">Social</h3>
+                        <p data-i18n="about.esg.social.desc">Comprehensive safety protocols and regular training ensure the well-being of our workforce and compliance with the highest industry safety standards. We actively engage with local communities, supporting economic development and creating employment opportunities. Through PQA's CSR initiatives, we contribute to community well-being.</p>
                     </div>
 
+                    <!-- ===== GOVERNANCE ===== -->
                     <div class="esg-card">
-                        <div class="esg-icon"><i class="fas fa-handshake"></i></div>
-                        <span class="sdg-badge">SDG 1, 8, 11</span>
-                        <h3 data-i18n="about.esg.community.title">Community</h3>
-                        <p data-i18n="about.esg.community.desc">We actively engage with local communities, supporting economic development and creating employment opportunities in the regions where we operate.</p>
-                        <div class="sdg-list">
-                            <span class="sdg-tag" data-i18n="about.esg.community.tags.0">No Poverty</span>
-                            <span class="sdg-tag" data-i18n="about.esg.community.tags.1">Decent Work</span>
-                            <span class="sdg-tag" data-i18n="about.esg.community.tags.2">Sustainable Cities</span>
-                        </div>
+                        <div class="esg-icon"><i class="fas fa-gavel"></i></div>
+                        <h3 data-i18n="about.esg.governance.title">Governance</h3>
+                        <p data-i18n="about.esg.governance.desc">We uphold the highest standards of governance, working closely with the Penang Quarries Association (PQA) and the state government to ensure regulatory compliance, sustainable aggregate supply, and industry best practices. We support the Penang Quarry Rules 2018 and regular inspections to maintain safety and environmental standards.</p>
                     </div>
                 </div>
             </div>
