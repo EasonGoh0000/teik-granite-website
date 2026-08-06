@@ -13,7 +13,6 @@ const TRANSLATIONS = {
       company: "Company",
       about: "About",
       products: "Products",
-      facilities: "Facilities",
       contact: "Contact"
     },
     logo: {
@@ -32,11 +31,11 @@ const TRANSLATIONS = {
     common: {
       learnMore: "Learn More →",
       requestQuote: "Request Quote",
-      viewMap: "View Locations on Map",
+      viewMap: "View Locations on Map →",
       backToTop: "Back to top",
       sendMessage: "Send Message",
       copyright: "© 2026 Teik Granite Quarry Sdn Bhd. All Rights Reserved.",
-      established: "Established: 1960",
+      established: "Established: 1952",
       regNo: "Registration No: 196001000153 (3821-P)",
       tagline: "A trusted Malaysian quarry company supplying premium granite and construction materials for over 60 years.",
       quickLinks: "Quick Links",
@@ -63,15 +62,15 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "SINCE 1952",
-        title: 'Built on the past. <br> Driven by the future.<br><span class="highlight-red">Since 1952</span>',
-        subtitle: '<strong>Trusted Aggregate Supply for Infrastructure & Construction</strong><br />Established in 1952, Teik Granite Quarry Sdn. Bhd. has over seven decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang.'
+        title: 'Built on the past. <br> Driven by the future.',
+        subtitle: '<strong>Trusted Aggregate Supply for Infrastructure & Construction</strong><br />Established in 1952, Teik Granite Quarry Sdn Bhd has over seven decades of experience supplying premium granite aggregates, manufactured sand and quarry materials throughout Penang.'
       },
       overview: {
         badge: "Since 1952",
         title: "Company Overview",
         subtitle: "From the Mine to the Market Powering Penang's Development with Quality Construction Materials",
-        p1: 'Established in 1952, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> is one of Penang\'s established quarry operators.',
-        p2: "For over 70 years, we have supplied quality granite products for highways, bridges, commercial developments, residential projects, factories, ports and infrastructure works.",
+        p1: 'Founded as Teik & Co in 1952, the business expanded with the incorporation into Teik Granite Quarry Ltd in 1960, later to become <br> <span class="highlight">Teik Granite Quarry Sdn Bhd </span> in 1966. We have since continued to <br> grow to become one of Penang\'s longest established quarry operators.',
+        p2: "For over 70 years of excellence, we have supplied quality granite products for highways, bridges, commercial developments, residential projects, factories, ports, and infrastructure works.",
         p3: "Today, we continue to combine decades of quarrying experience with modern production methods to provide reliable building materials for Penang's construction industry.",
         location: "Penang",
         stats: {
@@ -87,18 +86,18 @@ const TRANSLATIONS = {
         headOffice: "Head Office",
         corporateOffice: "Corporate Office",
         quarrySite: "Quarry Site",
-        address: "Address",
-        email: "Email",
-        phone: "Phone",
-        fax: "Fax",
-        website: "Website",
-        site: "Site"
+        address: "Address:",
+        email: "Email:",
+        phone: "Phone:",
+        fax: "Fax:",
+        website: "Website:",
+        site: "Site:"
       },
       products: {
         title: "Our Products",
         subtitle: "Premium quarry materials for construction and infrastructure",
         unifiedTitle: "Crushed Stone & Sand (Manufactured / M-Sand)",
-        unifiedDescription: "High-quality crushed granite for concrete production, asphalt paving, and road construction. Available in various sizes including 10, 20 & 40 mm, M.Sand, Quarry Dust, and Crusher Run. Infrastructure grade, and eco-friendly options available.",
+        unifiedDescription: "High-quality crushed granite for concrete production, asphalt paving, and road construction. Available in various sizes including 10, 20 & 40 mm, M.Sand, Quarry Dust, and Crushed Run.",
         sirim: "SIRIM Certified",
         premium: "Premium Quality",
         infrastructure: "Infrastructure Grade",
@@ -295,36 +294,6 @@ const TRANSLATIONS = {
       }
     },
 
-    // ---- FACILITIES PAGE ----
-    facilities: {
-      hero: {
-        title: "Our Facilities",
-        subtitle: "State-of-the-art quarry and processing facilities"
-      },
-      list: {
-        quarry: {
-          title: "Granite Quarry",
-          desc: "Our main quarry operation spans over decades of granite extraction. Equipped with modern drilling and blasting technology."
-        },
-        crushing: {
-          title: "Crushing Plant",
-          desc: "State-of-the-art crushing and screening plant producing high-quality aggregates of various sizes."
-        },
-        storage: {
-          title: "Storage Facilities",
-          desc: "Large covered storage areas for finished products, ensuring materials remain dry and ready for dispatch."
-        },
-        transport: {
-          title: "Transport Fleet",
-          desc: "Our own fleet of heavy-duty haulers and trucks ensures timely and reliable delivery across Malaysia."
-        },
-        safety: {
-          title: "Safety & Environment",
-          desc: "Committed to sustainable quarrying practices with comprehensive safety and environmental management."
-        }
-      }
-    },
-
     // ---- CONTACT PAGE ----
     contact: {
       hero: {
@@ -416,7 +385,6 @@ const TRANSLATIONS = {
       company: "Syarikat",
       about: "Tentang",
       products: "Produk",
-      facilities: "Kemudahan",
       contact: "Hubungi"
     },
     logo: {
@@ -435,11 +403,11 @@ const TRANSLATIONS = {
     common: {
       learnMore: "Ketahui Lebih Lanjut →",
       requestQuote: "Minta Sebut Harga",
-      viewMap: "Lihat Lokasi di Peta",
+      viewMap: "Lihat Lokasi di Peta →",
       backToTop: "Kembali ke atas",
       sendMessage: "Hantar Mesej",
       copyright: "© 2026 Teik Granite Quarry Sdn Bhd. Hak Cipta Terpelihara.",
-      established: "Ditubuhkan: 1960",
+      established: "Ditubuhkan: 1952",
       regNo: "No. Pendaftaran: 196001000153 (3821-P)",
       tagline: "Syarikat kuari Malaysia yang dipercayai membekalkan granit premium dan bahan binaan selama lebih 60 tahun.",
       quickLinks: "Pautan Pantas",
@@ -466,15 +434,15 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "SEJAK 1952",
-        title: 'Dibina di atas <br> masa lalu.<br> Didorong oleh <br> masa depan. <br> <span class="highlight-red">Sejak 1952</span>',
-        subtitle: '<strong>Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1952, Teik Granite Quarry Sdn. Bhd. mempunyai pengalaman lebih tujuh dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang.'
+        title: 'Dibina di atas <br> masa lalu.<br> Didorong oleh <br> masa depan.',
+        subtitle: '<strong>Bekalan Agregat Dipercayai untuk Infrastruktur & Pembinaan</strong><br />Ditubuhkan pada tahun 1952, Teik Granite Quarry Sdn Bhd mempunyai pengalaman lebih tujuh dekad membekalkan agregat granit premium, pasir buatan dan bahan kuari di seluruh Pulau Pinang.'
       },
       overview: {
         badge: "Sejak 1952",
         title: "Gambaran Syarikat",
         subtitle: "Dari Lombong ke Pasaran - Menjana Pembangunan Pulau Pinang dengan Bahan Binaan Berkualiti",
-        p1: 'Ditubuhkan pada tahun 1952, <span class="highlight">Teik Granite Quarry Sdn. Bhd.</span> adalah salah satu pengendali kuari yang mapan di Pulau Pinang.',
-        p2: "Selama lebih 70 tahun, kami telah membekalkan produk granit berkualiti untuk lebuh raya, jambatan, pembangunan komersial, projek perumahan, kilang, pelabuhan dan kerja infrastruktur.",
+        p1: 'Diasaskan sebagai Teik & Co pada tahun 1952, perniagaan ini berkembang dengan penubuhan Teik Granite Quarry Ltd pada tahun 1960, dan kemudiannya menjadi <span class="highlight">Teik Granite Quarry Sdn Bhd</span> pada tahun 1966. Sejak itu, kami terus berkembang menjadi salah satu pengendali kuari tertua di Pulau Pinang.',
+        p2: 'Selama lebih 70 tahun kecemerlangan, kami telah membekalkan produk granit berkualiti untuk lebuh raya, jambatan, pembangunan komersial, projek perumahan, kilang, pelabuhan, dan kerja infrastruktur.',
         p3: "Hari ini, kami terus menggabungkan pengalaman kuari selama beberapa dekad dengan kaedah pengeluaran moden untuk menyediakan bahan binaan yang boleh dipercayai untuk industri pembinaan Pulau Pinang.",
         location: "Pulau Pinang",
         stats: {
@@ -490,18 +458,18 @@ const TRANSLATIONS = {
         headOffice: "Pejabat Utama",
         corporateOffice: "Pejabat Korporat",
         quarrySite: "Tapak Kuari",
-        address: "Alamat",
-        email: "E-mel",
-        phone: "Telefon",
-        fax: "Faks",
-        website: "Laman Web",
-        site: "Tapak"
+        address: "Alamat:",
+        email: "E-mel:",
+        phone: "Telefon:",
+        fax: "Faks:",
+        website: "Laman Web:",
+        site: "Tapak:"
       },
       products: {
         title: "Produk Kami",
         subtitle: "Bahan kuari premium untuk pembinaan dan infrastruktur",
         unifiedTitle: "Batu Hancur & Pasir (M-Pasir / Debu Kuari)",
-        unifiedDescription: "Granit hancur berkualiti tinggi untuk pengeluaran konkrit, turapan asfalt, dan pembinaan jalan raya. Tersedia dalam pelbagai saiz termasuk 10, 20 & 40 mm, M.Pasir, Debu Kuari, dan Crusher Run. Gred infrastruktur, dan pilihan mesra alam.",
+        unifiedDescription: "Granit hancur berkualiti tinggi untuk pengeluaran konkrit, turapan asfalt, dan pembinaan jalan raya. Tersedia dalam pelbagai saiz termasuk 10, 20 & 40 mm, M.Pasir, Debu Kuari, dan Crushed Run.",
         sirim: "Diperakui SIRIM",
         premium: "Kualiti Premium",
         infrastructure: "Gred Infrastruktur",
@@ -698,36 +666,6 @@ const TRANSLATIONS = {
       }
     },
 
-    // ---- FACILITIES PAGE ----
-    facilities: {
-      hero: {
-        title: "Kemudahan Kami",
-        subtitle: "Kemudahan kuari dan pemprosesan terkini"
-      },
-      list: {
-        quarry: {
-          title: "Kuari Granit",
-          desc: "Operasi kuari utama kami merangkumi beberapa dekad pengekstrakan granit. Dilengkapi dengan teknologi penggerudian dan letupan moden."
-        },
-        crushing: {
-          title: "Loji Penghancuran",
-          desc: "Loji penghancuran dan penapisan terkini menghasilkan agregat berkualiti tinggi pelbagai saiz."
-        },
-        storage: {
-          title: "Kemudahan Penyimpanan",
-          desc: "Kawasan penyimpanan berbumbung besar untuk produk siap, memastikan bahan kekal kering dan siap untuk penghantaran."
-        },
-        transport: {
-          title: "Fleet Pengangkutan",
-          desc: "Fleet pengangkut berat dan lori kami sendiri memastikan penghantaran tepat dan boleh dipercayai di seluruh Malaysia."
-        },
-        safety: {
-          title: "Keselamatan & Alam Sekitar",
-          desc: "Komited terhadap amalan perlombongan mampan dengan pengurusan keselamatan dan alam sekitar yang komprehensif."
-        }
-      }
-    },
-
     // ---- CONTACT PAGE ----
     contact: {
       hero: {
@@ -819,7 +757,6 @@ const TRANSLATIONS = {
       company: "公司",
       about: "关于",
       products: "产品",
-      facilities: "设施",
       contact: "联系"
     },
     logo: {
@@ -838,11 +775,11 @@ const TRANSLATIONS = {
     common: {
       learnMore: "了解更多 →",
       requestQuote: "索取报价",
-      viewMap: "在地图上查看位置",
+      viewMap: "在地图上查看位置 →",
       backToTop: "返回顶部",
       sendMessage: "发送消息",
       copyright: "© 2026 德石较有限公司. 版权所有。",
-      established: "成立年份：1960年",
+      established: "成立年份：1952年",
       regNo: "注册号：196001000153 (3821-P)",
       tagline: "值得信赖的马来西亚采石场公司，供应优质花岗岩和建筑材料超过60年。",
       quickLinks: "快速链接",
@@ -869,15 +806,15 @@ const TRANSLATIONS = {
     index: {
       hero: {
         badge: "自1952年",
-        title: '立足于过去, <br> 驱动于未来。<br> <span class="highlight-red">自1952年</span>',
+        title: '立足于过去, <br> 驱动于未来。',
         subtitle: '<strong>值得信赖的骨料供应，用于基础设施和建筑</strong><br />德石较有限公司成立于1952年，拥有超过七十年的经验，供应优质花岗岩骨料、机制砂和采石材料，遍布槟城各地。'
       },
       overview: {
         badge: "自1952年",
         title: "公司概况",
         subtitle: "从矿山到市场 - 以优质建材推动槟城发展",
-        p1: '德石较有限公司成立于1952年，是槟城成熟的采石场运营商之一。',
-        p2: "70多年来，我们为高速公路、桥梁、商业开发、住宅项目、工厂、港口和基础设施工程供应优质花岗岩产品。",
+        p1: '公司于1952年以 Teik & Co 之名成立，1960年扩大并注册为 Teik Granite Quarry Ltd，后于1966年更名为德石较有限公司。自此，我们持续发展，成为槟城历史最悠久的采石场运营商之一。',
+        p2: "超过70年的卓越历程，我们为高速公路、桥梁、商业开发、住宅项目、工厂、港口及基础设施工程供应优质花岗岩产品。",
         p3: "如今，我们继续将数十年的采石经验与现代生产方式相结合，为槟城建筑行业提供可靠的建筑材料。",
         location: "槟城",
         stats: {
@@ -893,18 +830,18 @@ const TRANSLATIONS = {
         headOffice: "总部",
         corporateOffice: "公司办公室",
         quarrySite: "采石场",
-        address: "地址",
-        email: "电子邮件",
-        phone: "电话",
-        fax: "传真",
-        website: "网站",
-        site: "场地"
+        address: "地址:",
+        email: "电子邮件:",
+        phone: "电话:",
+        fax: "传真:",
+        website: "网站:",
+        site: "场地:"
       },
       products: {
         title: "我们的产品",
         subtitle: "用于建筑和基础设施的优质采石材料",
         unifiedTitle: "破碎石与砂（机制砂 / 采石场粉尘）",
-        unifiedDescription: "高品质碎石，用于混凝土生产、沥青铺设和道路建设。提供多种规格，包括10, 20 & 40毫米、机制砂、采石场粉尘和破碎跑料。基础设施级和环保选项。",
+        unifiedDescription: "高品质碎石，用于混凝土生产、沥青铺设和道路建设。提供多种规格，包括10, 20 & 40毫米、机制砂、采石场粉尘和破碎跑料。",
         sirim: "SIRIM认证",
         premium: "优质",
         infrastructure: "基础设施级",
